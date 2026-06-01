@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arel Kair</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const root = document.documentElement;
+      root.dataset.theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+      const lang = localStorage.getItem("lang");
+      if (lang) root.lang = lang;
+    })();
+  </script>
+</head>
+<body>
+  <div class="backdrop"></div>
+  <div class="grain"></div>
+
+  <div class="controls">
+    <div class="lang" id="lang">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+        <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" />
+        </svg>
+        <span class="lang-label" id="langLabel">English</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+        <li class="lang-option" role="option" data-lang="en" tabindex="-1">English</li>
+        <li class="lang-option" role="option" data-lang="es" tabindex="-1">Español</li>
+        <li class="lang-option" role="option" data-lang="ko" tabindex="-1">한국어</li>
+        <li class="lang-option" role="option" data-lang="zh" tabindex="-1">中文</li>
+      </ul>
+    </div>
+
+    <button class="control control-theme" id="themeToggle" type="button" aria-label="Toggle theme">
+      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+      </svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+      </svg>
+    </button>
+  </div>
+
+  <main class="panel">
+    <header class="hero reveal" style="--i: 0">
+      <h1 class="name">Arel Kair</h1>
+    </header>
+
+    <section class="block reveal" style="--i: 1">
+      <h2 class="block-title" data-i18n="aboutTitle">About</h2>
+      <p class="bio" data-i18n="bio">
+        I enjoy experimenting with AI and pushing it to its limits to explore its capabilities.
+        I organize and direct AI-driven projects and I'm interested in cybersecurity, network and
+        infrastructure management, as well as video games, self-hosting, programming, and many
+        other related topics.
+      </p>
+    </section>
+
+    <section class="block reveal" style="--i: 2">
+      <h2 class="block-title" data-i18n="projectsTitle">Projects</h2>
+      <div class="project-grid">
+        <article class="project" style="--i: 0">
+          <span class="project-index">01</span>
+          <h3 class="project-title">Hello, World!</h3>
+          <p class="project-desc" data-i18n="proj1">My first web page.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+          <a class="project-link" href="https://github.com/arelkair/helloworld" target="_blank" rel="noopener">
+            <span data-i18n="viewGithub">View on GitHub</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </article>
+
+        <article class="project" style="--i: 1">
+          <span class="project-index">02</span>
+          <h3 class="project-title">Calculator</h3>
+          <p class="project-desc" data-i18n="proj2">A grid-based, fully responsive scientific calculator built with plain HTML, CSS and JavaScript.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+          <a class="project-link" href="https://github.com/arelkair/calculator" target="_blank" rel="noopener">
+            <span data-i18n="viewGithub">View on GitHub</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script defer src="js/data/translations.js"></script>
+  <script defer src="js/lib/preferences.js"></script>
+  <script defer src="js/features/i18n.js"></script>
+  <script defer src="js/features/language-menu.js"></script>
+  <script defer src="js/features/theme.js"></script>
+  <script defer src="js/features/spotlight.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>
