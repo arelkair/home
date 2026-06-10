@@ -280,13 +280,16 @@ body {
   transform: translateY(-8px) scale(0.97);
   transform-origin: top right;
   pointer-events: none;
-  transition: opacity 0.22s var(--ease), transform 0.28s var(--ease);
+  visibility: hidden;
+  transition: opacity 0.22s var(--ease), transform 0.28s var(--ease), visibility 0s linear 0.28s;
 }
 
 .lang.open .lang-menu {
   opacity: 1;
   transform: none;
   pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.22s var(--ease), transform 0.28s var(--ease), visibility 0s;
 }
 
 .lang-option {
@@ -302,7 +305,8 @@ body {
   transition: background-color 0.18s ease, transform 0.18s var(--ease);
 }
 
-.lang-option:hover {
+.lang-option:hover,
+.lang-option:focus-visible {
   background: var(--surface-hover);
 }
 

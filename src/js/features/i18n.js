@@ -4,7 +4,7 @@ window.Portfolio = window.Portfolio || {};
   const STORAGE_KEY = "lang";
 
   app.getInitialLanguage = function () {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = app.storageGet(STORAGE_KEY);
     return app.supportedLanguages.includes(saved) ? saved : "en";
   };
 
@@ -15,6 +15,6 @@ window.Portfolio = window.Portfolio || {};
       if (value) element.textContent = value;
     });
     document.documentElement.lang = code;
-    localStorage.setItem(STORAGE_KEY, code);
+    app.storageSet(STORAGE_KEY, code);
   };
 })(window.Portfolio);

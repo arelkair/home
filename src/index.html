@@ -11,9 +11,14 @@
   <script>
     (function () {
       const root = document.documentElement;
-      root.dataset.theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
-      const lang = localStorage.getItem("lang");
-      if (lang) root.lang = lang;
+      let theme = null;
+      let lang = null;
+      try {
+        theme = localStorage.getItem("theme");
+        lang = localStorage.getItem("lang");
+      } catch (error) {}
+      root.dataset.theme = theme === "light" ? "light" : "dark";
+      if (["en", "es", "ko", "zh"].includes(lang)) root.lang = lang;
     })();
   </script>
 </head>
@@ -34,10 +39,10 @@
         </svg>
       </button>
       <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
-        <li class="lang-option" role="option" data-lang="en" tabindex="-1">English</li>
-        <li class="lang-option" role="option" data-lang="es" tabindex="-1">Español</li>
-        <li class="lang-option" role="option" data-lang="ko" tabindex="-1">한국어</li>
-        <li class="lang-option" role="option" data-lang="zh" tabindex="-1">中文</li>
+        <li class="lang-option" role="option" data-lang="en" tabindex="-1" aria-selected="true">English</li>
+        <li class="lang-option" role="option" data-lang="es" tabindex="-1" aria-selected="false">Español</li>
+        <li class="lang-option" role="option" data-lang="ko" tabindex="-1" aria-selected="false">한국어</li>
+        <li class="lang-option" role="option" data-lang="zh" tabindex="-1" aria-selected="false">中文</li>
       </ul>
     </div>
 
