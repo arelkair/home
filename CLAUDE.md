@@ -9,16 +9,16 @@ The personal portfolio website of Arel Kair: a single-page site with a short bio
 - `src/js/main.js` - Entry script that wires the features together
 - `src/js/data/translations.js` - Language dictionaries and supported language list
 - `src/js/lib/preferences.js` - Shared environment preferences (reduced motion)
-- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `spotlight.js`
+- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `spotlight.js`, `status.js`
 
 JavaScript files are plain deferred scripts sharing a single `window.Portfolio` namespace, loaded in dependency order. This keeps the per-feature file split while still working when `index.html` is opened directly via `file://` (ES modules are blocked there). Section entrance animations are CSS-only, so content is always visible even if scripts do not run.
 - `src/assets/fonts/` - Self-hosted Geist and Geist Mono (latin subset, variable weight)
-- `src/assets/favicon.svg` - Site icon
+- `src/assets/icons/favicon.svg` - Site icon
 - `src/vercel.json` - Deploy configuration (the Vercel root directory is `src/`)
 
 ## Design
 
-The visual system mirrors the Calculator project: Geist and Geist Mono fonts, the same dark/light theme tokens, a circular theme toggle in the top right, and the radial-gradient background with drifting blobs and a grain overlay.
+A Fluent/Windows 11-inspired aesthetic: Geist and Geist Mono fonts, a strictly monochrome (black/white) accent across both themes, translucent surfaces, a static radial-gradient background, and a subtle dotted Mica-style texture. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. UI controls and project tiles share a pointer-tracking "Reveal" hover highlight (`.reveal-target`). The background is intentionally static (no continuous animation or `backdrop-filter`) to keep idle CPU/GPU usage near zero.
 
 ## Performance
 

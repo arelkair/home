@@ -4,6 +4,5 @@ window.Portfolio = window.Portfolio || {};
   app.initTheme();
   app.initLanguageMenu();
   app.initSpotlight();
-  app.initParallax();
   app.initStatusClock();
 })(window.Portfolio);
