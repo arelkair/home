@@ -1,3 +1,3 @@
 # Home
 
-My simple home page - Built in HTML, CSS & JavaScript.
+My simple home page.
