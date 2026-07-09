@@ -1,4 +1,3 @@
-/* Fonts */
 @font-face {
   font-family: "Geist";
   src: url("../assets/fonts/geist-latin.woff2") format("woff2");
@@ -15,7 +14,6 @@
   font-display: swap;
 }
 
-/* Theme tokens (Windows 11 Mica / Fluent) */
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -59,7 +57,6 @@
   --menu-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +68,6 @@ body {
   min-height: 100%;
 }
 
-/* Base */
 body {
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -95,7 +91,6 @@ body {
   color: var(--accent-text);
 }
 
-/* Background atmosphere (static — cheap to render) */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -127,7 +122,6 @@ body {
   background: radial-gradient(circle, var(--blob-2) 0%, transparent 60%);
 }
 
-/* Subtle dotted Mica texture */
 .texture {
   position: fixed;
   inset: 0;
@@ -139,7 +133,6 @@ body {
   mask-image: radial-gradient(circle at 50% 0%, black, transparent 75%);
 }
 
-/* Shared Fluent "Reveal" hover highlight */
 .reveal-target {
   position: relative;
   overflow: hidden;
@@ -160,7 +153,6 @@ body {
   opacity: 1;
 }
 
-/* Clock */
 .clock {
   position: fixed;
   top: 24px;
@@ -186,7 +178,6 @@ body {
   height: 15px;
 }
 
-/* Controls */
 .controls {
   position: fixed;
   top: 24px;
@@ -247,7 +238,6 @@ body {
   display: block;
 }
 
-/* Language selector */
 .lang {
   position: relative;
 }
@@ -362,13 +352,11 @@ body {
   box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
-/* Page */
 .page {
   width: min(100%, 420px);
   text-align: center;
 }
 
-/* Hero */
 .hero {
   display: flex;
   flex-direction: column;
@@ -383,7 +371,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* Interest chips */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -428,7 +415,6 @@ body {
   color: var(--chip-accent, var(--accent));
 }
 
-/* Projects */
 .block-title {
   font-size: 0.78rem;
   font-weight: 600;
@@ -488,7 +474,6 @@ body {
   font-weight: 500;
 }
 
-/* Entrance reveal */
 .reveal {
   opacity: 1;
 }
@@ -509,7 +494,6 @@ body {
   }
 }
 
-/* Keyframes */
 @keyframes rise {
   from { opacity: 0; transform: translateY(22px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
@@ -524,7 +508,6 @@ body {
   to { opacity: 1; transform: none; }
 }
 
-/* Theme transition reveal */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -539,7 +522,6 @@ body {
   z-index: 9999;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   body {
     padding: 90px 18px;
