@@ -5,7 +5,7 @@ window.Portfolio = window.Portfolio || {};
 
   function setTheme(value) {
     document.documentElement.dataset.theme = value;
-    localStorage.setItem(STORAGE_KEY, value);
+    app.storageSet(STORAGE_KEY, value);
   }
 
   function revealFrom(element, apply) {
@@ -25,7 +25,7 @@ window.Portfolio = window.Portfolio || {};
           pseudoElement: "::view-transition-new(root)"
         }
       );
-    });
+    }, () => {});
   }
 
   app.initTheme = function () {
