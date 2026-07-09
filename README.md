@@ -2,8 +2,6 @@
 
 Personal portfolio site of Arel Kair — a single-page site with a short bio and project showcase.
 
-**Live:** [arelkair.vercel.app](https://arelkair.vercel.app/)
-
 ## Features
 
 - Light/dark theme toggle
