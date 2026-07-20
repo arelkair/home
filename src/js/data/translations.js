@@ -15,7 +15,12 @@ Portfolio.translations = {
     blogTitle: "Blog",
     blogSubtitle: "Notes on what I'm building and learning.",
     blogReadMore: "Read more",
-    blogBackToList: "Back to blog"
+    blogBackToList: "Back to blog",
+    postWelcomeTitle: "Welcome to the blog",
+    postWelcomeExcerpt: "The first post: why this blog exists and what to expect here going forward.",
+    postWelcomeP1: "This is the first post on this site's new blog section. I'll use this space for short write-ups on the projects I'm building, things I'm learning about security and self-hosting, and the occasional experiment with AI tooling.",
+    postWelcomeP2: "The rest of the site stays the same: a small portfolio of projects, built with plain HTML, CSS and JavaScript and no build step. The blog follows the same rule — every post here is its own static page, so there's nothing to install or compile to read or write one.",
+    postWelcomeP3: "More posts soon."
   },
   es: {
     navHome: "Inicio",
@@ -31,7 +36,12 @@ Portfolio.translations = {
     blogTitle: "Blog",
     blogSubtitle: "Notas sobre lo que estoy construyendo y aprendiendo.",
     blogReadMore: "Leer más",
-    blogBackToList: "Volver al blog"
+    blogBackToList: "Volver al blog",
+    postWelcomeTitle: "Bienvenida al blog",
+    postWelcomeExcerpt: "La primera publicación: por qué existe este blog y qué esperar de aquí en adelante.",
+    postWelcomeP1: "Esta es la primera publicación de la nueva sección de blog de este sitio. Voy a usar este espacio para escribir notas cortas sobre los proyectos que estoy construyendo, cosas que voy aprendiendo sobre seguridad y self-hosting, y algún que otro experimento con herramientas de IA.",
+    postWelcomeP2: "El resto del sitio sigue igual: un pequeño portfolio de proyectos, hecho con HTML, CSS y JavaScript planos, sin paso de build. El blog sigue la misma regla: cada publicación es su propia página estática, así que no hay nada que instalar ni compilar para leer o escribir una.",
+    postWelcomeP3: "Más publicaciones pronto."
   },
   ko: {
     navHome: "홈",
@@ -47,7 +57,12 @@ Portfolio.translations = {
     blogTitle: "블로그",
     blogSubtitle: "만들고 배우는 것에 대한 기록.",
     blogReadMore: "더 읽기",
-    blogBackToList: "블로그로 돌아가기"
+    blogBackToList: "블로그로 돌아가기",
+    postWelcomeTitle: "블로그에 오신 것을 환영합니다",
+    postWelcomeExcerpt: "첫 번째 글: 이 블로그가 왜 생겼는지, 앞으로 무엇을 기대할 수 있는지.",
+    postWelcomeP1: "이 사이트의 새로운 블로그 섹션에 올리는 첫 번째 글입니다. 이 공간은 제가 만들고 있는 프로젝트, 보안과 셀프 호스팅에 관해 배우는 것들, 그리고 가끔씩 해보는 AI 도구 실험에 대한 짧은 글을 올리는 곳입니다.",
+    postWelcomeP2: "사이트의 나머지 부분은 그대로입니다: 순수한 HTML, CSS, JavaScript로 만든 작은 프로젝트 포트폴리오이고 빌드 과정이 없습니다. 블로그도 같은 원칙을 따릅니다 — 각 글은 독립된 정적 페이지이므로, 읽거나 쓰는 데 설치하거나 컴파일할 것이 없습니다.",
+    postWelcomeP3: "곧 더 많은 글을 올리겠습니다."
   },
   zh: {
     navHome: "首页",
@@ -63,7 +78,12 @@ Portfolio.translations = {
     blogTitle: "博客",
     blogSubtitle: "记录我正在构建和学习的内容。",
     blogReadMore: "阅读更多",
-    blogBackToList: "返回博客"
+    blogBackToList: "返回博客",
+    postWelcomeTitle: "欢迎来到博客",
+    postWelcomeExcerpt: "第一篇文章:这个博客为什么存在,以及接下来可以期待什么。",
+    postWelcomeP1: "这是本站新博客栏目的第一篇文章。我会在这里写一些简短的笔记,记录我正在构建的项目、在安全和自托管方面学到的东西,以及偶尔进行的人工智能工具实验。",
+    postWelcomeP2: "网站的其余部分保持不变:一个用纯 HTML、CSS 和 JavaScript 构建的小型项目作品集,没有构建步骤。博客也遵循同样的原则——每篇文章都是独立的静态页面,阅读或撰写都无需安装或编译任何东西。",
+    postWelcomeP3: "更多文章即将发布。"
   }
 };
 

@@ -11,7 +11,7 @@ The personal portfolio website of Arel Kair: a project showcase plus a blog, bui
 - `src/js/main.js` - Entry script that wires the features together
 - `src/js/data/translations.js` - Language dictionaries and supported language list
 - `src/js/lib/preferences.js` - Shared environment preferences (reduced motion)
-- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `nav.js`, `spotlight.js`, `status.js`
+- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `nav.js`, `status.js`
 
 JavaScript files are plain deferred scripts sharing a single `window.Portfolio` namespace, loaded in dependency order. This keeps the per-feature file split while still working when a page is opened directly via `file://` (ES modules are blocked there). Section entrance animations are CSS-only, so content is always visible even if scripts do not run.
 - `src/assets/fonts/` - Self-hosted Inter and Geist Mono (latin subset, variable weight)
@@ -22,11 +22,11 @@ Every page repeats the same sidebar markup (brand, nav, clock, language/theme/Gi
 
 ## Design
 
-A documentation-site aesthetic inspired by 3ds.hacks.guide (VitePress): a fixed left sidebar for navigation, flat surfaces instead of translucency, a dark theme (`#1b1b1f`) with a warm off-white text color and a lavender accent (`#a8b1ff`), and an equivalent light theme with an indigo accent. Inter is the body/UI font; Geist Mono is kept for the clock and post dates/code. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. UI controls, nav links and cards share a pointer-tracking "Reveal" hover highlight (`.reveal-target`). The layout collapses to an off-canvas sidebar drawer below 960px.
+A warm, minimal take on the docs-site layout from 3ds.hacks.guide: a fixed left sidebar for navigation (same background as the page, separated only by a border), and a warm dark theme (`#201d1a`, off-white text, amber accent `#e0a666`) with a matching warm-cream light theme. Inter is the body/UI font; Geist Mono is kept for the clock and post dates/code. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. Motion is intentionally minimal: no entrance animations, no hover-triggered movement or glow, just simple color/border transitions and the functional sidebar-drawer slide on mobile (below 960px).
 
 ## Blog
 
-Posts are hand-written static HTML pages under `src/blog/`, following the same "no build step" philosophy as the rest of the site — copy an existing post, edit it, and link it from `src/blog/index.html`. Post content is not run through the language selector; only the surrounding page chrome (nav, dates format, "back to blog") is translated.
+Posts are hand-written static HTML pages under `src/blog/`, following the same "no build step" philosophy as the rest of the site — copy an existing post, edit it, and link it from `src/blog/index.html`. Post title, excerpt and body paragraphs use `data-i18n` keys (namespaced `post<Name><Field>`, e.g. `postWelcomeP1`) in `src/js/data/translations.js`, so a post's content changes with the selected language like the rest of the UI. A new post needs its own translation keys added for every supported language; the post date is left untranslated (language-agnostic ISO format).
 
 ## Performance
 
