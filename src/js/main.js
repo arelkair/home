@@ -5,4 +5,5 @@ window.Portfolio = window.Portfolio || {};
   app.initLanguageMenu();
   app.initSpotlight();
   app.initStatusClock();
+  app.initNav();
 })(window.Portfolio);

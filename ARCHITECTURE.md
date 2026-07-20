@@ -1,24 +1,32 @@
 # Personal Site
 
-The personal portfolio website of Arel Kair: a single-page site with a short bio and project showcase. Built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
+The personal portfolio website of Arel Kair: a project showcase plus a blog, built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
 
 ## Structure
 
-- `src/index.html` - Markup and page sections
-- `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, base, components, animations, responsive)
+- `src/index.html` - Home page: hero, interest chips, project tiles
+- `src/blog/index.html` - Blog index, lists all posts
+- `src/blog/*.html` - Individual posts; one static page per post, no templating
+- `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, sidebar, components, animations, responsive)
 - `src/js/main.js` - Entry script that wires the features together
 - `src/js/data/translations.js` - Language dictionaries and supported language list
 - `src/js/lib/preferences.js` - Shared environment preferences (reduced motion)
-- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `spotlight.js`, `status.js`
+- `src/js/features/` - One file per feature: `theme.js`, `i18n.js`, `language-menu.js`, `nav.js`, `spotlight.js`, `status.js`
 
-JavaScript files are plain deferred scripts sharing a single `window.Portfolio` namespace, loaded in dependency order. This keeps the per-feature file split while still working when `index.html` is opened directly via `file://` (ES modules are blocked there). Section entrance animations are CSS-only, so content is always visible even if scripts do not run.
-- `src/assets/fonts/` - Self-hosted Geist and Geist Mono (latin subset, variable weight)
+JavaScript files are plain deferred scripts sharing a single `window.Portfolio` namespace, loaded in dependency order. This keeps the per-feature file split while still working when a page is opened directly via `file://` (ES modules are blocked there). Section entrance animations are CSS-only, so content is always visible even if scripts do not run.
+- `src/assets/fonts/` - Self-hosted Inter and Geist Mono (latin subset, variable weight)
 - `src/assets/icons/favicon.svg` - Site icon
 - `src/vercel.json` - Deploy configuration (the Vercel root directory is `src/`)
 
+Every page repeats the same sidebar markup (brand, nav, clock, language/theme/GitHub controls) since there is no build step to share a layout partial; the active nav link is set by hand per page. `nav.js` only handles the off-canvas sidebar toggle used below the 960px breakpoint.
+
 ## Design
 
-A Fluent/Windows 11-inspired aesthetic: Geist and Geist Mono fonts, a strictly monochrome (black/white) accent across both themes, translucent surfaces, a static radial-gradient background, and a subtle dotted Mica-style texture. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. UI controls and project tiles share a pointer-tracking "Reveal" hover highlight (`.reveal-target`). The background is intentionally static (no continuous animation or `backdrop-filter`) to keep idle CPU/GPU usage near zero.
+A documentation-site aesthetic inspired by 3ds.hacks.guide (VitePress): a fixed left sidebar for navigation, flat surfaces instead of translucency, a dark theme (`#1b1b1f`) with a warm off-white text color and a lavender accent (`#a8b1ff`), and an equivalent light theme with an indigo accent. Inter is the body/UI font; Geist Mono is kept for the clock and post dates/code. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. UI controls, nav links and cards share a pointer-tracking "Reveal" hover highlight (`.reveal-target`). The layout collapses to an off-canvas sidebar drawer below 960px.
+
+## Blog
+
+Posts are hand-written static HTML pages under `src/blog/`, following the same "no build step" philosophy as the rest of the site — copy an existing post, edit it, and link it from `src/blog/index.html`. Post content is not run through the language selector; only the surrounding page chrome (nav, dates format, "back to blog") is translated.
 
 ## Performance
 
