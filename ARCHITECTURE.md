@@ -1,12 +1,10 @@
 # Personal Site
 
-The personal portfolio website of Arel Kair: a project showcase plus a blog, built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
+The personal portfolio website of Arel Kair: a single-page project showcase, built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
 
 ## Structure
 
-- `src/index.html` - Home page: hero, interest chips, project tiles
-- `src/blog/index.html` - Blog index, lists all posts
-- `src/blog/*.html` - Individual posts; one static page per post, no templating
+- `src/index.html` - The whole site: hero, interest chips, project tiles
 - `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, sidebar, components, responsive)
 - `src/js/app.js` - Everything: translations, shared preferences, and every feature (theme, i18n, language menu, nav, status clock), sharing a single `window.Portfolio` namespace
 - `src/assets/fonts/` - Self-hosted Inter and Geist Mono (latin subset, variable weight)
@@ -17,11 +15,7 @@ The personal portfolio website of Arel Kair: a project showcase plus a blog, bui
 
 ## Design
 
-Strictly black and white, minimal: a fixed left sidebar for navigation (same background as the page, separated only by a border), a near-black dark theme (`#0a0a0a`, off-white text, white accent) and a pure white light theme (black text and accent). Inter is the body/UI font; Geist Mono is kept for the clock and post dates/code. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. Motion is intentionally minimal: no entrance animations, no hover-triggered movement or glow, just simple color/border transitions and the functional sidebar-drawer slide on mobile (below 960px).
-
-## Blog
-
-Posts are hand-written static HTML pages under `src/blog/`, following the same "no build step" philosophy as the rest of the site — copy an existing post, edit it, and link it from `src/blog/index.html`. Post title, excerpt and body paragraphs use `data-i18n` keys (namespaced `post<Name><Field>`, e.g. `postWelcomeP1`) in the `Portfolio.translations` object in `src/js/app.js`, so a post's content changes with the selected language like the rest of the UI. A new post needs its own translation keys added for every supported language; the post date is left untranslated (language-agnostic ISO format).
+Strictly black and white, minimal: a fixed left sidebar for navigation (same background as the page, separated only by a border), a near-black dark theme (`#0a0a0a`, off-white text, white accent) and a pure white light theme (black text and accent). Inter is the body/UI font; Geist Mono is kept for the clock. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. Motion is intentionally minimal: no entrance animations, no hover-triggered movement or glow, just simple color/border transitions and the functional sidebar-drawer slide on mobile (below 960px).
 
 ## Performance
 
