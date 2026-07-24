@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/inter-latin.woff2") format("woff2");
+  font-family: "Geist";
+  src: url("../assets/fonts/geist-latin.woff2") format("woff2");
   font-weight: 400 600;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,6 @@
   --accent-soft: rgba(255, 255, 255, 0.12);
   --accent-text: #0a0a0a;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --overlay: rgba(0, 0, 0, 0.5);
 }
 
 :root[data-theme="light"] {
@@ -42,7 +41,6 @@
   --accent-soft: rgba(0, 0, 0, 0.08);
   --accent-text: #ffffff;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --overlay: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -57,12 +55,14 @@ body {
 }
 
 body {
-  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  font-family: var(--font-sans);
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 24px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -78,119 +78,41 @@ a {
   color: inherit;
 }
 
-.nav-toggle {
-  display: none;
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--bg);
-  color: var(--text);
-  cursor: pointer;
-  z-index: 50;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav-toggle .icon {
-  width: 18px;
-  height: 18px;
-}
-
-.shell {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 264px;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px;
-  background: var(--bg);
-  border-right: 1px solid var(--border);
-  overflow-y: auto;
-  z-index: 40;
-}
-
-.brand {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  margin-bottom: 32px;
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-link {
-  display: block;
-  padding: 9px 12px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.15s ease, background-color 0.15s ease;
-}
-
-.nav-link:hover,
-.nav-link:focus-visible {
-  color: var(--text);
-  background: var(--bg-soft);
-}
-
-.nav-link.active {
-  color: var(--accent);
-  background: var(--accent-soft);
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
 .clock {
+  position: fixed;
+  top: 24px;
+  left: 24px;
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 0 4px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
   color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
 }
 
 .clock-icon {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
 }
 
-.sidebar-controls {
+.controls {
+  position: fixed;
+  top: 24px;
+  right: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .control {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--bg-soft);
@@ -209,8 +131,8 @@ a {
 }
 
 .control .icon {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
 }
 
 .control-theme .icon-moon {
@@ -227,22 +149,20 @@ a {
 
 .lang {
   position: relative;
-  flex: 1;
 }
 
 .lang-btn {
-  width: 100%;
   display: flex;
   align-items: center;
-  gap: 7px;
-  height: 38px;
-  padding: 0 10px;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--bg-soft);
   color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-family: inherit;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: border-color 0.15s ease;
@@ -254,25 +174,20 @@ a {
 }
 
 .lang-globe {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   color: var(--text-dim);
-  flex-shrink: 0;
 }
 
 .lang-label {
-  flex: 1;
+  min-width: 4ch;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .lang-chevron {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   color: var(--text-dim);
-  flex-shrink: 0;
 }
 
 .lang.open .lang-chevron {
@@ -281,9 +196,9 @@ a {
 
 .lang-menu {
   position: absolute;
-  bottom: calc(100% + 8px);
-  left: 0;
+  top: calc(100% + 8px);
   right: 0;
+  min-width: 168px;
   list-style: none;
   padding: 6px;
   background: var(--bg-soft);
@@ -307,9 +222,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
-  border-radius: 7px;
-  font-size: 0.86rem;
+  padding: 9px 11px;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--text);
   cursor: pointer;
@@ -322,58 +237,48 @@ a {
 
 .lang-option[aria-selected="true"]::after {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--accent);
 }
 
-.content {
-  flex: 1;
-  min-width: 0;
-  margin-left: 264px;
-  padding: 88px 56px 100px;
-}
-
 .page {
-  max-width: 640px;
+  width: min(100%, 420px);
+  text-align: center;
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 56px;
 }
 
 .name {
-  font-size: clamp(1.9rem, 4.5vw, 2.4rem);
   font-weight: 600;
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
   letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-
-.tagline {
-  color: var(--text-dim);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  max-width: 54ch;
-  margin-bottom: 26px;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   list-style: none;
+  margin-top: 22px;
 }
 
 .chip {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 13px;
+  padding: 7px 12px;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 10px;
   background: var(--bg-soft);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-dim);
   transition: border-color 0.15s ease, color 0.15s ease;
@@ -385,36 +290,34 @@ a {
 }
 
 .chip-icon {
-  width: 13px;
-  height: 13px;
-}
-
-.block {
-  margin-bottom: 56px;
+  width: 14px;
+  height: 14px;
 }
 
 .block-title {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   color: var(--text-dim);
   margin-bottom: 18px;
 }
 
 .tile-grid {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
 }
 
 .tile {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 16px 18px;
+  gap: 12px;
+  width: 130px;
+  padding: 24px 12px;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--bg-soft);
   color: var(--text);
   text-decoration: none;
@@ -427,43 +330,38 @@ a {
 }
 
 .tile-icon {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   color: var(--accent);
-  flex-shrink: 0;
 }
 
 .tile-title {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 500;
 }
 
-@media (max-width: 960px) {
-  .nav-toggle {
-    display: flex;
+@media (max-width: 480px) {
+  body {
+    padding: 90px 18px;
   }
 
-  .sidebar {
-    transform: translateX(-100%);
-    box-shadow: var(--shadow);
-    transition: transform 0.2s ease;
+  .clock {
+    display: none;
   }
 
-  .sidebar.open {
-    transform: none;
+  .controls {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    justify-content: flex-end;
   }
 
-  .sidebar.open::after {
-    content: "";
-    position: fixed;
-    inset: 0 0 0 264px;
-    background: var(--overlay);
-    z-index: -1;
+  .lang-label {
+    display: none;
   }
 
-  .content {
-    margin-left: 0;
-    padding: 88px 22px 64px;
+  .lang-btn {
+    padding: 0 12px;
   }
 }
 

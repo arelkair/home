@@ -2,55 +2,36 @@ window.Portfolio = window.Portfolio || {};
 
 Portfolio.translations = {
   en: {
-    navHome: "Home",
-    navProjects: "Projects",
-    heroGreeting: "Hi, I'm Arel Kair.",
-    heroTagline: "I build things for the web and tinker with security, self-hosting and AI.",
     projectsTitle: "Projects",
     interestAi: "AI",
     interestSecurity: "Security",
     interestHosting: "Self-hosting",
-    interestGaming: "Gaming",
+    interestGaming: "Gaming"
   },
   es: {
-    navHome: "Inicio",
-    navProjects: "Proyectos",
-    heroGreeting: "Hola, soy Arel Kair.",
-    heroTagline: "Construyo cosas para la web y experimento con seguridad, self-hosting e IA.",
     projectsTitle: "Proyectos",
     interestAi: "IA",
     interestSecurity: "Ciberseguridad",
     interestHosting: "Self-hosting",
-    interestGaming: "Videojuegos",
+    interestGaming: "Videojuegos"
   },
   ko: {
-    navHome: "홈",
-    navProjects: "프로젝트",
-    heroGreeting: "안녕하세요, Arel Kair입니다.",
-    heroTagline: "웹을 만들고 보안, 셀프 호스팅, AI를 탐구합니다.",
     projectsTitle: "프로젝트",
     interestAi: "AI",
     interestSecurity: "보안",
     interestHosting: "셀프 호스팅",
-    interestGaming: "게임",
+    interestGaming: "게임"
   },
   zh: {
-    navHome: "首页",
-    navProjects: "项目",
-    heroGreeting: "你好,我是 Arel Kair。",
-    heroTagline: "我构建网络应用,并研究安全、自托管和人工智能。",
     projectsTitle: "项目",
     interestAi: "人工智能",
     interestSecurity: "网络安全",
     interestHosting: "自托管",
-    interestGaming: "游戏",
+    interestGaming: "游戏"
   }
 };
 
 Portfolio.supportedLanguages = Object.keys(Portfolio.translations);
-
-
-Portfolio.prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 Portfolio.storageGet = function (key) {
   try {
@@ -65,7 +46,6 @@ Portfolio.storageSet = function (key, value) {
     localStorage.setItem(key, value);
   } catch (error) {}
 };
-
 
 (function (app) {
   const STORAGE_KEY = "lang";
@@ -85,7 +65,6 @@ Portfolio.storageSet = function (key, value) {
     app.storageSet(STORAGE_KEY, code);
   };
 })(window.Portfolio);
-
 
 (function (app) {
   app.initLanguageMenu = function () {
@@ -176,7 +155,6 @@ Portfolio.storageSet = function (key, value) {
   };
 })(window.Portfolio);
 
-
 (function (app) {
   const STORAGE_KEY = "theme";
 
@@ -191,7 +169,6 @@ Portfolio.storageSet = function (key, value) {
     });
   };
 })(window.Portfolio);
-
 
 (function (app) {
   app.initStatusClock = function () {
@@ -210,37 +187,8 @@ Portfolio.storageSet = function (key, value) {
   };
 })(window.Portfolio);
 
-
-(function (app) {
-  app.initNav = function () {
-    const toggle = document.getElementById("navToggle");
-    const sidebar = document.getElementById("sidebar");
-    if (!toggle || !sidebar) return;
-
-    function close() {
-      sidebar.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
-
-    toggle.addEventListener("click", () => {
-      const open = sidebar.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    sidebar.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", close);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") close();
-    });
-  };
-})(window.Portfolio);
-
-
 (function (app) {
   app.initTheme();
   app.initLanguageMenu();
   app.initStatusClock();
-  app.initNav();
 })(window.Portfolio);
