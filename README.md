@@ -14,7 +14,7 @@ Personal portfolio site of Arel Kair — a single centered page, minimal, black 
 ## Structure
 
 ```
-src/index.html              the whole site: name, interests, project tiles
+src/index.html              the whole site: name, interests, project tiles, certifications
 src/css/styles.css          single stylesheet (tokens, layout, components, responsive)
 src/js/app.js               translations, preferences and every feature, in one file
 ```

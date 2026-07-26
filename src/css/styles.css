@@ -294,6 +294,14 @@ a {
   height: 14px;
 }
 
+.block {
+  margin-bottom: 40px;
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
 .block-title {
   font-size: 0.78rem;
   font-weight: 600;
@@ -338,6 +346,54 @@ a {
 .tile-title {
   font-size: 0.88rem;
   font-weight: 500;
+}
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 0.15s ease;
+}
+
+.cert:hover,
+.cert:focus-visible {
+  border-color: var(--accent);
+}
+
+.cert-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.cert-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cert-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cert-meta {
+  font-size: 0.78rem;
+  color: var(--text-dim);
 }
 
 @media (max-width: 480px) {

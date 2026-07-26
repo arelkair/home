@@ -4,7 +4,7 @@ The personal portfolio website of Arel Kair: a single centered page, built with 
 
 ## Structure
 
-- `src/index.html` - The whole site: name, interest chips, project tiles
+- `src/index.html` - The whole site: name, interest chips, project tiles, certifications
 - `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, layout, components, responsive)
 - `src/js/app.js` - Everything: translations, shared preferences, and every feature (theme, i18n, language menu, status clock), sharing a single `window.Portfolio` namespace
 - `src/assets/fonts/` - Self-hosted Geist and Geist Mono (latin subset, variable weight)

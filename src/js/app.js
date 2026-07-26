@@ -3,6 +3,7 @@ window.Portfolio = window.Portfolio || {};
 Portfolio.translations = {
   en: {
     projectsTitle: "Projects",
+    certificationsTitle: "Certifications",
     interestAi: "AI",
     interestSecurity: "Security",
     interestHosting: "Self-hosting",
@@ -10,6 +11,7 @@ Portfolio.translations = {
   },
   es: {
     projectsTitle: "Proyectos",
+    certificationsTitle: "Certificaciones",
     interestAi: "IA",
     interestSecurity: "Ciberseguridad",
     interestHosting: "Self-hosting",
@@ -17,6 +19,7 @@ Portfolio.translations = {
   },
   ko: {
     projectsTitle: "프로젝트",
+    certificationsTitle: "자격증",
     interestAi: "AI",
     interestSecurity: "보안",
     interestHosting: "셀프 호스팅",
@@ -24,6 +27,7 @@ Portfolio.translations = {
   },
   zh: {
     projectsTitle: "项目",
+    certificationsTitle: "证书",
     interestAi: "人工智能",
     interestSecurity: "网络安全",
     interestHosting: "自托管",
