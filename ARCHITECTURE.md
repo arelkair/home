@@ -1,13 +1,13 @@
 # Personal Site
 
-The personal portfolio website of Arel Kair: a single centered page, built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
+The personal homepage of Arel Kair (arelkair.dev): a single centered page, built with plain HTML, CSS and JavaScript. Fully responsive, with light/dark themes and a language selector (English, Spanish, Korean, Mandarin Chinese).
 
 ## Structure
 
-- `src/index.html` - The whole site: name, interest chips, project tiles, certifications
-- `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, layout, components, responsive)
+- `src/index.html` - The whole site: sticky nav, hero wordmark, project grid, footer
+- `src/css/styles.css` - Single stylesheet, organized into sections (fonts, tokens, nav, hero, cards, responsive)
 - `src/js/app.js` - Everything: translations, shared preferences, and every feature (theme, i18n, language menu, status clock), sharing a single `window.Portfolio` namespace
-- `src/assets/fonts/` - Self-hosted Geist and Geist Mono (latin subset, variable weight)
+- `src/assets/fonts/` - Self-hosted Fraunces, Inter and JetBrains Mono (latin subset)
 - `src/assets/icons/favicon.svg` - Site icon
 - `src/vercel.json` - Deploy configuration (the Vercel root directory is `src/`); also sets a one-year immutable `Cache-Control` on `/assets/*`
 
@@ -15,7 +15,13 @@ The personal portfolio website of Arel Kair: a single centered page, built with 
 
 ## Design
 
-Strictly black and white, minimal: a near-black dark theme (`#0a0a0a`, off-white text, white accent) and a pure white light theme (black text and accent), centered on the page — no sidebar, no navigation, no separate pages. Geist is the body/UI font; Geist Mono is kept for the clock. Project and interest icons are inline SVG so they inherit `currentColor` and stay theme-correct. Motion is intentionally minimal: no entrance animations, no hover-triggered movement or glow, just simple color/border transitions.
+Visual language adapted from Nivra (arelkair.dev's sibling project at nivra.arelkair.dev), reproduced from its actual design tokens rather than approximated: a near-black dark theme (`#09090b` paper, `#131316` surface) and a warm-cream light theme (`#f2f1ed` paper, `#fbfaf7` surface), both neutral with no color accent — the "inverted" near-white/near-black tone itself is the only accent, used for primary emphasis and hover states. Fraunces (a high-contrast serif) carries the one big display moment — the "Arel Kair" wordmark — used nowhere else; Inter handles all body and UI text; JetBrains Mono is reserved for small utility text (the clock, project URLs). Cards and controls share a consistent radius scale (12px controls/inputs, 20px project cards, full pill for chips) and a hairline border (`rgba(0,0,0,.07)` light / `rgba(255,255,255,.08)` dark) — no shadows, gradients or glassmorphism beyond the sticky nav's subtle blur.
+
+Motion is restrained: the wordmark performs a single translateY/opacity reveal on load (borrowed from Nivra's own intro animation, as a deliberate cross-reference between the two sites), cards lift 3px and brighten their border on hover, and everything respects `prefers-reduced-motion`.
+
+## Projects section
+
+Lists Arel Kair's four public projects (Nivra, Pool, Poisoned Candy, Hello World) as a 2-column card grid (1 column on narrow screens), each linking out to its own `*.arelkair.dev` subdomain. Card copy (name, one-line description) is sourced from each project's own live site, not invented. The project descriptions are translated per language in `app.js`; project names are kept as their canonical brand names in every language, matching how the projects refer to themselves.
 
 ## Performance
 
