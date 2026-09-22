@@ -2,7 +2,7 @@ window.Portfolio = window.Portfolio || {};
 
 Portfolio.translations = {
   en: {
-    heroTagline: "Independent developer. Building small web projects — games, tools and experiments.",
+    heroTagline: "A few web projects and games I've made.",
     projectsTitle: "Projects",
     interestAi: "AI",
     interestSecurity: "Security",
@@ -15,7 +15,7 @@ Portfolio.translations = {
     footerText: "Arel Kair — built from scratch, self-hosted."
   },
   es: {
-    heroTagline: "Desarrollador independiente. Construyo pequeños proyectos web: juegos, herramientas y experimentos.",
+    heroTagline: "Algunos proyectos web y juegos que he hecho.",
     projectsTitle: "Proyectos",
     interestAi: "IA",
     interestSecurity: "Ciberseguridad",
@@ -28,7 +28,7 @@ Portfolio.translations = {
     footerText: "Arel Kair — hecho desde cero, autoalojado."
   },
   ko: {
-    heroTagline: "독립 개발자입니다. 게임, 도구, 실험적인 작은 웹 프로젝트를 만듭니다.",
+    heroTagline: "제가 만든 몇 가지 웹 프로젝트와 게임입니다.",
     projectsTitle: "프로젝트",
     interestAi: "AI",
     interestSecurity: "보안",
@@ -41,7 +41,7 @@ Portfolio.translations = {
     footerText: "Arel Kair — 처음부터 직접 만들고 셀프 호스팅합니다."
   },
   zh: {
-    heroTagline: "独立开发者。构建小型网页项目——游戏、工具和实验性作品。",
+    heroTagline: "我做的一些网页项目和游戏。",
     projectsTitle: "项目",
     interestAi: "人工智能",
     interestSecurity: "网络安全",
