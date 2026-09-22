@@ -30,6 +30,7 @@ Lists Arel Kair's four public projects (Nivra, Pool, Poisoned Candy, Hello World
 - All JavaScript ships as a single deferred `app.js` request (non-blocking, parsed once).
 - The CSS stays as a single request to avoid render-blocking `@import` waterfalls.
 - `/assets/*` (fonts, icons) are served with a one-year immutable `Cache-Control` header.
+- `css/styles.css` and `js/app.js` are linked with a `?v=N` query string. Vercel applies its own multi-hour cache to plain `/css/*` and `/js/*` paths regardless of `Cache-Control` headers set in `vercel.json` (confirmed: custom headers there do not override it), so a deploy that changes either file without bumping its `v` would leave visitors with a recently cached copy stuck on stale styles or script against fresh HTML. **Bump the `v` on both tags any time `styles.css` or `app.js` changes.**
 
 ## Run
 
