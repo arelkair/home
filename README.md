@@ -1,15 +1,17 @@
 # Home
-Personal homepage of Arel Kair (arelkair.dev), a single page in the visual language of Nivra.
+The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 ## Features
-- Light/dark theme, neutral palette, four square project cards
-- Language selector: English, Spanish, Korean, Mandarin Chinese
-- Geist and Geist Mono, one type family
-- Self-hosted, preloaded fonts, no external font requests
-- A single bundled script (`src/js/app.js`), one request for everything
-- No build step: open `src/index.html` directly, or deploy `src/` as-is
+- Home page plus a case study for each project: Pool, Poisoned Candy and Nivra
+- Real project screenshots, and only verifiable information
+- A cue ball in the hero you can drag and shoot, like in Pool
+- Light and dark themes, following the system by default
+- English, Spanish, Korean and Mandarin Chinese
+- Plain HTML, CSS and JavaScript, no build step, no trackers
 ## Structure
 ```
-src/index.html              the whole site: controls, statement, project grid, footer
-src/css/styles.css          single stylesheet (tokens, layout, components, responsive)
-src/js/app.js               translations, preferences and every feature, in one file
+src/index.html              home page
+src/work/*.html             project case studies
+src/css/styles.css          single stylesheet
+src/js/app.js               translations, preferences, language menu and cue ball
+src/assets/                 fonts, screenshots, icons and social image
 ```
