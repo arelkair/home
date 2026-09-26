@@ -4,14 +4,14 @@ The portfolio of Arel Kair (arelkair.dev), built with plain HTML, CSS and JavaSc
 
 ## Structure
 
-- `src/index.html` - Home: hero, selected work, other repositories, about, tools, contact
+- `src/index.html` - Home: hero, selected work, other repositories, about, tools, social links
 - `src/work/pool.html`, `src/work/poisoned-candy.html`, `src/work/nivra.html` - One case study per project
 - `src/404.html` - Not found page (served automatically by Vercel)
 - `src/css/styles.css` - Single stylesheet: fonts, tokens, header, hero, projects, case studies, responsive, motion
-- `src/js/app.js` - Translations, preferences, theme toggle, language menu and the hero cue ball, sharing a single `window.Portfolio` namespace
+- `src/js/app.js` - Translations, preferences, theme toggle and language menu, sharing a single `window.Portfolio` namespace
 - `src/assets/work/` - Real screenshots of each project (Pool's comes from its repository; the others were captured from the live sites)
 - `src/assets/fonts/` - Self-hosted Bricolage Grotesque, Geist and Geist Mono (latin subset)
-- `src/assets/icons/` - Favicon and Apple touch icon
+- `src/assets/icons/` - Favicon and Apple touch icon (AK monogram)
 - `src/assets/og.png` - Social preview image (1200x630)
 - `src/robots.txt`, `src/sitemap.xml` - Crawling
 - `src/vercel.json` - Deploy configuration (the Vercel root directory is `src/`): clean URLs, security headers and a one-year cache on `/assets/*`
@@ -24,11 +24,11 @@ Every fact on the site comes from a public source: the GitHub profile and its RE
 
 ## Design
 
-- Palette: neutral paper and ink in both themes, with one accent, the green of Pool's table, used for focus rings, the live status dot, hover states and the aim line.
+- Palette: neutral paper and ink in both themes, with one accent, the green of Pool's table, used for focus rings, the live status dot and hover states.
 - Type: Bricolage Grotesque for the name and headings, Geist for text, Geist Mono only for code paths and domains.
 - Layout: each project has its own treatment instead of identical cards. Pool is image-led, Poisoned Candy shows the real board and Nivra pairs the desktop dashboard with the phone screen.
-- The signature element is a cue ball in the hero that can be dragged and released, like a shot in Pool: an aim line shows the direction, the ball rolls with friction and bounces off the edges. It is decorative (hidden from assistive technology) and is removed when reduced motion is requested.
-- Motion is limited to one load sequence, hover feedback on devices that can hover, press feedback, the language menu and the cue ball.
+- Social links, in order: GitHub, X, YouTube, TikTok and Discord, each with its brand icon from Simple Icons. GitHub comes first because this is a developer portfolio; Discord goes last as the direct contact channel.
+- Motion is limited to one load sequence, hover feedback on devices that can hover, press feedback and the language menu.
 
 ## Translations
 

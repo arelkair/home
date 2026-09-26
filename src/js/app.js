@@ -5,12 +5,10 @@ Portfolio.translations = {
     skip: "Saltar al contenido",
     navWork: "Trabajo",
     navAbout: "Sobre mí",
-    navContact: "Contacto",
-    footerNote: "HTML, CSS y JavaScript. Sin rastreadores.",
+    navSocial: "Redes",
     statusLive: "Disponible",
     heroIntro: "Construyo proyectos web y juegos con IA, desde España.",
     heroWork: "Ver el trabajo",
-    cueHint: "Arrastra la bola y suéltala.",
     workTitle: "Trabajo seleccionado",
     poolSummary: "Un juego de billar 2D con partidas online 1 contra 1. Un jugador comparte un código de cuatro letras, el otro se une, y la partida va de igual a igual con las reglas estándar de bola 8.",
     candySummary: "Un juego de tablero para 2 a 5 jugadores. Cada uno esconde chuches envenenadas en el tablero y luego se turnan para comer. Se juega pasando un solo móvil o online en una sala con código.",
@@ -47,8 +45,8 @@ Portfolio.translations = {
     stackPeer: "(juego online)",
     stackAll: "Todos los proyectos",
     stackHosting: "Alojamiento de todos los sitios de aquí",
-    contactTitle: "Contacto",
-    contactNote: "GitHub es el mejor sitio para seguir mi trabajo.",
+    socialTitle: "Redes",
+    discordHandle: "Perfil",
     backWork: "Todo el trabajo",
     nextProject: "Siguiente proyecto",
     langsPool: "Inglés, español",
@@ -109,12 +107,10 @@ Portfolio.translations = {
     skip: "본문으로 건너뛰기",
     navWork: "작업",
     navAbout: "소개",
-    navContact: "연락처",
-    footerNote: "HTML, CSS, JavaScript로 만들었습니다. 추적기 없음.",
+    navSocial: "소셜",
     statusLive: "운영 중",
     heroIntro: "스페인에서 AI로 웹 프로젝트와 게임을 만듭니다.",
     heroWork: "작업 보기",
-    cueHint: "공을 끌었다가 놓아 보세요.",
     workTitle: "주요 작업",
     poolSummary: "온라인 1대1이 가능한 2D 당구 게임입니다. 한 사람이 네 글자 코드를 공유하고 다른 사람이 참가하면, 표준 8볼 규칙으로 P2P 대전이 진행됩니다.",
     candySummary: "2~5명이 즐기는 보드게임입니다. 모두가 보드에 독 사탕을 숨긴 뒤 차례로 사탕을 먹습니다. 휴대폰 한 대를 돌려 가며 하거나, 코드로 들어가는 방에서 온라인으로 즐길 수 있습니다.",
@@ -151,8 +147,8 @@ Portfolio.translations = {
     stackPeer: "(온라인 플레이)",
     stackAll: "모든 프로젝트",
     stackHosting: "여기 있는 모든 사이트의 호스팅",
-    contactTitle: "연락처",
-    contactNote: "제 작업을 가장 잘 따라갈 수 있는 곳은 GitHub입니다.",
+    socialTitle: "소셜",
+    discordHandle: "프로필",
     backWork: "모든 작업",
     nextProject: "다음 프로젝트",
     langsPool: "영어, 스페인어",
@@ -213,12 +209,10 @@ Portfolio.translations = {
     skip: "跳到正文",
     navWork: "作品",
     navAbout: "关于",
-    navContact: "联系",
-    footerNote: "纯 HTML、CSS 和 JavaScript。无追踪。",
+    navSocial: "社交",
     statusLive: "已上线",
     heroIntro: "我在西班牙,用 AI 制作网页项目和游戏。",
     heroWork: "查看作品",
-    cueHint: "拖动这颗球,然后松手。",
     workTitle: "精选作品",
     poolSummary: "一款支持在线 1 对 1 的 2D 台球游戏。一名玩家分享四个字母的代码,另一名玩家加入,对局以点对点方式进行,采用标准八球规则。",
     candySummary: "一款 2 到 5 人的棋盘游戏。每个人先在棋盘上藏好毒糖果,然后轮流吃糖。可以传递同一部手机来玩,也可以用房间代码在线对战。",
@@ -255,8 +249,8 @@ Portfolio.translations = {
     stackPeer: "(在线对战)",
     stackAll: "所有项目",
     stackHosting: "这里所有网站的托管",
-    contactTitle: "联系",
-    contactNote: "关注我作品的最佳地方是 GitHub。",
+    socialTitle: "社交",
+    discordHandle: "个人资料",
     backWork: "全部作品",
     nextProject: "下一个项目",
     langsPool: "英语、西班牙语",
@@ -470,174 +464,6 @@ Portfolio.storageSet = function (key, value) {
 })(window.Portfolio);
 
 (function (app) {
-  const MAX_PULL = 170;
-  const MAX_SPEED = 2400;
-  const DECELERATION = 520;
-  const DRAG = 0.55;
-  const RESTITUTION = 0.8;
-
-  app.initCueBall = function () {
-    const table = document.getElementById("table");
-    const ball = document.getElementById("cueBall");
-    const aim = document.getElementById("cueAim");
-    const hint = document.getElementById("cueHint");
-    if (!table || !ball || !aim || !hint) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const radius = ball.offsetWidth / 2;
-    let width = 0;
-    let height = 0;
-    let x = 0;
-    let y = 0;
-    let vx = 0;
-    let vy = 0;
-    let frame = 0;
-    let last = 0;
-    let pull = null;
-    let moved = false;
-
-    function measure() {
-      width = table.clientWidth;
-      height = table.clientHeight;
-    }
-
-    function home() {
-      const wide = width >= 900;
-      x = wide ? width * 0.78 : width - radius - 24;
-      y = wide ? height * 0.42 : Math.max(radius + 24, height * 0.14);
-    }
-
-    function clamp() {
-      x = Math.min(Math.max(x, radius), width - radius);
-      y = Math.min(Math.max(y, radius), height - radius);
-    }
-
-    function draw() {
-      ball.style.transform = `translate(${x - radius}px, ${y - radius}px)`;
-    }
-
-    function placeHint() {
-      const right = x + radius + 14 + hint.offsetWidth < width;
-      const hx = right ? x + radius + 14 : x - radius - 14 - hint.offsetWidth;
-      hint.style.transform = `translate(${hx}px, ${y - hint.offsetHeight / 2}px)`;
-    }
-
-    function step(time) {
-      const dt = Math.min(0.032, (time - last) / 1000 || 0.016);
-      last = time;
-      x += vx * dt;
-      y += vy * dt;
-
-      if (x < radius || x > width - radius) {
-        vx = -vx * RESTITUTION;
-        vy *= RESTITUTION;
-      }
-      if (y < radius || y > height - radius) {
-        vy = -vy * RESTITUTION;
-        vx *= RESTITUTION;
-      }
-      clamp();
-
-      const speed = Math.hypot(vx, vy);
-      const next = Math.max(0, speed - DECELERATION * dt) * Math.pow(DRAG, dt);
-      if (next < 4) {
-        vx = 0;
-        vy = 0;
-        frame = 0;
-        draw();
-        return;
-      }
-      vx *= next / speed;
-      vy *= next / speed;
-      draw();
-      frame = requestAnimationFrame(step);
-    }
-
-    function stop() {
-      cancelAnimationFrame(frame);
-      frame = 0;
-      vx = 0;
-      vy = 0;
-    }
-
-    function shotVector(event) {
-      const rect = table.getBoundingClientRect();
-      let dx = pull.x - (event.clientX - rect.left);
-      let dy = pull.y - (event.clientY - rect.top);
-      const length = Math.hypot(dx, dy);
-      if (length > MAX_PULL) {
-        dx *= MAX_PULL / length;
-        dy *= MAX_PULL / length;
-      }
-      return { dx, dy, length: Math.min(length, MAX_PULL) };
-    }
-
-    function endAim() {
-      pull = null;
-      ball.classList.remove("aiming");
-      aim.classList.remove("on");
-    }
-
-    ball.addEventListener("pointerdown", (event) => {
-      if (event.button !== 0 || pull) return;
-      event.preventDefault();
-      moved = true;
-      stop();
-      ball.setPointerCapture(event.pointerId);
-      const rect = table.getBoundingClientRect();
-      pull = { x: event.clientX - rect.left, y: event.clientY - rect.top, id: event.pointerId };
-      ball.classList.add("aiming");
-    });
-
-    ball.addEventListener("pointermove", (event) => {
-      if (!pull || event.pointerId !== pull.id) return;
-      const shot = shotVector(event);
-      if (shot.length < 6) {
-        aim.classList.remove("on");
-        return;
-      }
-      const angle = Math.atan2(shot.dy, shot.dx);
-      aim.style.width = `${shot.length * 1.2}px`;
-      aim.style.transform = `translate(${x + Math.cos(angle) * radius}px, ${y + Math.sin(angle) * radius - 1}px) rotate(${angle}rad)`;
-      aim.classList.add("on");
-    });
-
-    ball.addEventListener("pointerup", (event) => {
-      if (!pull || event.pointerId !== pull.id) return;
-      const shot = shotVector(event);
-      endAim();
-      if (shot.length < 6) return;
-      const power = (shot.length / MAX_PULL) * MAX_SPEED;
-      vx = (shot.dx / shot.length) * power;
-      vy = (shot.dy / shot.length) * power;
-      hint.classList.add("gone");
-      last = performance.now();
-      frame = requestAnimationFrame(step);
-    });
-
-    ball.addEventListener("pointercancel", (event) => {
-      if (pull && event.pointerId === pull.id) endAim();
-    });
-
-    new ResizeObserver(() => {
-      measure();
-      if (!moved) home();
-      clamp();
-      draw();
-      if (!hint.classList.contains("gone")) placeHint();
-    }).observe(table);
-
-    measure();
-    home();
-    draw();
-    placeHint();
-    ball.classList.add("ready");
-    hint.classList.add("ready");
-  };
-})(window.Portfolio);
-
-(function (app) {
   app.initTheme();
   app.initLanguageMenu();
-  app.initCueBall();
 })(window.Portfolio);
