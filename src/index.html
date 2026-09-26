@@ -10,7 +10,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#09090b" />
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
   <script>
     (function () {
       const root = document.documentElement;
@@ -29,85 +29,77 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol>
     <symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol>
-    <symbol id="i-github" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></symbol>
     <symbol id="i-caret" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol>
   </svg>
 
-  <header class="nav">
-    <div class="lang" id="lang">
-      <button class="control lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
-        <span id="langLabel">EN</span>
-        <svg class="lang-chevron" aria-hidden="true"><use href="#i-caret" /></svg>
+  <header class="nav frame">
+    <a class="brand" href="/">Arel Kair</a>
+    <div class="tools">
+      <div class="lang" id="lang">
+        <button class="control lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+          <span id="langLabel">EN</span>
+          <svg class="lang-chevron" aria-hidden="true"><use href="#i-caret" /></svg>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+          <li class="lang-option" role="option" data-lang="en" tabindex="-1" aria-selected="true">English</li>
+          <li class="lang-option" role="option" data-lang="es" tabindex="-1" aria-selected="false">Español</li>
+          <li class="lang-option" role="option" data-lang="ko" tabindex="-1" aria-selected="false">한국어</li>
+          <li class="lang-option" role="option" data-lang="zh" tabindex="-1" aria-selected="false">中文</li>
+        </ul>
+      </div>
+      <button class="control control-theme" id="themeToggle" type="button" aria-label="Toggle theme">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
       </button>
-      <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
-        <li class="lang-option" role="option" data-lang="en" tabindex="-1" aria-selected="true">English</li>
-        <li class="lang-option" role="option" data-lang="es" tabindex="-1" aria-selected="false">Español</li>
-        <li class="lang-option" role="option" data-lang="ko" tabindex="-1" aria-selected="false">한국어</li>
-        <li class="lang-option" role="option" data-lang="zh" tabindex="-1" aria-selected="false">中文</li>
-      </ul>
     </div>
-
-    <button class="control control-theme" id="themeToggle" type="button" aria-label="Toggle theme">
-      <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
-      <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
-    </button>
-
-    <a class="control" href="https://github.com/arelkair" target="_blank" rel="noopener" aria-label="GitHub">
-      <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
-    </a>
   </header>
 
-  <main class="page">
+  <main class="page frame">
     <section class="hero">
-      <h1 class="wordmark">Arel Kair</h1>
-      <p class="tagline" data-i18n="heroTagline">I make web projects and games.</p>
+      <h1 class="statement" data-i18n="heroTagline">I make web projects and games.</h1>
     </section>
 
     <section class="projects">
       <h2 class="projects-title" data-i18n="projectsTitle">Projects</h2>
       <div class="grid">
         <a class="card" href="https://nivra.arelkair.dev/" target="_blank" rel="noopener">
-          <div class="shot"><img src="assets/img/nivra.jpg" alt="" width="720" height="560" decoding="async" /></div>
-          <div class="meta">
-            <div class="name-row"><span class="name">Nivra</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div class="card-top"><span>nivra.arelkair.dev</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div>
+            <span class="name">Nivra</span>
             <p class="desc" data-i18n="nivraDesc">A private space for your calendar, schedule and tasks.</p>
-            <span class="url">nivra.arelkair.dev</span>
           </div>
         </a>
-
         <a class="card" href="https://pool.arelkair.dev/" target="_blank" rel="noopener">
-          <div class="shot"><img src="assets/img/pool.jpg" alt="" width="720" height="560" decoding="async" /></div>
-          <div class="meta">
-            <div class="name-row"><span class="name">Pool</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div class="card-top"><span>pool.arelkair.dev</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div>
+            <span class="name">Pool</span>
             <p class="desc" data-i18n="poolDesc">A physics-based pool game. Pull back and release to shoot.</p>
-            <span class="url">pool.arelkair.dev</span>
           </div>
         </a>
-
         <a class="card" href="https://candy.arelkair.dev/" target="_blank" rel="noopener">
-          <div class="shot"><img src="assets/img/candy.jpg" alt="" width="720" height="560" decoding="async" /></div>
-          <div class="meta">
-            <div class="name-row"><span class="name">Poisoned Candy</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div class="card-top"><span>candy.arelkair.dev</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div>
+            <span class="name">Poisoned Candy</span>
             <p class="desc" data-i18n="candyDesc">Eat candy, avoid the poison. Local or online.</p>
-            <span class="url">candy.arelkair.dev</span>
           </div>
         </a>
-
         <a class="card" href="https://helloworld.arelkair.dev/" target="_blank" rel="noopener">
-          <div class="shot"><img src="assets/img/helloworld.jpg" alt="" width="720" height="560" decoding="async" /></div>
-          <div class="meta">
-            <div class="name-row"><span class="name">Hello, World!</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div class="card-top"><span>helloworld.arelkair.dev</span><svg class="arrow" aria-hidden="true"><use href="#i-arrow" /></svg></div>
+          <div>
+            <span class="name">Hello, World!</span>
             <p class="desc" data-i18n="helloworldDesc">My first web page.</p>
-            <span class="url">helloworld.arelkair.dev</span>
           </div>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">&copy; 2026 Arel Kair</footer>
+  <footer class="site-footer frame">
+    <span>&copy; 2026 Arel Kair</span>
+    <a href="https://github.com/arelkair" target="_blank" rel="noopener">GitHub</a>
+  </footer>
 
-  <script defer src="js/app.js?v=2"></script>
+  <script defer src="js/app.js?v=3"></script>
 </body>
 </html>

@@ -4,11 +4,10 @@ The personal homepage of Arel Kair (arelkair.dev): a single centered page, built
 
 ## Structure
 
-- `src/index.html` - The whole site: language/theme/GitHub controls, hero wordmark, project grid, footer. Icons are an inline SVG sprite (Phosphor).
+- `src/index.html` - The whole site: brand and controls, one-line statement, project grid, footer. Icons are an inline SVG sprite (Phosphor).
 - `src/css/styles.css` - Single stylesheet: fonts, tokens, controls, hero, cards, responsive, motion
 - `src/js/app.js` - Translations, shared preferences, theme and language menu, sharing a single `window.Portfolio` namespace
 - `src/assets/fonts/` - Self-hosted Geist and Geist Mono (latin subset)
-- `src/assets/img/` - Real screenshots of each project (JPEG, 720x560), used as card previews
 - `src/assets/icons/favicon.svg` - Site icon
 - `src/vercel.json` - Deploy configuration (the Vercel root directory is `src/`); also sets a one-year immutable `Cache-Control` on `/assets/*`
 
@@ -16,11 +15,11 @@ The personal homepage of Arel Kair (arelkair.dev): a single centered page, built
 
 ## Design
 
-Visual language adapted from Nivra: neutral near-black dark theme and a cool off-white light theme, no accent color, hairline borders, one radius scale (12px controls, 16px cards) and no shadows or gradients. A single type family (Geist, with Geist Mono for URLs) keeps the page quiet; the large left-aligned "Arel Kair" wordmark is the only expressive element.
+Purely typographic and quiet, in the visual language of Nivra: neutral near-black dark theme and a cool off-white light theme, no accent color, hairline borders, one radius scale (10px controls, 16px cards), no shadows, gradients or images. One type family (Geist, with Geist Mono for addresses). The only expressive element is the large left-aligned statement; everything else is small and evenly spaced.
 
-Projects are four near-square cards (1 column on phones, 2 on tablets, 4 from 1100px) that preview each real site with a screenshot, its name, a description sourced from the site itself and its address. Descriptions are translated per language in `app.js`; project names stay as their canonical names.
+Projects are four square cards (1 column on phones, 2 from 600px). Each shows its address, an arrow, its name and a one-line description taken from the project's own site. Descriptions are translated in `app.js`; project names keep their canonical form.
 
-Motion is limited to one load sequence (wordmark, tagline, then cards staggered 50ms), a 1.03 image zoom and border change on hover (only on devices that can hover), a press scale on tap, and the language menu opening. Everything respects `prefers-reduced-motion`.
+Motion is one load sequence (statement, then cards staggered 50ms), an arrow nudge and border change on hover (only on devices that can hover), a press scale on tap, and the language menu opening. Everything respects `prefers-reduced-motion`.
 
 ## Performance
 
@@ -28,7 +27,7 @@ Motion is limited to one load sequence (wordmark, tagline, then cards staggered 
 - Only the latin subset is shipped (covers English and Spanish); CJK falls back to the system font.
 - All JavaScript ships as a single deferred `app.js` request (non-blocking, parsed once).
 - The CSS stays as a single request to avoid render-blocking `@import` waterfalls.
-- `/assets/*` (fonts, images, icons) are served with a one-year immutable `Cache-Control` header.
+- `/assets/*` (fonts, icons) are served with a one-year immutable `Cache-Control` header.
 - `css/styles.css` and `js/app.js` are linked with a `?v=N` query string. Vercel applies its own multi-hour cache to plain `/css/*` and `/js/*` paths regardless of `Cache-Control` headers set in `vercel.json` (confirmed: custom headers there do not override it), so a deploy that changes either file without bumping its `v` would leave visitors with a recently cached copy stuck on stale styles or script against fresh HTML. **Bump the `v` on both tags any time `styles.css` or `app.js` changes.**
 
 ## Run

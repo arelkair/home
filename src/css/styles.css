@@ -17,35 +17,36 @@
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #09090b;
-  --surface: #111113;
-  --text: #ececef;
-  --text-dim: #a1a1aa;
-  --text-faint: #71717a;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.22);
-  --hover: rgba(255, 255, 255, 0.06);
+  --paper: #0a0a0b;
+  --surface: #101012;
+  --text: #ededef;
+  --text-dim: #9a9aa3;
+  --text-faint: #6b6b74;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --hover: rgba(255, 255, 255, 0.05);
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --paper: #f5f5f6;
-  --surface: #fdfdfd;
-  --text: #18181b;
-  --text-dim: #52525b;
-  --text-faint: #71717a;
-  --line: rgba(0, 0, 0, 0.09);
-  --line-strong: rgba(0, 0, 0, 0.24);
-  --hover: rgba(0, 0, 0, 0.05);
+  --paper: #f7f7f8;
+  --surface: #ffffff;
+  --text: #17171a;
+  --text-dim: #55555e;
+  --text-faint: #75757e;
+  --line: rgba(0, 0, 0, 0.08);
+  --line-strong: rgba(0, 0, 0, 0.22);
+  --hover: rgba(0, 0, 0, 0.045);
 }
 
 :root {
   --font: "Geist", system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans CJK SC", "Noto Sans KR", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
-  --radius-control: 12px;
+  --radius-control: 10px;
   --radius-card: 16px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --gutter: clamp(16px, 4vw, 40px);
+  --gutter: clamp(20px, 5vw, 48px);
+  --measure: 880px;
 }
 
 *,
@@ -100,40 +101,58 @@ button,
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
   flex: none;
 }
 
+.frame {
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+}
+
 .nav {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 8px;
-  height: 64px;
-  padding: env(safe-area-inset-top) max(var(--gutter), env(safe-area-inset-right)) 0 max(var(--gutter), env(safe-area-inset-left));
-  box-sizing: content-box;
+  justify-content: space-between;
+  height: 72px;
+  margin-top: env(safe-area-inset-top);
+}
+
+.brand {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  height: 40px;
-  min-width: 40px;
-  padding: 0 10px;
-  border: 1px solid var(--line);
+  gap: 4px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 9px;
+  border: 0;
   border-radius: var(--radius-control);
   background: transparent;
   color: var(--text-dim);
   cursor: pointer;
-  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 120ms var(--ease-out);
+  transition: background-color 150ms ease, color 150ms ease, transform 120ms var(--ease-out);
 }
 
 .control:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
 .lang-btn {
@@ -143,8 +162,8 @@ button,
 }
 
 .lang-chevron {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   fill: currentColor;
   transition: transform 200ms var(--ease-out);
 }
@@ -159,16 +178,16 @@ button,
 
 .lang-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   right: 0;
   z-index: 10;
-  min-width: 168px;
+  min-width: 160px;
   margin: 0;
-  padding: 6px;
+  padding: 4px;
   list-style: none;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius-control);
+  border-radius: 12px;
   opacity: 0;
   visibility: hidden;
   transform: scale(0.96);
@@ -184,7 +203,7 @@ button,
 }
 
 .lang-option {
-  padding: 9px 10px;
+  padding: 8px 10px;
   border-radius: 8px;
   color: var(--text-dim);
   font-size: 0.875rem;
@@ -207,52 +226,43 @@ button,
 }
 
 .page {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--gutter);
   flex: 1;
 }
 
 .hero {
-  padding: clamp(40px, 10vh, 96px) 0 clamp(48px, 9vh, 88px);
+  padding: clamp(56px, 14vh, 128px) 0 clamp(64px, 12vh, 112px);
 }
 
-.wordmark {
+.statement {
   margin: 0;
-  font-size: clamp(3.25rem, 11vw, 7.5rem);
+  max-width: 14ch;
+  font-size: clamp(2.5rem, 7.5vw, 4.75rem);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.02;
   letter-spacing: -0.045em;
-}
-
-.tagline {
-  margin: 20px 0 0;
-  max-width: 30ch;
-  color: var(--text-dim);
-  font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
-  line-height: 1.4;
+  text-wrap: balance;
 }
 
 .projects-title {
-  margin: 0 0 20px;
-  color: var(--text-dim);
-  font-size: 0.9375rem;
+  margin: 0 0 16px;
+  color: var(--text-faint);
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 12px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  aspect-ratio: 1 / 1;
-  min-height: 0;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 220px;
+  padding: 22px 22px 24px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
@@ -263,89 +273,65 @@ button,
   transform: scale(0.985);
 }
 
-.shot {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
-}
-
-.shot img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 500ms var(--ease-out);
-}
-
-.meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 18px 18px;
-}
-
-.name-row {
+.card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-}
-
-.name {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.arrow {
-  width: 16px;
-  height: 16px;
-  fill: var(--text-faint);
-  transition: transform 200ms var(--ease-out), fill 200ms ease;
-}
-
-.desc {
-  margin: 0;
-  color: var(--text-dim);
-  font-size: 0.875rem;
-  line-height: 1.45;
-}
-
-.url {
-  margin-top: 8px;
+  gap: 12px;
   color: var(--text-faint);
   font-family: var(--mono);
   font-size: 0.75rem;
 }
 
+.arrow {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex: none;
+  transition: transform 220ms var(--ease-out), color 200ms ease;
+}
+
+.name {
+  display: block;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.desc {
+  margin: 8px 0 0;
+  max-width: 30ch;
+  color: var(--text-dim);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
 .site-footer {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 72px var(--gutter) calc(32px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 96px;
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
   color: var(--text-faint);
   font-size: 0.8125rem;
 }
 
-@media (min-width: 640px) {
+.site-footer a {
+  transition: color 150ms ease;
+}
+
+@media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
-}
 
-@media (min-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1800px) {
-  .page,
-  .site-footer {
-    max-width: 1440px;
+  .card {
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    padding: 26px 26px 28px;
   }
 }
 
@@ -366,46 +352,41 @@ button,
     border-color: var(--line-strong);
   }
 
-  .card:hover .shot img {
-    transform: scale(1.03);
+  .card:hover .arrow {
+    color: var(--text);
+    transform: translate(2px, -2px);
   }
 
-  .card:hover .arrow {
-    fill: var(--text);
-    transform: translate(2px, -2px);
+  .site-footer a:hover {
+    color: var(--text);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .wordmark,
-  .tagline,
+  .statement,
   .projects-title,
   .card {
     animation: rise 600ms var(--ease-out) both;
   }
 
-  .tagline {
-    animation-delay: 60ms;
-  }
-
   .projects-title {
-    animation-delay: 140ms;
+    animation-delay: 120ms;
   }
 
   .card:nth-child(1) {
-    animation-delay: 180ms;
+    animation-delay: 160ms;
   }
 
   .card:nth-child(2) {
-    animation-delay: 230ms;
+    animation-delay: 210ms;
   }
 
   .card:nth-child(3) {
-    animation-delay: 280ms;
+    animation-delay: 260ms;
   }
 
   .card:nth-child(4) {
-    animation-delay: 330ms;
+    animation-delay: 310ms;
   }
 }
 
