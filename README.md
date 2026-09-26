@@ -1,7 +1,7 @@
 # Home
 The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 ## Features
-- Home page plus a case study for each project: Pool, Poisoned Candy and Nivra
+- Home page plus a case study for each project: Pool, Poisoned Candy, Nivra and Wii Party Recomp
 - Real project screenshots, and only verifiable information
 - Links to GitHub, X, YouTube, TikTok and Discord
 - Light and dark themes, following the system by default

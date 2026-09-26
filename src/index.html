@@ -18,11 +18,11 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="/assets/icons/favicon.png" type="image/png" sizes="64x64" />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/css/styles.css?v=5" />
+  <link rel="stylesheet" href="/css/styles.css?v=6" />
   <script>(function(){var r=document.documentElement,t=null,l=null;try{t=localStorage.getItem("theme");l=localStorage.getItem("lang")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";r.dataset.theme=t;if(["en","es","ko","zh"].indexOf(l)>-1)r.lang=l})();</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Arel Kair","url":"https://arelkair.dev/","sameAs":["https://github.com/arelkair","https://x.com/arelkair","https://www.youtube.com/@arelkair","https://www.tiktok.com/@arelkair"],"address":{"@type":"PostalAddress","addressCountry":"ES"}}</script>
 </head>
@@ -140,6 +140,34 @@
         </a>
       </article>
 
+      <article class="project project-wii">
+        <div class="project-text">
+          <img class="app-icon" src="/assets/work/wiiparty-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async" />
+          <h3 class="project-name"><a href="/work/wii-party-recomp">Wii Party Recomp</a></h3>
+          <p class="project-desc" data-i18n="wiiSummary">A static recompilation of Wii Party for PC. The game's code is translated into C++ and built as a native Windows program, with no emulator.</p>
+          <dl class="facts">
+            <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot dot-dev" aria-hidden="true"></span><span data-i18n="statusDev">In development</span></span></dd></div>
+            <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthSep">September 2026</span></dd></div>
+            <div><dt data-i18n="factStack">Stack</dt><dd>C++, Python, Direct3D 11</dd></div>
+          </dl>
+          <p class="project-links">
+            <a class="link" href="/work/wii-party-recomp"><span data-i18n="caseStudy">Case study</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
+          </p>
+        </div>
+        <div class="progress-panel project-media">
+        <p class="progress-head"><span data-i18n="wiiProgress">Estimated progress by component</span><span class="progress-total">73%</span></p>
+        <ul class="progress">
+          <li><span class="progress-name" data-i18n="pToolchain">Recompilation toolchain</span><span class="progress-bar" style="--p: 95%" aria-hidden="true"></span><span class="progress-value">95%</span></li>
+          <li><span class="progress-name" data-i18n="pRuntime">System runtime</span><span class="progress-bar" style="--p: 91%" aria-hidden="true"></span><span class="progress-value">91%</span></li>
+          <li><span class="progress-name" data-i18n="pGraphics">Graphics (GX to Direct3D 11)</span><span class="progress-bar" style="--p: 85%" aria-hidden="true"></span><span class="progress-value">85%</span></li>
+          <li><span class="progress-name" data-i18n="pAudio">Audio</span><span class="progress-bar" style="--p: 83%" aria-hidden="true"></span><span class="progress-value">83%</span></li>
+          <li><span class="progress-name" data-i18n="pFlow">Game flow</span><span class="progress-bar" style="--p: 75%" aria-hidden="true"></span><span class="progress-value">75%</span></li>
+          <li><span class="progress-name" data-i18n="pInput">Input</span><span class="progress-bar" style="--p: 65%" aria-hidden="true"></span><span class="progress-value">65%</span></li>
+          <li><span class="progress-name" data-i18n="pPc">PC features</span><span class="progress-bar" style="--p: 15%" aria-hidden="true"></span><span class="progress-value">15%</span></li>
+        </ul>
+      </div>
+      </article>
+
       <div class="more" aria-labelledby="more-title">
         <h3 class="more-title" id="more-title" data-i18n="moreTitle">Also on GitHub</h3>
         <ul class="more-list">
@@ -174,6 +202,7 @@
         <p class="lead" data-i18n="about1">I build with AI: agents, automations, web projects and games.</p>
         <p data-i18n="about2">My first web page went online in May 2026. Since then I have published two multiplayer browser games, both of which connect players directly through PeerJS instead of a game server, and Nivra, an organizer that keeps its data on your own device.</p>
         <p data-i18n="about3">Everything here runs in the browser and is free to open. The games and this site are open source on GitHub.</p>
+        <p data-i18n="about4">Since September 2026 I have also been working on Wii Party Recomp, which translates a Wii game into C++ so it runs natively on PC.</p>
         <dl class="facts facts-row">
           <div><dt data-i18n="factBased">Based in</dt><dd><span data-i18n="spain">Spain</span></dd></div>
           <div><dt data-i18n="factInterests">Interests</dt><dd><span data-i18n="interests">AI, security, self-hosting, gaming</span></dd></div>
@@ -186,6 +215,8 @@
       <div class="band-body">
         <p class="band-note" data-i18n="stackNote">Only tools used in a published project, and where.</p>
         <dl class="stack">
+          <div><dt>C++</dt><dd><a href="/work/wii-party-recomp">Wii Party Recomp</a> <span data-i18n="stackCpp">(engine)</span></dd></div>
+          <div><dt>Python</dt><dd><a href="/work/wii-party-recomp">Wii Party Recomp</a> <span data-i18n="stackPy">(recompilers)</span></dd></div>
           <div><dt>JavaScript</dt><dd><a href="/work/pool">Pool</a>, <a href="/work/poisoned-candy">Poisoned Candy</a></dd></div>
           <div><dt>TypeScript</dt><dd><a href="/work/nivra">Nivra</a></dd></div>
           <div><dt>React</dt><dd><a href="/work/nivra">Nivra</a></dd></div>
@@ -258,6 +289,6 @@
     <span>&copy; 2026 Arel Kair</span>
   </footer>
 
-  <script defer src="/js/app.js?v=5"></script>
+  <script defer src="/js/app.js?v=6"></script>
 </body>
 </html>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Pool | Arel Kair</title>
-  <meta name="description" content="Pool is a 2D pool game for the browser by Arel Kair, with online 1v1 multiplayer over peer-to-peer and a custom physics engine." />
-  <link rel="canonical" href="https://arelkair.dev/work/pool" />
+  <title>Wii Party Recomp | Arel Kair</title>
+  <meta name="description" content="Wii Party Recomp is a static recompilation of Wii Party for PC by Arel Kair: the game's code translated into C++ and built as a native Windows program." />
+  <link rel="canonical" href="https://arelkair.dev/work/wii-party-recomp" />
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#efefed" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121311" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Arel Kair" />
-  <meta property="og:title" content="Pool" />
-  <meta property="og:description" content="Pool is a 2D pool game for the browser by Arel Kair, with online 1v1 multiplayer over peer-to-peer and a custom physics engine." />
-  <meta property="og:url" content="https://arelkair.dev/work/pool" />
+  <meta property="og:title" content="Wii Party Recomp" />
+  <meta property="og:description" content="Wii Party Recomp is a static recompilation of Wii Party for PC by Arel Kair: the game's code translated into C++ and built as a native Windows program." />
+  <meta property="og:url" content="https://arelkair.dev/work/wii-party-recomp" />
   <meta property="og:image" content="https://arelkair.dev/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -66,58 +66,78 @@
     </div>
   </header>
 
-  <main id="main" class="case case-pool">
+  <main id="main" class="case case-wii-party-recomp">
     <div class="wrap">
       <a class="back link" href="/#work"><svg class="icon-sm" aria-hidden="true"><use href="#i-left" /></svg><span data-i18n="backWork">All work</span></a>
       <header class="case-head">
-        <h1 class="case-name">Pool</h1>
-        <p class="case-lead" data-i18n="poolLead">A 2D pool game for the browser, with online 1v1 multiplayer and a physics engine written for it.</p>
-        <p class="project-links"><a class="link" href="https://pool.arelkair.dev/" target="_blank" rel="noopener"><span data-i18n="linkPlay">Play</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
-        <a class="link" href="https://github.com/arelkair/pool" target="_blank" rel="noopener"><span data-i18n="linkSource">Source</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></p>
+        <h1 class="case-name">Wii Party Recomp</h1>
+        <p class="case-lead" data-i18n="wiiLead">A static recompilation of Wii Party for PC. The game runs as a native Windows program, with no emulator.</p>
+        
       </header>
       <dl class="facts facts-case">
-        <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span></dd></div>
-        <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthJun">June 2026</span></dd></div>
-        <div><dt data-i18n="factStack">Stack</dt><dd>JavaScript, PixiJS, PeerJS, Vite</dd></div>
-        <div><dt data-i18n="factLanguages">Languages</dt><dd><span data-i18n="langsPool">English, Spanish</span></dd></div>
-        <div><dt data-i18n="factLicense">License</dt><dd>MIT</dd></div>
+        <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot dot-dev" aria-hidden="true"></span><span data-i18n="statusDev">In development</span></span></dd></div>
+        <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthSep">September 2026</span></dd></div>
+        <div><dt data-i18n="factStack">Stack</dt><dd>C++, Python, Direct3D 11, SDL3</dd></div>
+        <div><dt data-i18n="factRuns">Runs on</dt><dd>Windows</dd></div>
+        <div><dt data-i18n="factSource">Source</dt><dd><span data-i18n="private">Private</span></dd></div>
       </dl>
     </div>
-    <figure class="wrap case-figure "><div class="shot"><img src="/assets/work/pool.jpg" alt="A game of Pool in progress: the green table seen from above, with the shot and potted counters at the top." data-i18n-alt="poolAlt" width="1183" height="705" decoding="async" /></div></figure>
+    <div class="wrap case-figure"><div class="progress-panel progress-wide">
+        <p class="progress-head"><span data-i18n="wiiProgress">Estimated progress by component</span><span class="progress-total">73%</span></p>
+        <ul class="progress">
+          <li><span class="progress-name" data-i18n="pToolchain">Recompilation toolchain</span><span class="progress-bar" style="--p: 95%" aria-hidden="true"></span><span class="progress-value">95%</span></li>
+          <li><span class="progress-name" data-i18n="pRuntime">System runtime</span><span class="progress-bar" style="--p: 91%" aria-hidden="true"></span><span class="progress-value">91%</span></li>
+          <li><span class="progress-name" data-i18n="pGraphics">Graphics (GX to Direct3D 11)</span><span class="progress-bar" style="--p: 85%" aria-hidden="true"></span><span class="progress-value">85%</span></li>
+          <li><span class="progress-name" data-i18n="pAudio">Audio</span><span class="progress-bar" style="--p: 83%" aria-hidden="true"></span><span class="progress-value">83%</span></li>
+          <li><span class="progress-name" data-i18n="pFlow">Game flow</span><span class="progress-bar" style="--p: 75%" aria-hidden="true"></span><span class="progress-value">75%</span></li>
+          <li><span class="progress-name" data-i18n="pInput">Input</span><span class="progress-bar" style="--p: 65%" aria-hidden="true"></span><span class="progress-value">65%</span></li>
+          <li><span class="progress-name" data-i18n="pPc">PC features</span><span class="progress-bar" style="--p: 15%" aria-hidden="true"></span><span class="progress-value">15%</span></li>
+        </ul>
+      </div><p class="progress-note" data-i18n="wiiEstimate">These percentages are my own estimates, not measurements.</p></div>
     <div class="wrap case-body">
       <section class="band">
-        <h2 class="section-title" data-i18n="poolModesTitle">Two ways to play</h2>
+        <h2 class="section-title" data-i18n="wiiWhatTitle">What it is</h2>
         <div class="band-body prose">
-          <p data-i18n="poolModes1">Singleplayer is free practice. Multiplayer is a 1v1 match: one player creates a game and shares a four-letter code, the other joins with it. Turns follow standard 8-ball rules.</p>
-          <p data-i18n="poolModes2">To shoot, drag from the cue ball and release. The further you pull, the more power.</p>
+          <p data-i18n="wiiWhat1">The original game executable is translated into C++ source code that is compiled natively, so the game runs on PC without an emulator. The Wii hardware it expects, from the graphics and audio chips to the Wii Remote, is recreated around that code.</p>
         </div>
       </section>
       <section class="band">
-        <h2 class="section-title" data-i18n="poolNetTitle">No server in the middle</h2>
+        <h2 class="section-title" data-i18n="wiiNowTitle">Where it stands</h2>
         <div class="band-body prose">
-          <p data-i18n="poolNet1">The two players connect to each other peer-to-peer through PeerJS. There are no game servers to run and nothing to set up on the router.</p>
+          <p data-i18n="wiiNow1">The game boots, reaches the menu and has been played through a complete game of Board Game Island: 17 rounds, up to the final ranking and the save. It runs at a steady 50 fps, with sound from the game's own audio microcode and in the language of the Windows installation.</p>
+          <p data-i18n="wiiNow2">Some things are still missing. Not every minigame has been checked, real Wii Remotes are not supported yet, and gamepad support has not been tested with a physical gamepad.</p>
         </div>
       </section>
       <section class="band">
-        <h2 class="section-title" data-i18n="poolCodeTitle">What is inside</h2>
+        <h2 class="section-title" data-i18n="wiiHowTitle">How it is built</h2>
         <div class="band-body prose">
-          <p data-i18n="poolCode1">The code is split by responsibility. The physics are not a library: collisions, friction and pockets are handled by a billiards engine written for this game, and there is a self-test for it.</p>
+          <p data-i18n="wiiHow1">The project is split into a reusable Wii engine and one folder per game, so other Wii games could be recompiled with the same tools.</p>
           <ul class="files">
-            <li><code>src/physics.js</code><span data-i18n="fPhysics">Billiards engine: collisions, friction, pockets</span></li>
-            <li><code>src/scene.js</code><span data-i18n="fScene">Rendering with PixiJS</span></li>
-            <li><code>src/net.js</code><span data-i18n="fNet">Peer-to-peer multiplayer with PeerJS</span></li>
-            <li><code>src/main.js</code><span data-i18n="fMain">Game loop, input and turns</span></li>
-            <li><code>src/ui.js</code><span data-i18n="fUi">Menu, HUD and dialogs</span></li>
-            <li><code>src/audio.js</code><span data-i18n="fAudio">Sound effects</span></li>
-            <li><code>src/i18n.js</code><span data-i18n="fI18n">English and Spanish text</span></li>
-            <li><code>src/config.js</code><span data-i18n="fConfig">Table, ball and physics constants</span></li>
+            <li><code>recompiler/</code><span data-i18n="wRecompiler">PowerPC and audio DSP recompilers, written in Python</span></li>
+            <li><code>engine/src/core</code><span data-i18n="wCore">Runs the translated code: memory, threads, interrupts and boot</span></li>
+            <li><code>engine/src/gpu</code><span data-i18n="wGpu">Wii graphics commands drawn with Direct3D 11</span></li>
+            <li><code>engine/src/audio</code><span data-i18n="wAudio">The game's recompiled audio microcode and sound output</span></li>
+            <li><code>engine/src/input</code><span data-i18n="wInput">An emulated Wii Remote, driven by keyboard, mouse and gamepads</span></li>
+            <li><code>games/wiiparty/</code><span data-i18n="wGame">Everything specific to Wii Party</span></li>
           </ul>
+        </div>
+      </section>
+      <section class="band">
+        <h2 class="section-title" data-i18n="wiiCopyTitle">Your own copy</h2>
+        <div class="band-body prose">
+          <p data-i18n="wiiCopy1">No game files are included. The tools work from your own dump of the disc.</p>
+        </div>
+      </section>
+      <section class="band">
+        <h2 class="section-title" data-i18n="wiiNextTitle">Planned</h2>
+        <div class="band-body prose">
+          <p data-i18n="wiiNext1">Ultrawide support, higher frame rates, a launcher and options menu, online play and a Galician translation.</p>
         </div>
       </section>
 
     </div>
     <nav class="wrap next" aria-label="Next project">
-      <a class="next-link" href="/work/poisoned-candy"><span class="next-label" data-i18n="nextProject">Next project</span><span class="next-name">Poisoned Candy<svg class="icon-lg" aria-hidden="true"><use href="#i-right" /></svg></span></a>
+      <a class="next-link" href="/work/pool"><span class="next-label" data-i18n="nextProject">Next project</span><span class="next-name">Pool<svg class="icon-lg" aria-hidden="true"><use href="#i-right" /></svg></span></a>
     </nav>
   </main>
 
