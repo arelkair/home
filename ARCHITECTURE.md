@@ -7,8 +7,8 @@ The portfolio of Arel Kair (arelkair.dev), built with plain HTML, CSS and JavaSc
 - `src/index.html` - Home: hero, selected work, other repositories, about, tools, social links
 - `src/work/pool.html`, `src/work/poisoned-candy.html`, `src/work/nivra.html`, `src/work/wii-party-recomp.html` - One case study per project
 - `src/404.html` - Not found page (served automatically by Vercel)
-- `src/css/styles.css` - Single stylesheet: fonts, tokens, header, hero, projects, case studies, responsive, motion
-- `src/js/app.js` - Translations, preferences, theme toggle and language menu, sharing a single `window.Portfolio` namespace
+- `src/css/styles.<hash>.css` - Single stylesheet: fonts, tokens, header, hero, projects, case studies, responsive, motion
+- `src/js/app.<hash>.js` - Translations, preferences, theme toggle and language menu, sharing a single `window.Portfolio` namespace
 - `src/assets/work/` - Real screenshots of each project (Pool's comes from its repository; the others were captured from the live sites)
 - `src/assets/fonts/` - Self-hosted Bricolage Grotesque, Geist and Geist Mono (latin subset)
 - `src/assets/icons/` - Favicon (SVG, adapts to light and dark) and Apple touch icon: a rounded square with a green dot
@@ -20,7 +20,7 @@ All pages share the same header, footer and inline theme script. That script mus
 
 ## Content
 
-Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show. Nivra's repository is private, so it links only to the live app. Wii Party Recomp has neither a public repository nor a public site, so it has no outbound links; its page is built from the project's README and uses its own original icon and progress estimates instead of game screenshots.
+Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show. Nivra's repository is private, so it links only to the live app. Wii Party Recomp links to its repository; its page is built from the project's README and uses its own original icon and progress estimates instead of game screenshots, which would be Nintendo's content.
 
 ## Design
 
@@ -39,4 +39,5 @@ The English text lives in the HTML. `app.js` stores the original text of every `
 - No framework, one stylesheet, one deferred script.
 - Fonts are self-hosted and the two main ones are preloaded.
 - Images below the fold load lazily and have explicit dimensions.
-- `/assets/*` is cached for a year. `css/styles.css` and `js/app.js` are linked with a `?v=N` query string because Vercel applies its own multi-hour cache to those paths that `vercel.json` cannot override. **Bump `v` on every page any time `styles.css` or `app.js` changes.**
+- `/assets/*` is cached for a year.
+- The stylesheet and the script carry a fingerprint of their content in the file name (`styles.<hash>.css`, `app.<hash>.js`). Vercel's edge cache ignores query strings, so a `?v=N` parameter cannot force a fresh copy; a new file name always can. **Whenever `styles` or `app` changes, rename it with the first 10 characters of the SHA-256 of its contents (LF line endings) and update the `<link>` and `<script>` tags on every page.**

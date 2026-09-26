@@ -2,6 +2,9 @@ window.Portfolio = window.Portfolio || {};
 
 Portfolio.translations = {
   es: {
+    wiiNext2: "El código es abierto bajo la licencia GPL, y las issues y pull requests son bienvenidas en GitHub.",
+    wiiHow2: "El ejecutable principal, unas 7.350 funciones, y los 115 módulos del juego se traducen a C++ y se compilan en un único programa nativo de unos 440 MB. Funciona usando alrededor de hilo y medio de CPU y 200 MB de memoria.",
+    profileDesc: "El README de mi perfil de GitHub.",
     statusDev: "En desarrollo",
     monthSep: "Septiembre de 2026",
     factRuns: "Funciona en",
@@ -33,7 +36,7 @@ Portfolio.translations = {
     wInput: "Un Wii Remote emulado, controlado con teclado, ratón y mandos",
     wGame: "Todo lo específico de Wii Party",
     wiiCopyTitle: "Tu propia copia",
-    wiiCopy1: "No incluye archivos del juego. Las herramientas trabajan a partir de tu propia copia del disco.",
+    wiiCopy1: "El repositorio no contiene recursos, código ni binarios de Nintendo. Necesitas tu propia copia legal de Wii Party, y las herramientas trabajan a partir de un volcado de ese disco. El proyecto no está afiliado ni respaldado por Nintendo.",
     wiiNextTitle: "Previsto",
     wiiNext1: "Soporte ultrapanorámico, más fotogramas por segundo, un lanzador y menú de opciones, juego online y una traducción al gallego.",
     skip: "Saltar al contenido",
@@ -70,7 +73,7 @@ Portfolio.translations = {
     aboutTitle: "Sobre mí",
     about1: "Construyo con IA: agentes, automatizaciones, proyectos web y juegos.",
     about2: "Mi primera página web se publicó en mayo de 2026. Desde entonces he publicado dos juegos multijugador para el navegador, que conectan a los jugadores directamente con PeerJS en lugar de usar un servidor de juego, y Nivra, un organizador que guarda sus datos en tu propio dispositivo.",
-    about3: "Todo lo que hay aquí funciona en el navegador y se puede abrir gratis. Los juegos y este sitio son de código abierto en GitHub.",
+    about3: "Los juegos funcionan en el navegador y se pueden abrir gratis. Ellos, este sitio y Wii Party Recomp son de código abierto en GitHub.",
     spain: "España",
     interests: "IA, seguridad, self-hosting, videojuegos",
     stackTitle: "Con qué construyo",
@@ -138,6 +141,9 @@ Portfolio.translations = {
     nfHome: "Volver al inicio"
   },
   ko: {
+    wiiNext2: "코드는 GPL 라이선스의 오픈 소스이며, GitHub에서 이슈와 풀 리퀘스트를 환영합니다.",
+    wiiHow2: "약 7,350개 함수로 이루어진 메인 실행 파일과 게임의 모듈 115개 전체를 C++로 옮겨, 약 440MB 크기의 네이티브 프로그램 하나로 빌드합니다. 실행 시 CPU 스레드 약 1.5개와 메모리 200MB 정도를 사용합니다.",
+    profileDesc: "제 GitHub 프로필 README입니다.",
     statusDev: "개발 중",
     monthSep: "2026년 9월",
     factRuns: "실행 환경",
@@ -169,7 +175,7 @@ Portfolio.translations = {
     wInput: "키보드, 마우스, 게임패드로 조작하는 에뮬레이션 Wii 리모컨",
     wGame: "Wii Party 전용 부분 전체",
     wiiCopyTitle: "직접 소유한 사본",
-    wiiCopy1: "게임 파일은 포함되어 있지 않습니다. 도구는 직접 덤프한 디스크 사본으로 작동합니다.",
+    wiiCopy1: "저장소에는 Nintendo의 에셋, 게임 코드, 바이너리가 없습니다. 합법적으로 얻은 Wii Party 사본이 필요하며, 도구는 그 디스크의 덤프로 작동합니다. 이 프로젝트는 Nintendo와 제휴하거나 승인받지 않았습니다.",
     wiiNextTitle: "계획",
     wiiNext1: "울트라와이드 지원, 더 높은 프레임레이트, 런처와 옵션 메뉴, 온라인 플레이, 갈리시아어 번역.",
     skip: "본문으로 건너뛰기",
@@ -206,7 +212,7 @@ Portfolio.translations = {
     aboutTitle: "소개",
     about1: "AI로 에이전트, 자동화, 웹 프로젝트, 게임을 만듭니다.",
     about2: "첫 웹페이지는 2026년 5월에 공개했습니다. 그 뒤로 게임 서버 없이 PeerJS로 플레이어를 직접 연결하는 브라우저 멀티플레이 게임 두 개와, 데이터를 사용자의 기기에 보관하는 정리 앱 Nivra를 공개했습니다.",
-    about3: "여기 있는 모든 것은 브라우저에서 무료로 열 수 있습니다. 게임과 이 사이트는 GitHub에 오픈 소스로 공개되어 있습니다.",
+    about3: "게임은 브라우저에서 무료로 열 수 있습니다. 게임들과 이 사이트, Wii Party Recomp는 GitHub에 오픈 소스로 공개되어 있습니다.",
     spain: "스페인",
     interests: "AI, 보안, 셀프 호스팅, 게임",
     stackTitle: "사용하는 기술",
@@ -274,6 +280,9 @@ Portfolio.translations = {
     nfHome: "홈으로 돌아가기"
   },
   zh: {
+    wiiNext2: "代码以 GPL 许可证开源,欢迎在 GitHub 上提交 issue 和 pull request。",
+    wiiHow2: "主可执行文件(约 7,350 个函数)和游戏的全部 115 个模块都被翻译成 C++,构建为一个约 440 MB 的原生程序。运行时大约占用一个半 CPU 线程和 200 MB 内存。",
+    profileDesc: "我的 GitHub 个人主页 README。",
     statusDev: "开发中",
     monthSep: "2026 年 9 月",
     factRuns: "运行平台",
@@ -305,7 +314,7 @@ Portfolio.translations = {
     wInput: "由键盘、鼠标和手柄操控的模拟 Wii 遥控器",
     wGame: "Wii Party 专属的全部内容",
     wiiCopyTitle: "你自己的副本",
-    wiiCopy1: "不包含任何游戏文件。这些工具使用你自己转储的光盘副本。",
+    wiiCopy1: "仓库中不包含任何任天堂的资源、游戏代码或二进制文件。你需要自己合法获得的 Wii Party 副本,工具会使用该光盘的转储。本项目与任天堂无关,也未获其认可。",
     wiiNextTitle: "计划",
     wiiNext1: "超宽屏支持、更高帧率、启动器和选项菜单、在线对战以及加利西亚语翻译。",
     skip: "跳到正文",
@@ -342,7 +351,7 @@ Portfolio.translations = {
     aboutTitle: "关于",
     about1: "我用 AI 构建智能体、自动化、网页项目和游戏。",
     about2: "我的第一个网页于 2026 年 5 月上线。此后我发布了两款浏览器多人游戏,它们通过 PeerJS 直接连接玩家,而不经过游戏服务器;还发布了 Nivra,一个把数据保存在你自己设备上的整理工具。",
-    about3: "这里的一切都在浏览器中运行,可以免费打开。这些游戏和本网站都在 GitHub 上开源。",
+    about3: "这些游戏在浏览器中运行,可以免费打开。它们、本网站以及 Wii Party Recomp 都在 GitHub 上开源。",
     spain: "西班牙",
     interests: "AI、安全、自托管、游戏",
     stackTitle: "我使用的技术",
