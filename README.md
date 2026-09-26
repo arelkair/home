@@ -12,6 +12,6 @@ The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 src/index.html              home page
 src/work/*.html             project case studies
 src/css/styles.<hash>.css   single stylesheet (content hash in the name)
-src/js/app.<hash>.js         translations, preferences and language menu
+src/js/app.<hash>.js        translations, preferences and language menu
 src/assets/                 fonts, screenshots, icons and social image
 ```
