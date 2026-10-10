@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/css/styles.ca4923ea9d.css" />
+  <link rel="stylesheet" href="/css/styles.4074cfeffc.css" />
   <script>(function(){var r=document.documentElement,t=null,l=null;try{t=localStorage.getItem("theme");l=localStorage.getItem("lang")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";r.dataset.theme=t;if(["en","es","ko","zh"].indexOf(l)>-1)r.lang=l})();</script>
 </head>
 <body>
@@ -82,16 +82,20 @@
         <div><dt data-i18n="factLicense">License</dt><dd>GPL-3.0-or-later</dd></div>
       </dl>
     </div>
+    <div class="wrap case-figure"><figure class="trailer" id="trailer" data-trailer-es="/assets/work/wiiparty-trailer-es.mp4" data-trailer-en="">
+        <video class="trailer-video" controls playsinline preload="none" poster="/assets/work/wiiparty-trailer-poster.jpg" width="1920" height="1080" hidden></video>
+        <div class="trailer-soon"><img src="/assets/work/wiiparty-trailer-poster.jpg" alt="" width="1920" height="1080" decoding="async" /><p data-i18n="wiiTrailerSoon">The English trailer is coming soon.</p></div>
+      </figure></div>
     <div class="wrap case-figure"><div class="progress-panel progress-wide">
-        <p class="progress-head"><span data-i18n="wiiProgress">Estimated progress by component</span><span class="progress-total">84%</span></p>
+        <p class="progress-head"><span data-i18n="wiiProgress">Estimated progress by component</span><span class="progress-total">91%</span></p>
         <ul class="progress">
           <li><span class="progress-name" data-i18n="pToolchain">Recompilation toolchain</span><span class="progress-bar" style="--p: 100%" aria-hidden="true"></span><span class="progress-value">100%</span></li>
-          <li><span class="progress-name" data-i18n="pRuntime">System runtime</span><span class="progress-bar" style="--p: 92%" aria-hidden="true"></span><span class="progress-value">92%</span></li>
-          <li><span class="progress-name" data-i18n="pGraphics">Graphics (GX to Direct3D 11 and OpenGL)</span><span class="progress-bar" style="--p: 90%" aria-hidden="true"></span><span class="progress-value">90%</span></li>
-          <li><span class="progress-name" data-i18n="pAudio">Audio</span><span class="progress-bar" style="--p: 83%" aria-hidden="true"></span><span class="progress-value">83%</span></li>
+          <li><span class="progress-name" data-i18n="pRuntime">System runtime</span><span class="progress-bar" style="--p: 100%" aria-hidden="true"></span><span class="progress-value">100%</span></li>
+          <li><span class="progress-name" data-i18n="pGraphics">Graphics (GX to Direct3D 11 and OpenGL)</span><span class="progress-bar" style="--p: 100%" aria-hidden="true"></span><span class="progress-value">100%</span></li>
+          <li><span class="progress-name" data-i18n="pAudio">Audio</span><span class="progress-bar" style="--p: 100%" aria-hidden="true"></span><span class="progress-value">100%</span></li>
           <li><span class="progress-name" data-i18n="pFlow">Game flow</span><span class="progress-bar" style="--p: 90%" aria-hidden="true"></span><span class="progress-value">90%</span></li>
-          <li><span class="progress-name" data-i18n="pInput">Input</span><span class="progress-bar" style="--p: 66%" aria-hidden="true"></span><span class="progress-value">66%</span></li>
-          <li><span class="progress-name" data-i18n="pPc">PC features</span><span class="progress-bar" style="--p: 66%" aria-hidden="true"></span><span class="progress-value">66%</span></li>
+          <li><span class="progress-name" data-i18n="pInput">Input</span><span class="progress-bar" style="--p: 75%" aria-hidden="true"></span><span class="progress-value">75%</span></li>
+          <li><span class="progress-name" data-i18n="pPc">PC features</span><span class="progress-bar" style="--p: 75%" aria-hidden="true"></span><span class="progress-value">75%</span></li>
         </ul>
       </div><p class="progress-note" data-i18n="wiiEstimate">These percentages are my own estimates, not measurements.</p></div>
     <div class="wrap case-body">
@@ -105,7 +109,7 @@
         <h2 class="section-title" data-i18n="wiiNowTitle">Where it stands</h2>
         <div class="band-body prose">
           <p data-i18n="wiiNow1">The game boots, reaches every menu and has been played through a complete game of Board Game Island: 17 rounds, up to the final ranking and the save. It runs at a steady 60 fps, with sound from the game's own audio microcode and in the language of your system. A launcher that updates itself builds it from your own PAL or NTSC-U disc in about ten minutes, also without an internet connection. The Linux version is new and still experimental.</p>
-          <p data-i18n="wiiNow2">Some things are still missing. Every minigame and every mode has been played, but a few minigames still show graphics faults, and real Wii Remotes are not supported yet.</p>
+          <p data-i18n="wiiNow2">Some things are still missing. Every minigame has been played without faults, but the other modes have only been tried, not played through, and pointing with a real Wii Remote and a sensor bar is untested.</p>
         </div>
       </section>
       <section class="band">
@@ -132,7 +136,7 @@
       <section class="band">
         <h2 class="section-title" data-i18n="wiiNextTitle">Planned</h2>
         <div class="band-body prose">
-          <p data-i18n="wiiNext1">Ultrawide support, higher frame rates, a Mii editor, a macOS version, online play and a Galician translation.</p>
+          <p data-i18n="wiiNext1">Ultrawide support and online play.</p>
           <p data-i18n="wiiNext2">The code is open source under the GPL, and issues and pull requests are welcome on GitHub.</p>
         </div>
       </section>
@@ -147,6 +151,6 @@
     <span>&copy; 2026 Arel Kair</span>
   </footer>
 
-  <script defer src="/js/app.f591f7cbad.js"></script>
+  <script defer src="/js/app.2a46666c20.js"></script>
 </body>
 </html>

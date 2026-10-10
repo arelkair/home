@@ -531,6 +531,52 @@ code {
   background: var(--felt);
 }
 
+.trailer {
+  margin: 0 0 clamp(32px, 5vw, 56px);
+}
+
+.trailer-video,
+.trailer-soon {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #0b0a10;
+}
+
+.trailer-video {
+  height: auto;
+}
+
+.trailer-video[hidden],
+.trailer-soon[hidden] {
+  display: none;
+}
+
+.trailer-soon {
+  position: relative;
+  overflow: hidden;
+}
+
+.trailer-soon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.trailer-soon p {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #fff;
+  font-size: clamp(1rem, 2.4vw, 1.375rem);
+  font-weight: 560;
+  text-align: center;
+}
+
 .progress-note {
   margin-top: 14px;
   color: var(--faint);

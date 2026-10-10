@@ -26,7 +26,8 @@ Portfolio.translations = {
     wiiWhat1: "El ejecutable original del juego se traduce a código fuente en C++ que se compila de forma nativa, así que el juego funciona en PC sin emulador. El hardware de Wii que espera, desde los chips de gráficos y audio hasta el Wii Remote, se recrea alrededor de ese código.",
     wiiNowTitle: "En qué punto está",
     wiiNow1: "El juego arranca, llega a todos los menús y se ha jugado una partida completa de Board Game Island: 17 rondas, hasta la clasificación final y el guardado. Funciona a 60 fps estables, con el sonido del propio microcódigo de audio del juego y en el idioma de tu sistema. Un lanzador que se actualiza solo lo compila a partir de tu propio disco PAL o NTSC-U en unos diez minutos, también sin conexión a internet. La versión para Linux es nueva y todavía experimental.",
-    wiiNow2: "Todavía faltan cosas. Ya se han jugado todos los minijuegos y todos los modos, pero unos pocos minijuegos aún tienen fallos gráficos y todavía no hay soporte para Wii Remotes reales.",
+    wiiNow2: "Todavía faltan cosas. Todos los minijuegos se han jugado sin fallos, pero los demás modos solo se han probado, no jugado enteros, y apuntar con un Wii Remote real y una barra de sensores está sin probar.",
+    wiiTrailerSoon: "El tráiler en inglés llegará pronto.",
     wiiHowTitle: "Cómo está hecho",
     wiiHow1: "El proyecto se divide en un motor de Wii reutilizable y una carpeta por juego, así que con las mismas herramientas se podrían recompilar otros juegos de Wii.",
     wRecompiler: "Recompiladores de PowerPC y del DSP de audio, escritos en Python",
@@ -38,7 +39,7 @@ Portfolio.translations = {
     wiiCopyTitle: "Tu propia copia",
     wiiCopy1: "El repositorio no contiene recursos, código ni binarios de Nintendo. Necesitas tu propia copia legal de Wii Party, y las herramientas trabajan a partir de un volcado de ese disco. El proyecto no está afiliado ni respaldado por Nintendo.",
     wiiNextTitle: "Previsto",
-    wiiNext1: "Soporte ultrapanorámico, más fotogramas por segundo, un editor de Miis, una versión para macOS, juego online y una traducción al gallego.",
+    wiiNext1: "Soporte ultrapanorámico y juego online.",
     skip: "Saltar al contenido",
     navWork: "Trabajo",
     navAbout: "Sobre mí",
@@ -166,7 +167,8 @@ Portfolio.translations = {
     wiiWhat1: "원래 게임 실행 파일을 네이티브로 컴파일되는 C++ 소스 코드로 옮기기 때문에, 에뮬레이터 없이 PC에서 게임이 실행됩니다. 그래픽·오디오 칩부터 Wii 리모컨까지 게임이 기대하는 Wii 하드웨어를 그 코드 주위에 다시 구현합니다.",
     wiiNowTitle: "현재 상태",
     wiiNow1: "게임이 부팅되어 모든 메뉴에 도달하며, Board Game Island를 17라운드, 최종 순위와 저장까지 한 판 완주했습니다. 게임 자체의 오디오 마이크로코드로 소리를 내고 시스템 언어로 안정적인 60fps로 실행됩니다. 스스로 업데이트하는 런처가 직접 소유한 PAL 또는 NTSC-U 디스크로 약 10분 만에 게임을 빌드하며, 인터넷 연결 없이도 가능합니다. Linux 버전은 새로 나왔으며 아직 실험 단계입니다.",
-    wiiNow2: "아직 빠진 부분이 있습니다. 모든 미니게임과 모든 모드를 플레이했지만 몇몇 미니게임에는 아직 그래픽 오류가 있으며, 실제 Wii 리모컨은 아직 지원하지 않습니다.",
+    wiiNow2: "아직 빠진 부분이 있습니다. 모든 미니게임을 오류 없이 플레이했지만, 다른 모드는 끝까지 플레이하지 않고 시험만 해 보았으며, 실제 Wii 리모컨과 센서 바로 포인팅하는 것은 아직 테스트하지 않았습니다.",
+    wiiTrailerSoon: "영어 트레일러는 곧 공개됩니다.",
     wiiHowTitle: "구조",
     wiiHow1: "프로젝트는 재사용 가능한 Wii 엔진과 게임별 폴더로 나뉘어 있어, 같은 도구로 다른 Wii 게임도 재컴파일할 수 있습니다.",
     wRecompiler: "Python으로 작성한 PowerPC 및 오디오 DSP 재컴파일러",
@@ -178,7 +180,7 @@ Portfolio.translations = {
     wiiCopyTitle: "직접 소유한 사본",
     wiiCopy1: "저장소에는 Nintendo의 에셋, 게임 코드, 바이너리가 없습니다. 합법적으로 얻은 Wii Party 사본이 필요하며, 도구는 그 디스크의 덤프로 작동합니다. 이 프로젝트는 Nintendo와 제휴하거나 승인받지 않았습니다.",
     wiiNextTitle: "계획",
-    wiiNext1: "울트라와이드 지원, 더 높은 프레임레이트, Mii 편집기, macOS 버전, 온라인 플레이, 갈리시아어 번역.",
+    wiiNext1: "울트라와이드 지원과 온라인 플레이.",
     skip: "본문으로 건너뛰기",
     navWork: "작업",
     navAbout: "소개",
@@ -306,7 +308,8 @@ Portfolio.translations = {
     wiiWhat1: "原始游戏可执行文件被翻译成可原生编译的 C++ 源代码,因此游戏无需模拟器即可在 PC 上运行。游戏所依赖的 Wii 硬件,从图形和音频芯片到 Wii 遥控器,都围绕这些代码重新实现。",
     wiiNowTitle: "目前进展",
     wiiNow1: "游戏可以启动并进入所有菜单,并已完整玩过一局 Board Game Island:17 回合,直到最终排名和存档。它以稳定的 60 fps 运行,声音来自游戏自身的音频微代码,语言与你的系统语言一致。可自动更新的启动器可以用你自己的 PAL 或 NTSC-U 光盘在大约十分钟内构建游戏,无需联网也可以。Linux 版本是新推出的,仍处于实验阶段。",
-    wiiNow2: "仍有缺失的部分。所有小游戏和所有模式都已玩过,但少数小游戏仍存在图形问题,也尚不支持真实的 Wii 遥控器。",
+    wiiNow2: "仍有缺失的部分。所有小游戏都已无故障地玩过,但其他模式只是试玩,没有完整玩完;使用真实的 Wii 遥控器和感应条进行指向也尚未测试。",
+    wiiTrailerSoon: "英文预告片即将推出。",
     wiiHowTitle: "构建方式",
     wiiHow1: "项目分为可复用的 Wii 引擎和每款游戏各自的文件夹,因此同一套工具也可以用来重编译其他 Wii 游戏。",
     wRecompiler: "用 Python 编写的 PowerPC 和音频 DSP 重编译器",
@@ -318,7 +321,7 @@ Portfolio.translations = {
     wiiCopyTitle: "你自己的副本",
     wiiCopy1: "仓库中不包含任何任天堂的资源、游戏代码或二进制文件。你需要自己合法获得的 Wii Party 副本,工具会使用该光盘的转储。本项目与任天堂无关,也未获其认可。",
     wiiNextTitle: "计划",
-    wiiNext1: "超宽屏支持、更高帧率、Mii 编辑器、macOS 版本、在线对战以及加利西亚语翻译。",
+    wiiNext1: "超宽屏支持和在线对战。",
     skip: "跳到正文",
     navWork: "作品",
     navAbout: "关于",
@@ -470,6 +473,26 @@ Portfolio.storageSet = function (key, value) {
     });
     document.documentElement.lang = code;
     app.storageSet(STORAGE_KEY, code);
+    app.applyTrailer(code);
+  };
+
+  app.applyTrailer = function (code) {
+    const figure = document.getElementById("trailer");
+    if (!figure) return;
+    const video = figure.querySelector("video");
+    const soon = figure.querySelector(".trailer-soon");
+    const source = code === "es" ? figure.dataset.trailerEs : figure.dataset.trailerEn;
+    if (source) {
+      if (video.getAttribute("src") !== source) video.setAttribute("src", source);
+      video.hidden = false;
+      soon.hidden = true;
+    } else {
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+      video.hidden = true;
+      soon.hidden = false;
+    }
   };
 })(window.Portfolio);
 
