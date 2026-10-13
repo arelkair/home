@@ -20,7 +20,7 @@ All pages share the same header, footer and inline theme script. That script mus
 
 ## Content
 
-Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show. Nivra's repository is private, so it links only to the live app. Wii Party Recomp links to its repository; its page is built from the project's README and uses its own original icon and progress estimates instead of game screenshots, which would be Nintendo's content. Its page also carries the project's 40-second trailer (`src/assets/work/wiiparty-trailer-es.mp4`), which does show the game running: the Spanish trailer plays when the site is in Spanish, and every other language shows a "coming soon" frame until the English trailer exists; then put its path in `data-trailer-en` on the `#trailer` figure.
+Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show. Nivra's repository is private, so it links only to the live app. Wii Party Recomp links to its repository; its page is built from the project's README and uses its own original icon and progress estimates instead of game screenshots, which would be Nintendo's content. The trailer was removed from the page on 2026-10-13.
 
 ## Design
 

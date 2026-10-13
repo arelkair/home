@@ -27,7 +27,6 @@ Portfolio.translations = {
     wiiNowTitle: "En qué punto está",
     wiiNow1: "El juego arranca, llega a todos los menús y se ha jugado una partida completa de Board Game Island: 17 rondas, hasta la clasificación final y el guardado. Funciona a 60 fps estables, con el sonido del propio microcódigo de audio del juego y en el idioma de tu sistema. Un lanzador que se actualiza solo lo compila a partir de tu propio disco PAL o NTSC-U en unos diez minutos, también sin conexión a internet. La versión para Linux es nueva y todavía experimental.",
     wiiNow2: "Todavía faltan cosas. Todos los minijuegos se han jugado sin fallos, pero los demás modos solo se han probado, no jugado enteros, y apuntar con un Wii Remote real y una barra de sensores está sin probar.",
-    wiiTrailerSoon: "El tráiler en inglés llegará pronto.",
     wiiHowTitle: "Cómo está hecho",
     wiiHow1: "El proyecto se divide en un motor de Wii reutilizable y una carpeta por juego, así que con las mismas herramientas se podrían recompilar otros juegos de Wii.",
     wRecompiler: "Recompiladores de PowerPC y del DSP de audio, escritos en Python",
@@ -168,7 +167,6 @@ Portfolio.translations = {
     wiiNowTitle: "현재 상태",
     wiiNow1: "게임이 부팅되어 모든 메뉴에 도달하며, Board Game Island를 17라운드, 최종 순위와 저장까지 한 판 완주했습니다. 게임 자체의 오디오 마이크로코드로 소리를 내고 시스템 언어로 안정적인 60fps로 실행됩니다. 스스로 업데이트하는 런처가 직접 소유한 PAL 또는 NTSC-U 디스크로 약 10분 만에 게임을 빌드하며, 인터넷 연결 없이도 가능합니다. Linux 버전은 새로 나왔으며 아직 실험 단계입니다.",
     wiiNow2: "아직 빠진 부분이 있습니다. 모든 미니게임을 오류 없이 플레이했지만, 다른 모드는 끝까지 플레이하지 않고 시험만 해 보았으며, 실제 Wii 리모컨과 센서 바로 포인팅하는 것은 아직 테스트하지 않았습니다.",
-    wiiTrailerSoon: "영어 트레일러는 곧 공개됩니다.",
     wiiHowTitle: "구조",
     wiiHow1: "프로젝트는 재사용 가능한 Wii 엔진과 게임별 폴더로 나뉘어 있어, 같은 도구로 다른 Wii 게임도 재컴파일할 수 있습니다.",
     wRecompiler: "Python으로 작성한 PowerPC 및 오디오 DSP 재컴파일러",
@@ -309,7 +307,6 @@ Portfolio.translations = {
     wiiNowTitle: "目前进展",
     wiiNow1: "游戏可以启动并进入所有菜单,并已完整玩过一局 Board Game Island:17 回合,直到最终排名和存档。它以稳定的 60 fps 运行,声音来自游戏自身的音频微代码,语言与你的系统语言一致。可自动更新的启动器可以用你自己的 PAL 或 NTSC-U 光盘在大约十分钟内构建游戏,无需联网也可以。Linux 版本是新推出的,仍处于实验阶段。",
     wiiNow2: "仍有缺失的部分。所有小游戏都已无故障地玩过,但其他模式只是试玩,没有完整玩完;使用真实的 Wii 遥控器和感应条进行指向也尚未测试。",
-    wiiTrailerSoon: "英文预告片即将推出。",
     wiiHowTitle: "构建方式",
     wiiHow1: "项目分为可复用的 Wii 引擎和每款游戏各自的文件夹,因此同一套工具也可以用来重编译其他 Wii 游戏。",
     wRecompiler: "用 Python 编写的 PowerPC 和音频 DSP 重编译器",
@@ -473,26 +470,6 @@ Portfolio.storageSet = function (key, value) {
     });
     document.documentElement.lang = code;
     app.storageSet(STORAGE_KEY, code);
-    app.applyTrailer(code);
-  };
-
-  app.applyTrailer = function (code) {
-    const figure = document.getElementById("trailer");
-    if (!figure) return;
-    const video = figure.querySelector("video");
-    const soon = figure.querySelector(".trailer-soon");
-    const source = code === "es" ? figure.dataset.trailerEs : figure.dataset.trailerEn;
-    if (source) {
-      if (video.getAttribute("src") !== source) video.setAttribute("src", source);
-      video.hidden = false;
-      soon.hidden = true;
-    } else {
-      video.pause();
-      video.removeAttribute("src");
-      video.load();
-      video.hidden = true;
-      soon.hidden = false;
-    }
   };
 })(window.Portfolio);
 
