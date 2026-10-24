@@ -1,12 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <style>
-    .bg { fill: #121212 }
-    .fg { fill: #f5f5f4 }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #ebebea }
-      .fg { fill: #0e0e0e }
-    }
-  </style>
-  <rect class="bg" width="32" height="32" />
-  <text class="fg" x="16" y="23.5" text-anchor="middle" font-family="Lora, Georgia, serif" font-style="italic" font-size="22">a</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+<title>Emblema abstracto de cuatro pétalos</title>
+<defs>
+ <linearGradient id="silk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".17" stop-color="#a8a8a8"/><stop offset=".42" stop-color="#151515"/><stop offset=".72" stop-color="#343434"/><stop offset="1" stop-color="#fff"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#fff"/><stop offset=".4" stop-color="#222"/><stop offset=".8" stop-color="#999"/><stop offset="1" stop-color="#fff"/></linearGradient>
+ <path id="petal" d="M 600 225 C 525 248 449 310 448 386 C 446 455 526 482 565 531 C 584 556 612 567 633 536 C 682 463 706 385 680 318 C 660 270 632 237 600 225 Z"/>
+ <clipPath id="petalclip"><use href="#petal"/></clipPath>
+ <g id="leaf">
+  <use href="#petal" fill="url(#silk)"/>
+  <path d="M600 225 C542 293 518 371 546 432 C563 470 599 506 633 536" fill="none" stroke="url(#edge)" stroke-width="3"/>
+  <path d="M600 225 C620 294 657 364 650 420 C645 465 633 506 633 536" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2"/>
+  <g clip-path="url(#petalclip)" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width=".75">
+   <path d="M520 250 Q475 378 633 536"/><path d="M525 250 Q480 378 633 536"/><path d="M530 250 Q485 378 633 536"/><path d="M535 250 Q490 378 633 536"/><path d="M540 250 Q495 378 633 536"/><path d="M545 250 Q500 378 633 536"/><path d="M550 250 Q505 378 633 536"/><path d="M555 250 Q510 378 633 536"/><path d="M560 250 Q515 378 633 536"/><path d="M565 250 Q520 378 633 536"/><path d="M570 250 Q525 378 633 536"/><path d="M575 250 Q530 378 633 536"/><path d="M580 250 Q535 378 633 536"/><path d="M585 250 Q540 378 633 536"/><path d="M590 250 Q545 378 633 536"/><path d="M595 250 Q550 378 633 536"/>
+  </g>
+  <use href="#petal" fill="none" stroke="#f4f4f4" stroke-opacity=".7" stroke-width="2"/>
+ </g>
+</defs>
+<rect width="1200" height="1200" fill="#000"/>
+<use href="#leaf"/>
+<use href="#leaf" transform="rotate(90 600 600)"/>
+<use href="#leaf" transform="rotate(180 600 600)"/>
+<use href="#leaf" transform="rotate(270 600 600)"/>
 </svg>

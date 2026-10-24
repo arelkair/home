@@ -54,6 +54,15 @@ const person = {
     {path === "" && <script type="application/ld+json" set:html={JSON.stringify(person)} />}
   </head>
   <body>
+    <header class="masthead">
+      <div>
+        <a class="name" href={localize(lang)}>Arel Kair</a>
+        <p class="tagline">Computers <span>&amp;</span> Reverse Engineering</p>
+      </div>
+      <nav aria-label="Blog">
+        <a href={localize(lang, "/blog")} aria-current={path === "/blog" ? "page" : undefined}>Blog</a>
+      </nav>
+    </header>
     <main id="main">
       <slot />
     </main>
