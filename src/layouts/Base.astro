@@ -1,13 +1,8 @@
 ---
-import "@fontsource/cormorant-garamond/300-italic.css";
-import "@fontsource/cormorant-garamond/400-italic.css";
-import "@fontsource/cormorant-garamond/400.css";
 import "@fontsource-variable/lora/wght.css";
 import "@fontsource-variable/lora/wght-italic.css";
-import "@fontsource-variable/geist/wght.css";
 import "../styles/global.css";
 import { locales, localeNames, localize, translator, type Locale } from "../i18n";
-import { projects } from "../data/projects";
 
 interface Props {
   lang: Locale;
@@ -19,16 +14,9 @@ interface Props {
 const { lang, path, title, description } = Astro.props;
 const t = translator(lang);
 const site = Astro.site!.origin;
-const home = localize(lang);
 const pageTitle = title ? `${title}, Arel Kair` : "Arel Kair";
 const pageDescription = description ?? t("metaDescription");
 const canonical = site + localize(lang, path);
-const sections: [string, string][] = [
-  ["work", "navWork"],
-  ["about", "navAbout"],
-  ["tools", "navTools"],
-  ["social", "navSocial"],
-];
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -50,8 +38,8 @@ const person = {
     {locales.map((code) => <link rel="alternate" hreflang={code} href={site + localize(code, path)} />)}
     <link rel="alternate" hreflang="x-default" href={site + localize("en", path)} />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f4" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0e0e" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0f" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Arel Kair" />
     <meta property="og:title" content={pageTitle} />
@@ -66,54 +54,20 @@ const person = {
     {path === "" && <script type="application/ld+json" set:html={JSON.stringify(person)} />}
   </head>
   <body>
-    <a class="skip" href="#main">{t("skip")}</a>
-    <div class="shell">
-      <aside class="rail">
-        <a class="rail-name" href={home}>Arel Kair</a>
-        <nav class="rail-nav" aria-label={t("navContents")}>
-          <ol>
-            {
-              sections.map(([id, label]) => (
-                <li>
-                  <a href={`${home}#${id}`}>{t(label)}</a>
-                  {id === "work" && (
-                    <ol class="rail-projects">
-                      {projects.map((project) => {
-                        const href = localize(lang, `/work/${project.slug}`);
-                        return (
-                          <li>
-                            <a href={href} aria-current={path === `/work/${project.slug}` ? "page" : undefined}>
-                              {project.name}
-                            </a>
-                          </li>
-                        );
-                      })}
-                    </ol>
-                  )}
-                </li>
-              ))
-            }
-          </ol>
-        </nav>
-        <nav class="rail-langs" aria-label={t("langLabel")}>
-          {
-            locales.map((code) => (
-              <a href={localize(code, path)} hreflang={code} lang={code} aria-current={code === lang ? "true" : undefined} title={localeNames[code]}>
-                {code.toUpperCase()}
-              </a>
-            ))
-          }
-        </nav>
-      </aside>
-      <div class="content">
-        <main id="main">
-          <slot />
-        </main>
-        <footer class="colophon">
-          <p>&copy; 2026 Arel Kair</p>
-          <p>{t("colophon")}</p>
-        </footer>
-      </div>
-    </div>
+    <main id="main">
+      <slot />
+    </main>
+    <footer>
+      <nav aria-label={t("langLabel")}>
+        {
+          locales.map((code) => (
+            <a href={localize(code, path)} hreflang={code} lang={code} aria-current={code === lang ? "true" : undefined} title={localeNames[code]}>
+              {code}
+            </a>
+          ))
+        }
+      </nav>
+      <p>&copy; 2026</p>
+    </footer>
   </body>
 </html>

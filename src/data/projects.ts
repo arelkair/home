@@ -184,16 +184,6 @@ export const projects: Project[] = [
 
 export const overallProgress = 93;
 
-export const toolIndex = [...new Set(projects.flatMap((project) => project.stack))]
-  .sort((a, b) => a.localeCompare(b))
-  .map((tool) => ({ tool, projects: projects.filter((project) => project.stack.includes(tool)) }));
-
-export const repositories: { name: string; desc: Key; tag: string; url: string }[] = [
-  { name: "Hello, World!", desc: "helloDesc", tag: "HTML", url: "https://github.com/arelkair/helloworld" },
-  { name: "arelkair", desc: "profileDesc", tag: "Markdown", url: "https://github.com/arelkair/arelkair" },
-  { name: "home", desc: "homeDesc", tag: "Astro", url: "https://github.com/arelkair/home" },
-];
-
 export const socials: [string, string][] = [
   ["GitHub", "https://github.com/arelkair"],
   ["X", "https://x.com/arelkair"],
