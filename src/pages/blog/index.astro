@@ -1,0 +1,30 @@
+---
+import Base from "../../layouts/Base.astro";
+import { formatDate, getPosts } from "../../data/blog";
+
+const posts = await getPosts();
+---
+
+<Base path="/blog" title="Blog" description="Notes by Arel Kair on computers and reverse engineering.">
+  {
+    posts.length ? (
+      <ul class="rows">
+        {posts.map((post) => (
+          <li>
+            <a class="row" href={`/blog/${post.id}`}>
+              <span class="row-title">{post.data.title}</span>
+              <span class="row-text">
+                <span>{post.data.description}</span>
+                <time class="row-detail" datetime={post.data.date.toISOString()}>
+                  {formatDate(post.data.date)}
+                </time>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">No posts yet.</p>
+    )
+  }
+</Base>

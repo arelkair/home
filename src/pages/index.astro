@@ -4,18 +4,20 @@ import { projects } from "../data/projects";
 ---
 
 <Base path="">
-  <ul class="projects">
+  <ul class="rows">
     {
       projects.map((project) => (
         <li>
-          <a href={project.repo} target="_blank" rel="noopener">
-            {project.name}
-            <span class="arrow" aria-hidden="true">↗</span>
+          <a class="row" href={project.repo} target="_blank" rel="noopener">
+            <span class="row-title">
+              {project.name}
+              <span class="arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="row-text">
+              <span>{project.short}</span>
+              <span class="row-detail">{project.detail}</span>
+            </span>
           </a>
-          <div>
-            <p>{project.short}</p>
-            <p class="detail">{project.detail}</p>
-          </div>
         </li>
       ))
     }

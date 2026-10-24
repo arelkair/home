@@ -4,8 +4,12 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 
 ## Structure
 
-- `src/pages/index.astro` - Home: the four main projects, each linking to its repository
-- `src/pages/blog.astro` - Blog at `/blog`, empty for now
+- `src/pages/index.astro` - Home: the four main projects, each a block that links to its repository
+- `src/pages/blog/index.astro` - Blog list at `/blog`, newest first, with an empty state
+- `src/pages/blog/[slug].astro` - One page per post
+- `src/content/blog/*.md` - Posts in Markdown (title, description, date, draft); files starting with `_` are never published
+- `src/content.config.ts` - Blog collection schema
+- `src/data/blog.ts` - Published posts sorted by date, and date formatting
 - `src/pages/work/[slug].astro` - One case study template for every project (not linked from the home page for now)
 - `src/pages/404.astro` - Not found page
 - `src/layouts/Base.astro` - Document head and the header (name, tagline and Blog link)
@@ -18,7 +22,7 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 
 ## Design
 
-Extremely minimal: one narrow column of text, set only in Lora, black and white following the system light or dark mode. Project and section names are in italic. There are no images on the home page; case studies show their screenshots in grayscale. The only motion is a short fade when a page loads, skipped when the system asks for reduced motion.
+Extremely minimal: one narrow column of text, set only in Lora, black and white following the system light or dark mode. Project and section names are in italic. There are no images on the home page; case studies show their screenshots in grayscale. Project and post rows are blocks that turn light gray on hover. On every page load the name stays still while the tagline, the Blog link and the content fade and rise in; with reduced motion this becomes a plain fade.
 
 ## Content
 

@@ -1,0 +1,23 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { formatDate, getPosts } from "../../data/blog";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base path={`/blog/${post.id}`} title={post.data.title} description={post.data.description}>
+  <article class="post">
+    <h1>{post.data.title}</h1>
+    <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
