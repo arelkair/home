@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Arel Kair</title>
-  <meta name="description" content="Arel Kair builds web projects and games with AI: Pool, Poisoned Candy and Nivra, all playable or usable in the browser." />
+  <meta name="description" content="Arel Kair builds web projects and games with AI: Wii Party Recomp, Nivra, Pool and Poisoned Candy." />
   <link rel="canonical" href="https://arelkair.dev/" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#efefed" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121311" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f4f6" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0e12" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Arel Kair" />
   <meta property="og:title" content="Arel Kair" />
-  <meta property="og:description" content="Arel Kair builds web projects and games with AI: Pool, Poisoned Candy and Nivra, all playable or usable in the browser." />
+  <meta property="og:description" content="Arel Kair builds web projects and games with AI: Wii Party Recomp, Nivra, Pool and Poisoned Candy." />
   <meta property="og:url" content="https://arelkair.dev/" />
   <meta property="og:image" content="https://arelkair.dev/assets/og.png" />
   <meta property="og:image:width" content="1200" />
@@ -20,9 +20,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
-  <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/css/styles.ca4923ea9d.css" />
+  <link rel="stylesheet" href="/css/styles.f7b431e16a.css" />
   <script>(function(){var r=document.documentElement,t=null,l=null;try{t=localStorage.getItem("theme");l=localStorage.getItem("lang")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";r.dataset.theme=t;if(["en","es","ko","zh"].indexOf(l)>-1)r.lang=l})();</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Arel Kair","url":"https://arelkair.dev/","sameAs":["https://github.com/arelkair","https://x.com/arelkair","https://www.youtube.com/@arelkair","https://www.tiktok.com/@arelkair"],"address":{"@type":"PostalAddress","addressCountry":"ES"}}</script>
 </head>
@@ -49,7 +49,7 @@
       <a href="#about" data-i18n="navAbout">About</a>
       <a href="#social" data-i18n="navSocial">Social</a>
     </nav>
-    <div class="tools">
+    <div class="tools-bar">
       <div class="lang" id="lang">
         <button class="control lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
           <span id="langLabel">EN</span><svg class="caret" aria-hidden="true"><use href="#i-caret" /></svg>
@@ -68,35 +68,37 @@
   </header>
 
   <main id="main">
-    <section class="hero wrap" id="hero" aria-labelledby="name">
-      <h1 class="hero-name" id="name">Arel Kair</h1>
-      <p class="hero-intro" data-i18n="heroIntro">I build web projects and games with AI, from Spain.</p>
-      <p class="hero-links">
-        <a class="link" href="#work"><span data-i18n="heroWork">See the work</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
-        <a class="link" href="https://github.com/arelkair" target="_blank" rel="noopener"><span>GitHub</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
-      </p>
+    <section class="hero wrap" aria-labelledby="name">
+      <div class="hero-name-box"><h1 class="hero-name" id="name">Arel Kair</h1></div>
+      <div class="hero-row">
+        <p class="hero-intro" data-i18n="heroIntro">I build web projects and games with AI, from Spain.</p>
+        <p class="hero-links">
+          <a class="link" href="#work"><span data-i18n="heroWork">See the work</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
+          <a class="link" href="https://github.com/arelkair" target="_blank" rel="noopener"><span>GitHub</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
+        </p>
+      </div>
     </section>
 
     <section class="work wrap" id="work" aria-labelledby="work-title">
-      <h2 class="section-title" id="work-title" data-i18n="workTitle">Selected work</h2>
-
-      <article class="project project-wii">
-        <div class="project-text">
-          <img class="app-icon" src="/assets/work/wiiparty-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async" />
-          <h3 class="project-name"><a href="/work/wii-party-recomp">Wii Party Recomp</a></h3>
-          <p class="project-desc" data-i18n="wiiSummary">A static recompilation of Wii Party for PC. The game's code is translated into C++ and built as a native program for Windows and Linux, with no emulator.</p>
-          <dl class="facts">
-            <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot dot-dev" aria-hidden="true"></span><span data-i18n="statusDev">In development</span></span></dd></div>
-            <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthSep">September 2026</span></dd></div>
-            <div><dt data-i18n="factStack">Stack</dt><dd>C++, Python, Direct3D 11, OpenGL</dd></div>
-          </dl>
-          <p class="project-links">
+      <div class="section-head"><h2 class="section-title" id="work-title" data-i18n="workTitle">Selected work</h2></div>
+      <div class="bento">
+      <article class="cell cell-wii">
+        <div class="cell-body">
+          <img class="app-icon" src="/assets/work/wiiparty-icon.png" alt="" width="256" height="256" decoding="async" />
+          <div class="cell-head">
+          <h3 class="cell-name"><a class="cell-link" href="/work/wii-party-recomp">Wii Party Recomp</a></h3>
+          <span class="status live"><span class="dot dot-dev" aria-hidden="true"></span><span data-i18n="statusDev">In development</span></span>
+        </div>
+          <p class="cell-desc" data-i18n="wiiSummary">A static recompilation of Wii Party for PC. The game's code is translated into C++ and built as a native program for Windows and Linux, with no emulator.</p>
+          <p class="cell-stack">C++, Python, Direct3D 11, OpenGL</p>
+          <p class="cell-links">
             <a class="link" href="/work/wii-party-recomp"><span data-i18n="caseStudy">Case study</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
             <a class="link" href="https://github.com/arelkair/wiiparty-recomp" target="_blank" rel="noopener"><span data-i18n="linkSource">Source</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
             <a class="link" href="https://github.com/arelkair/wiiparty-recomp/releases" target="_blank" rel="noopener"><span data-i18n="linkDownload">Download</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
           </p>
         </div>
-        <div class="progress-panel project-media">
+        <div class="cell-progress">
+          <div class="progress-panel">
         <p class="progress-head"><span data-i18n="wiiProgress">Estimated progress by component</span><span class="progress-total">93%</span></p>
         <ul class="progress">
           <li><span class="progress-name" data-i18n="pToolchain">Recompilation toolchain</span><span class="progress-bar" style="--p: 100%" aria-hidden="true"></span><span class="progress-value">100%</span></li>
@@ -108,189 +110,129 @@
           <li><span class="progress-name" data-i18n="pPc">PC features</span><span class="progress-bar" style="--p: 80%" aria-hidden="true"></span><span class="progress-value">80%</span></li>
         </ul>
       </div>
+        </div>
       </article>
-
-      <article class="project project-nivra">
-        <div class="project-text">
-          <h3 class="project-name"><a href="/work/nivra">Nivra</a></h3>
-          <p class="project-desc" data-i18n="nivraSummary">A private organizer for calendar, timetable, tasks, grades and money. There is no account: everything stays in your browser.</p>
-          <dl class="facts">
-            <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span></dd></div>
-            <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthAug">August 2026</span></dd></div>
-            <div><dt data-i18n="factStack">Stack</dt><dd>React, TypeScript, Tailwind CSS, Vite</dd></div>
-          </dl>
-          <p class="project-links">
+      <article class="cell cell-nivra">
+        <div class="cell-media nivra-media">
+          <img class="shot-main" src="/assets/work/nivra.jpg" alt="" width="1440" height="968" loading="lazy" decoding="async" />
+          <div class="nivra-phone"><img src="/assets/work/nivra-mobile.jpg" alt="" width="520" height="1125" loading="lazy" decoding="async" /></div>
+        </div>
+        <div class="cell-body">
+          <div class="cell-head">
+          <h3 class="cell-name"><a class="cell-link" href="/work/nivra">Nivra</a></h3>
+          <span class="status live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span>
+        </div>
+          <p class="cell-desc" data-i18n="nivraSummary">A private organizer for calendar, timetable, tasks, grades and money. There is no account: everything stays in your browser.</p>
+          <p class="cell-stack">React, TypeScript, Tailwind CSS, Vite</p>
+          <p class="cell-links">
             <a class="link" href="/work/nivra"><span data-i18n="caseStudy">Case study</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
             <a class="link" href="https://nivra.arelkair.dev/" target="_blank" rel="noopener"><span data-i18n="linkOpen">Open</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
           </p>
         </div>
-        <a class="project-media nivra-media" href="/work/nivra" tabindex="-1" aria-hidden="true">
-          <span class="shot nivra-desktop"><img src="/assets/work/nivra.jpg" alt="" width="1440" height="968" loading="lazy" decoding="async" /></span>
-          <span class="shot nivra-phone"><img src="/assets/work/nivra-mobile.jpg" alt="" width="520" height="1125" loading="lazy" decoding="async" /></span>
-        </a>
       </article>
-
-      <article class="project project-pool">
-        <div class="project-text">
-          <h3 class="project-name"><a href="/work/pool">Pool</a></h3>
-          <p class="project-desc" data-i18n="poolSummary">A 2D pool game with online 1v1. One player shares a four-letter code, the other joins, and the match runs peer-to-peer with standard 8-ball rules.</p>
-          <dl class="facts">
-            <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span></dd></div>
-            <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthJun">June 2026</span></dd></div>
-            <div><dt data-i18n="factStack">Stack</dt><dd>JavaScript, PixiJS, PeerJS, Vite</dd></div>
-          </dl>
-          <p class="project-links">
+      <article class="cell cell-pool">
+        <div class="cell-media">
+          <img src="/assets/work/pool.jpg" alt="" width="1183" height="705" loading="lazy" decoding="async" />
+        </div>
+        <div class="cell-body">
+          <div class="cell-head">
+          <h3 class="cell-name"><a class="cell-link" href="/work/pool">Pool</a></h3>
+          <span class="status live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span>
+        </div>
+          <p class="cell-desc" data-i18n="poolSummary">A 2D pool game with online 1v1. One player shares a four-letter code, the other joins, and the match runs peer-to-peer with standard 8-ball rules.</p>
+          <p class="cell-stack">JavaScript, PixiJS, PeerJS, Vite</p>
+          <p class="cell-links">
             <a class="link" href="/work/pool"><span data-i18n="caseStudy">Case study</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
             <a class="link" href="https://pool.arelkair.dev/" target="_blank" rel="noopener"><span data-i18n="linkPlay">Play</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
             <a class="link" href="https://github.com/arelkair/pool" target="_blank" rel="noopener"><span data-i18n="linkSource">Source</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
           </p>
         </div>
-        <a class="project-media shot" href="/work/pool" tabindex="-1" aria-hidden="true">
-          <img src="/assets/work/pool.jpg" alt="" width="1183" height="705" loading="lazy" decoding="async" />
-        </a>
       </article>
-
-      <article class="project project-candy">
-        <a class="project-media shot" href="/work/poisoned-candy" tabindex="-1" aria-hidden="true">
-          <img src="/assets/work/candy-board.jpg" alt="" width="880" height="575" loading="lazy" decoding="async" />
-        </a>
-        <div class="project-text">
-          <h3 class="project-name"><a href="/work/poisoned-candy">Poisoned Candy</a></h3>
-          <p class="project-desc" data-i18n="candySummary">A board game for 2 to 5 players. Everyone hides poisoned candy on the board, then takes turns eating. Pass one phone around, or play online in a room with a code.</p>
-          <dl class="facts">
-            <div><dt data-i18n="factStatus">Status</dt><dd><span class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span></dd></div>
-            <div><dt data-i18n="factSince">Since</dt><dd><span data-i18n="monthJul">July 2026</span></dd></div>
-            <div><dt data-i18n="factStack">Stack</dt><dd>HTML, CSS, JavaScript, PeerJS</dd></div>
-          </dl>
-          <p class="project-links">
+      <article class="cell cell-candy">
+        <div class="cell-body">
+          <div class="cell-head">
+          <h3 class="cell-name"><a class="cell-link" href="/work/poisoned-candy">Poisoned Candy</a></h3>
+          <span class="status live"><span class="dot" aria-hidden="true"></span><span data-i18n="statusLive">Live</span></span>
+        </div>
+          <p class="cell-desc" data-i18n="candySummary">A board game for 2 to 5 players. Everyone hides poisoned candy on the board, then takes turns eating. Pass one phone around, or play online in a room with a code.</p>
+          <p class="cell-stack">HTML, CSS, JavaScript, PeerJS</p>
+          <p class="cell-links">
             <a class="link" href="/work/poisoned-candy"><span data-i18n="caseStudy">Case study</span><svg class="icon-sm" aria-hidden="true"><use href="#i-right" /></svg></a>
             <a class="link" href="https://candy.arelkair.dev/" target="_blank" rel="noopener"><span data-i18n="linkPlay">Play</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
             <a class="link" href="https://github.com/arelkair/poisoned-candy" target="_blank" rel="noopener"><span data-i18n="linkSource">Source</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a>
           </p>
         </div>
+        <div class="duo">
+          <img src="/assets/work/candy-board.jpg" alt="" width="880" height="575" loading="lazy" decoding="async" />
+          <img src="/assets/work/candy-shop.jpg" alt="" width="1180" height="635" loading="lazy" decoding="async" />
+        </div>
       </article>
+      </div>
 
-      <div class="more" aria-labelledby="more-title">
-        <h3 class="more-title" id="more-title" data-i18n="moreTitle">Also on GitHub</h3>
+      <div class="more">
+        <h3 class="more-title" data-i18n="moreTitle">Also on GitHub</h3>
         <ul class="more-list">
-          <li>
-            <a href="https://github.com/arelkair/helloworld" target="_blank" rel="noopener">
-              <span class="more-name">Hello, World!</span>
-              <span class="more-desc" data-i18n="helloDesc">My first web page, from May 2026.</span>
-              <span class="more-tag">HTML</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/arelkair/arelkair" target="_blank" rel="noopener">
-              <span class="more-name">arelkair</span>
-              <span class="more-desc" data-i18n="profileDesc">My GitHub profile README.</span>
-              <span class="more-tag">Markdown</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/arelkair/home" target="_blank" rel="noopener">
-              <span class="more-name">home</span>
-              <span class="more-desc" data-i18n="homeDesc">The source of this site.</span>
-              <span class="more-tag">HTML, CSS, JS</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/arelkair?tab=repositories" target="_blank" rel="noopener">
-              <span class="more-name" data-i18n="allRepos">All repositories</span>
-              <span class="more-desc">github.com/arelkair</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
+          <li><a href="https://github.com/arelkair/helloworld" target="_blank" rel="noopener"><span class="more-name">Hello, World!</span><span class="more-desc" data-i18n="helloDesc">My first web page, from May 2026.</span><span class="more-tag">HTML</span></a></li>
+          <li><a href="https://github.com/arelkair/arelkair" target="_blank" rel="noopener"><span class="more-name">arelkair</span><span class="more-desc" data-i18n="profileDesc">My GitHub profile README.</span><span class="more-tag">Markdown</span></a></li>
+          <li><a href="https://github.com/arelkair/home" target="_blank" rel="noopener"><span class="more-name">home</span><span class="more-desc" data-i18n="homeDesc">The source of this site.</span><span class="more-tag">HTML, CSS, JS</span></a></li>
+          <li><a href="https://github.com/arelkair?tab=repositories" target="_blank" rel="noopener"><span class="more-name" data-i18n="allRepos">All repositories</span><span class="more-desc">github.com/arelkair</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
         </ul>
       </div>
     </section>
 
-    <section class="band wrap" id="about" aria-labelledby="about-title">
+    <section class="about wrap" id="about" aria-labelledby="about-title">
       <h2 class="section-title" id="about-title" data-i18n="aboutTitle">About</h2>
-      <div class="band-body prose">
+      <div class="about-body">
         <p class="lead" data-i18n="about1">I build with AI: agents, automations, web projects and games.</p>
         <p data-i18n="about2">My first web page went online in May 2026. Since then I have published two multiplayer browser games, both of which connect players directly through PeerJS instead of a game server, and Nivra, an organizer that keeps its data on your own device.</p>
         <p data-i18n="about3">The games run in the browser and are free to open. They, this site and Wii Party Recomp are open source on GitHub.</p>
         <p data-i18n="about4">Since September 2026 I have also been working on Wii Party Recomp, which translates a Wii game into C++ so it runs natively on PC.</p>
-        <dl class="facts facts-row">
+        <dl class="facts">
           <div><dt data-i18n="factBased">Based in</dt><dd><span data-i18n="spain">Spain</span></dd></div>
           <div><dt data-i18n="factInterests">Interests</dt><dd><span data-i18n="interests">AI, security, self-hosting, gaming</span></dd></div>
         </dl>
       </div>
     </section>
 
-    <section class="band wrap" id="stack" aria-labelledby="stack-title">
-      <h2 class="section-title" id="stack-title" data-i18n="stackTitle">What I build with</h2>
-      <div class="band-body">
-        <p class="band-note" data-i18n="stackNote">Only tools used in a published project, and where.</p>
-        <dl class="stack">
-          <div><dt>C++</dt><dd><a href="/work/wii-party-recomp">Wii Party Recomp</a> <span data-i18n="stackCpp">(engine)</span></dd></div>
-          <div><dt>Python</dt><dd><a href="/work/wii-party-recomp">Wii Party Recomp</a> <span data-i18n="stackPy">(recompilers)</span></dd></div>
-          <div><dt>JavaScript</dt><dd><a href="/work/pool">Pool</a>, <a href="/work/poisoned-candy">Poisoned Candy</a></dd></div>
-          <div><dt>TypeScript</dt><dd><a href="/work/nivra">Nivra</a></dd></div>
-          <div><dt>React</dt><dd><a href="/work/nivra">Nivra</a></dd></div>
-          <div><dt>Tailwind CSS</dt><dd><a href="/work/nivra">Nivra</a></dd></div>
-          <div><dt>PixiJS</dt><dd><a href="/work/pool">Pool</a> <span data-i18n="stackPixi">(rendering)</span></dd></div>
-          <div><dt>PeerJS</dt><dd><a href="/work/pool">Pool</a>, <a href="/work/poisoned-candy">Poisoned Candy</a> <span data-i18n="stackPeer">(online play)</span></dd></div>
-          <div><dt>Vite</dt><dd><a href="/work/pool">Pool</a>, <a href="/work/nivra">Nivra</a></dd></div>
-          <div><dt>HTML &amp; CSS</dt><dd data-i18n="stackAll">Every project</dd></div>
-          <div><dt>Git &amp; GitHub</dt><dd data-i18n="stackAll">Every project</dd></div>
-          <div><dt>Vercel</dt><dd data-i18n="stackHosting">Hosting for every site here</dd></div>
-        </dl>
+    <section class="tools wrap" id="tools" aria-labelledby="tools-title">
+      <div class="section-head">
+        <h2 class="section-title" id="tools-title" data-i18n="stackTitle">What I build with</h2>
+        <p class="section-note" data-i18n="stackNote">Only tools used in a published project, and where.</p>
+      </div>
+      <div class="matrix-wrap">
+        <table class="matrix">
+        <thead><tr><th scope="col"><span class="sr" data-i18n="toolHead">Tool</span></th><th scope="col"><a href="/work/wii-party-recomp" aria-label="Wii Party Recomp"><span class="n-full" aria-hidden="true">Wii Party Recomp</span><span class="n-short" aria-hidden="true">Wii</span></a></th><th scope="col"><a href="/work/nivra" aria-label="Nivra"><span class="n-full" aria-hidden="true">Nivra</span><span class="n-short" aria-hidden="true">Nivra</span></a></th><th scope="col"><a href="/work/pool" aria-label="Pool"><span class="n-full" aria-hidden="true">Pool</span><span class="n-short" aria-hidden="true">Pool</span></a></th><th scope="col"><a href="/work/poisoned-candy" aria-label="Poisoned Candy"><span class="n-full" aria-hidden="true">Poisoned Candy</span><span class="n-short" aria-hidden="true">Candy</span></a></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">C++</th><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td><td></td></tr>
+          <tr><th scope="row">Python</th><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td><td></td></tr>
+          <tr><th scope="row">JavaScript</th><td></td><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td></tr>
+          <tr><th scope="row">TypeScript</th><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td></tr>
+        </tbody>
+        <tbody>
+          <tr><th scope="row">React</th><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td></tr>
+          <tr><th scope="row">Tailwind CSS</th><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td></tr>
+          <tr><th scope="row">Vite</th><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td></tr>
+          <tr><th scope="row">PixiJS</th><td></td><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td></tr>
+          <tr><th scope="row">PeerJS</th><td></td><td></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td></tr>
+        </tbody>
+        <tbody>
+          <tr><th scope="row">Direct3D 11</th><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td><td></td></tr>
+          <tr><th scope="row">OpenGL</th><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td><td></td></tr>
+          <tr><th scope="row">SDL3</th><td><span class="mark"><span class="sr" data-i18n="used">Used</span></span></td><td></td><td></td><td></td></tr>
+        </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="band wrap" id="social" aria-labelledby="social-title">
+    <section class="social wrap" id="social" aria-labelledby="social-title">
       <h2 class="section-title" id="social-title" data-i18n="socialTitle">Social</h2>
-      <div class="band-body">
-        <ul class="socials">
-          <li>
-            <a href="https://github.com/arelkair" target="_blank" rel="noopener me">
-              <svg class="social-icon" aria-hidden="true"><use href="#s-github" /></svg>
-              <span class="social-name">GitHub</span>
-              <span class="social-handle">arelkair</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/arelkair" target="_blank" rel="noopener me">
-              <svg class="social-icon" aria-hidden="true"><use href="#s-x" /></svg>
-              <span class="social-name">X</span>
-              <span class="social-handle">@arelkair</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/@arelkair" target="_blank" rel="noopener me">
-              <svg class="social-icon" aria-hidden="true"><use href="#s-youtube" /></svg>
-              <span class="social-name">YouTube</span>
-              <span class="social-handle">@arelkair</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.tiktok.com/@arelkair" target="_blank" rel="noopener me">
-              <svg class="social-icon" aria-hidden="true"><use href="#s-tiktok" /></svg>
-              <span class="social-name">TikTok</span>
-              <span class="social-handle">@arelkair</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://discord.com/users/1505398694810357830" target="_blank" rel="noopener me">
-              <svg class="social-icon" aria-hidden="true"><use href="#s-discord" /></svg>
-              <span class="social-name">Discord</span>
-              <span class="social-handle" data-i18n="discordHandle">Profile</span>
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg>
-            </a>
-          </li>
-        </ul>
-        <ul class="sites">
-          <li><a href="https://pool.arelkair.dev/" target="_blank" rel="noopener">pool.arelkair.dev</a></li>
-          <li><a href="https://candy.arelkair.dev/" target="_blank" rel="noopener">candy.arelkair.dev</a></li>
-          <li><a href="https://nivra.arelkair.dev/" target="_blank" rel="noopener">nivra.arelkair.dev</a></li>
-        </ul>
-      </div>
+      <ul class="social-list">
+          <li><a href="https://github.com/arelkair" target="_blank" rel="noopener me"><svg class="social-icon" aria-hidden="true"><use href="#s-github" /></svg><span class="social-name">GitHub</span><span class="social-handle">arelkair</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
+          <li><a href="https://x.com/arelkair" target="_blank" rel="noopener me"><svg class="social-icon" aria-hidden="true"><use href="#s-x" /></svg><span class="social-name">X</span><span class="social-handle">@arelkair</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
+          <li><a href="https://www.youtube.com/@arelkair" target="_blank" rel="noopener me"><svg class="social-icon" aria-hidden="true"><use href="#s-youtube" /></svg><span class="social-name">YouTube</span><span class="social-handle">@arelkair</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
+          <li><a href="https://www.tiktok.com/@arelkair" target="_blank" rel="noopener me"><svg class="social-icon" aria-hidden="true"><use href="#s-tiktok" /></svg><span class="social-name">TikTok</span><span class="social-handle">@arelkair</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
+          <li><a href="https://discord.com/users/1505398694810357830" target="_blank" rel="noopener me"><svg class="social-icon" aria-hidden="true"><use href="#s-discord" /></svg><span class="social-name">Discord</span><span class="social-handle" data-i18n="discordHandle">Profile</span><svg class="icon-sm" aria-hidden="true"><use href="#i-out" /></svg></a></li>
+      </ul>
     </section>
   </main>
 
@@ -298,6 +240,6 @@
     <span>&copy; 2026 Arel Kair</span>
   </footer>
 
-  <script defer src="/js/app.8b4cc4bd5f.js"></script>
+  <script defer src="/js/app.beeca91c35.js"></script>
 </body>
 </html>

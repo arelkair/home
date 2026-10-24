@@ -4,13 +4,13 @@ The portfolio of Arel Kair (arelkair.dev), built with plain HTML, CSS and JavaSc
 
 ## Structure
 
-- `src/index.html` - Home: hero, selected work, other repositories, about, tools, social links
+- `src/index.html` - Home: hero, selected work (bento grid), other repositories, about, tools matrix, social links
 - `src/work/pool.html`, `src/work/poisoned-candy.html`, `src/work/nivra.html`, `src/work/wii-party-recomp.html` - One case study per project
 - `src/404.html` - Not found page (served automatically by Vercel)
 - `src/css/styles.<hash>.css` - Single stylesheet: fonts, tokens, header, hero, projects, case studies, responsive, motion
 - `src/js/app.<hash>.js` - Translations, preferences, theme toggle and language menu, sharing a single `window.Portfolio` namespace
 - `src/assets/work/` - Real screenshots of each project (Pool's comes from its repository; the others were captured from the live sites)
-- `src/assets/fonts/` - Self-hosted Bricolage Grotesque, Geist and Geist Mono (latin subset)
+- `src/assets/fonts/` - Self-hosted Archivo (variable weight and width), Geist and Geist Mono (latin subset)
 - `src/assets/icons/` - Favicon (SVG, adapts to light and dark) and Apple touch icon: a rounded square with a green dot
 - `src/assets/og.png` - Social preview image (1200x630)
 - `src/robots.txt`, `src/sitemap.xml` - Crawling
@@ -24,11 +24,12 @@ Every fact on the site comes from a public source: the GitHub profile and its RE
 
 ## Design
 
-- Palette: neutral paper and ink in both themes, with one accent, the green of Pool's table, used for focus rings, the live status dot and hover states.
-- Type: Bricolage Grotesque for the name and headings, Geist for text, Geist Mono only for code paths and domains.
-- Layout: each project has its own treatment instead of identical cards. Pool is image-led, Poisoned Candy shows the real board and Nivra pairs the desktop dashboard with the phone screen, and Wii Party Recomp shows its estimated progress by component.
-- Social links, in order: GitHub, X, YouTube, TikTok and Discord, each with its brand icon from Simple Icons. GitHub comes first because this is a developer portfolio; Discord goes last as the direct contact channel.
-- Motion is limited to one load sequence, hover feedback on devices that can hover, press feedback and the language menu.
+- Palette: cool off-white and near-black ink in light and dark, with one cobalt accent (`#2542e8` light, `#8ba0ff` dark) for focus rings, status dots, progress bars, tool marks and hover states.
+- Type: Archivo at its narrowest width and heaviest weight for the name, project names and headings; Geist for text; Geist Mono for stacks and handles. The hero name is sized with a container query unit so it always spans the full content width.
+- Layout: the work section is a bento grid, with Wii Party Recomp across the full width with its estimated progress, Nivra and Pool side by side, and Poisoned Candy across the full width with two real screenshots. Each cell links to its case study through a stretched link, with the external links layered above it.
+- Tools: a matrix of technologies against projects, so each tool is backed by the project that uses it. It replaces any skills list.
+- Social links, in order: GitHub, X, YouTube, TikTok and Discord, each with its brand icon from Simple Icons.
+- Motion: one load sequence on the hero, hover feedback only on devices that can hover, press feedback and the language menu. Everything respects `prefers-reduced-motion`.
 
 ## Translations
 

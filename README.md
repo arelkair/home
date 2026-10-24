@@ -2,7 +2,7 @@
 The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 ## Features
 - Home page plus a case study for each project: Wii Party Recomp, Pool, Poisoned Candy and Nivra
-- Real project screenshots, and only verifiable information
+- Bento grid of projects with real screenshots, a tools matrix, and only verifiable information
 - Links to GitHub, X, YouTube, TikTok and Discord
 - Light and dark themes, following the system by default
 - English, Spanish, Korean and Mandarin Chinese
