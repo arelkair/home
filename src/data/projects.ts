@@ -16,7 +16,7 @@ export type Block =
 export interface Project {
   slug: string;
   name: string;
-  repo: string;
+  href: string;
   short: string;
   detail: string;
   status: "statusLive" | "statusDev";
@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     slug: "wii-party-recomp",
     name: "Wii Party Recomp",
-    repo: "https://github.com/arelkair/wiiparty-recomp",
+    href: "https://github.com/arelkair/wiiparty-recomp",
     short: "Static recompilation of Wii Party for native PC.",
     detail: "In development, about 93% complete.",
     status: "statusDev",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     slug: "nivra",
     name: "Nivra",
-    repo: "https://github.com/arelkair/nivra",
+    href: "https://nivra.arelkair.dev",
     short: "Privacy-first personal organizer for the browser.",
     detail: "Everything stays on your device.",
     status: "statusLive",
@@ -130,7 +130,7 @@ export const projects: Project[] = [
   {
     slug: "pool",
     name: "Pool",
-    repo: "https://github.com/arelkair/pool",
+    href: "https://pool.arelkair.dev",
     short: "2D 8-ball pool with online peer-to-peer matches.",
     detail: "Custom physics engine, rendered with PixiJS.",
     status: "statusLive",
@@ -173,7 +173,7 @@ export const projects: Project[] = [
   {
     slug: "poisoned-candy",
     name: "Poisoned Candy",
-    repo: "https://github.com/arelkair/poisoned-candy",
+    href: "https://candy.arelkair.dev",
     short: "Multiplayer board game for 2 to 5 players.",
     detail: "Local on one device, or online peer-to-peer.",
     status: "statusLive",

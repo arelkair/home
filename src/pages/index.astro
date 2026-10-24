@@ -7,13 +7,13 @@ import snorlax from "../assets/snorlax.webp";
 
 <Base path="">
   <p class="intro">
-    I take software apart to see how it works, then rebuild it to run somewhere new. Right now that means translating a Wii game into native C++ for PC. Before that, I made two multiplayer browser games and a private organizer.
+    I like finding out how programs work by taking them apart, and I build games and tools along the way. These are the biggest things I have made so far.
   </p>
   <ul class="rows">
     {
       projects.map((project) => (
         <li>
-          <a class="row" href={project.repo} target="_blank" rel="noopener">
+          <a class="row" href={project.href} target="_blank" rel="noopener">
             <span class="row-title">
               {project.name}
               <span class="arrow" aria-hidden="true">↗</span>
