@@ -4,7 +4,7 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 
 ## Structure
 
-- `src/pages/index.astro` - Home: the four main projects, each a block that links to its repository
+- `src/pages/index.astro` - Home: the four main projects, each a block that links to its repository, with a Snorlax plush below as decoration
 - `src/pages/blog/index.astro` - Blog list at `/blog`, newest first, with an empty state
 - `src/pages/blog/[slug].astro` - One page per post
 - `src/content/blog/*.md` - Posts in Markdown (title, description, date, draft); files starting with `_` are never published
@@ -17,7 +17,7 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 - `src/i18n/en.json` - Case study text; `src/i18n/index.ts` looks strings up by key
 - `src/styles/global.css` - Single short stylesheet
 - `src/assets/work/` - Screenshots used on the case studies, optimized to WebP at build time by `astro:assets`
-- `public/` - Favicon (the four-petal emblem), Apple touch icon, social image and robots.txt
+- `public/` - Favicon (the four-petal emblem, SVG only), social image and robots.txt
 - `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers and a one-year cache on `/_astro/*`
 
 ## Design

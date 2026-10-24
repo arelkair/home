@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import { projects } from "../data/projects";
+import snorlax from "../assets/snorlax.webp";
 ---
 
 <Base path="">
@@ -22,4 +24,5 @@ import { projects } from "../data/projects";
       ))
     }
   </ul>
+  <Image class="mascot" src={snorlax} alt="" widths={[280, 560]} sizes="280px" loading="lazy" />
 </Base>
