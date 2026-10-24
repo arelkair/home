@@ -6,6 +6,7 @@ const posts = await getPosts();
 ---
 
 <Base path="/blog" title="Blog" description="Notes by Arel Kair on computers and reverse engineering.">
+  <a class="back" href="/"><span aria-hidden="true">←</span> Back</a>
   {
     posts.length ? (
       <ul class="rows">

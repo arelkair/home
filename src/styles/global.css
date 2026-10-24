@@ -166,6 +166,32 @@ main header h1 + p {
   transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms ease;
 }
 
+.intro {
+  margin-bottom: 40px;
+  max-width: 40rem;
+}
+
+.back {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.back span {
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+.back:hover span {
+  transform: translateX(-3px);
+}
+
 .mascot {
   display: block;
   width: min(280px, 70%);

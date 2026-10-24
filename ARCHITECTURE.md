@@ -4,9 +4,9 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 
 ## Structure
 
-- `src/pages/index.astro` - Home: the four main projects, each a block that links to its repository, with a Snorlax plush below as decoration
-- `src/pages/blog/index.astro` - Blog list at `/blog`, newest first, with an empty state
-- `src/pages/blog/[slug].astro` - One page per post
+- `src/pages/index.astro` - Home: a short intro, then the four main projects, each a block that links to its repository, with a Snorlax plush below as decoration
+- `src/pages/blog/index.astro` - Blog list at `/blog`, newest first, with a back link and an empty state
+- `src/pages/blog/[slug].astro` - One page per post, with a link back to the blog
 - `src/content/blog/*.md` - Posts in Markdown (title, description, date, draft); files starting with `_` are never published
 - `src/content.config.ts` - Blog collection schema
 - `src/data/blog.ts` - Published posts sorted by date, and date formatting
