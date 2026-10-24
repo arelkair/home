@@ -129,15 +129,33 @@ main header h1 + p {
   color: var(--ink);
 }
 
-.list li + li {
-  margin-top: 24px;
+.projects {
+  display: grid;
+  gap: 28px;
 }
 
-.list a {
-  font-style: italic;
+.projects li {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 4px 24px;
 }
 
-.list p {
+.projects a {
+  align-self: start;
+  text-decoration: none;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  transition: transform 200ms ease-out, color 200ms ease;
+}
+
+.projects .detail {
+  margin-top: 0;
+  font-size: 0.9375rem;
   color: var(--muted);
 }
 
@@ -200,29 +218,18 @@ figure.portrait {
   font-style: italic;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 96px;
-  font-size: 0.875rem;
-  color: var(--muted);
+@media (hover: hover) and (pointer: fine) {
+  .projects a:hover .arrow {
+    color: var(--ink);
+    transform: translate(2px, -2px);
+  }
 }
 
-footer nav {
-  display: flex;
-  gap: 16px;
-}
+@media (max-width: 560px) {
+  .projects li {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-footer a {
-  text-decoration-color: transparent;
-}
-
-footer a[aria-current] {
-  color: var(--ink);
-  text-decoration-color: currentColor;
-}
-
-@media (max-width: 520px) {
   dl div {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;

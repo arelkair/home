@@ -2,21 +2,19 @@
 import "@fontsource-variable/lora/wght.css";
 import "@fontsource-variable/lora/wght-italic.css";
 import "../styles/global.css";
-import { locales, localeNames, localize, translator, type Locale } from "../i18n";
+import { t } from "../i18n";
 
 interface Props {
-  lang: Locale;
   path: string;
   title?: string;
   description?: string;
 }
 
-const { lang, path, title, description } = Astro.props;
-const t = translator(lang);
+const { path, title, description } = Astro.props;
 const site = Astro.site!.origin;
 const pageTitle = title ? `${title}, Arel Kair` : "Arel Kair";
 const pageDescription = description ?? t("metaDescription");
-const canonical = site + localize(lang, path);
+const canonical = site + (path || "/");
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -28,15 +26,13 @@ const person = {
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
-    {locales.map((code) => <link rel="alternate" hreflang={code} href={site + localize(code, path)} />)}
-    <link rel="alternate" hreflang="x-default" href={site + localize("en", path)} />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0f" />
@@ -56,27 +52,15 @@ const person = {
   <body>
     <header class="masthead">
       <div>
-        <a class="name" href={localize(lang)}>Arel Kair</a>
+        <a class="name" href="/">Arel Kair</a>
         <p class="tagline">Computers <span>&amp;</span> Reverse Engineering</p>
       </div>
       <nav aria-label="Blog">
-        <a href={localize(lang, "/blog")} aria-current={path === "/blog" ? "page" : undefined}>Blog</a>
+        <a href="/blog" aria-current={path === "/blog" ? "page" : undefined}>Blog</a>
       </nav>
     </header>
     <main id="main">
       <slot />
     </main>
-    <footer>
-      <nav aria-label={t("langLabel")}>
-        {
-          locales.map((code) => (
-            <a href={localize(code, path)} hreflang={code} lang={code} aria-current={code === lang ? "true" : undefined} title={localeNames[code]}>
-              {code}
-            </a>
-          ))
-        }
-      </nav>
-      <p>&copy; 2026</p>
-    </footer>
   </body>
 </html>

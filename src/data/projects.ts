@@ -16,6 +16,9 @@ export type Block =
 export interface Project {
   slug: string;
   name: string;
+  repo: string;
+  short: string;
+  detail: string;
   status: "statusLive" | "statusDev";
   since: Key;
   summary: Key;
@@ -33,6 +36,9 @@ export const projects: Project[] = [
   {
     slug: "wii-party-recomp",
     name: "Wii Party Recomp",
+    repo: "https://github.com/arelkair/wiiparty-recomp",
+    short: "Static recompilation of Wii Party for native PC",
+    detail: "In development, about 93% complete",
     status: "statusDev",
     since: "monthSep",
     summary: "wiiSummary",
@@ -83,16 +89,21 @@ export const projects: Project[] = [
   {
     slug: "nivra",
     name: "Nivra",
+    repo: "https://github.com/arelkair/nivra",
+    short: "Privacy-first personal organizer for the browser",
+    detail: "Everything stays on your device",
     status: "statusLive",
     since: "monthAug",
     summary: "nivraSummary",
     lead: "nivraLead",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    links: [["linkOpen", "https://nivra.arelkair.dev/"]],
+    links: [
+      ["linkOpen", "https://nivra.arelkair.dev/"],
+      ["linkSource", "https://github.com/arelkair/nivra"],
+    ],
     cover: { src: nivra, alt: "nivraAlt" },
     facts: [
       ["factLanguages", "langsNivra"],
-      ["factSource", "private"],
     ],
     sections: [
       {
@@ -119,6 +130,9 @@ export const projects: Project[] = [
   {
     slug: "pool",
     name: "Pool",
+    repo: "https://github.com/arelkair/pool",
+    short: "2D 8-ball pool with online peer-to-peer matches",
+    detail: "Custom physics engine, rendered with PixiJS",
     status: "statusLive",
     since: "monthJun",
     summary: "poolSummary",
@@ -159,6 +173,9 @@ export const projects: Project[] = [
   {
     slug: "poisoned-candy",
     name: "Poisoned Candy",
+    repo: "https://github.com/arelkair/poisoned-candy",
+    short: "Multiplayer board game for 2 to 5 players",
+    detail: "Local on one device, or online peer-to-peer",
     status: "statusLive",
     since: "monthJul",
     summary: "candySummary",
@@ -184,10 +201,3 @@ export const projects: Project[] = [
 
 export const overallProgress = 93;
 
-export const socials: [string, string][] = [
-  ["GitHub", "https://github.com/arelkair"],
-  ["X", "https://x.com/arelkair"],
-  ["YouTube", "https://www.youtube.com/@arelkair"],
-  ["TikTok", "https://www.tiktok.com/@arelkair"],
-  ["Discord", "https://discord.com/users/1505398694810357830"],
-];

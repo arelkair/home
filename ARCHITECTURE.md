@@ -4,21 +4,17 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 
 ## Structure
 
-- `src/pages/[...lang]/index.astro` - Home, being rebuilt step by step; for now only the shared header
-- `src/pages/[...lang]/blog.astro` - Blog, empty for now
-- `src/pages/[...lang]/work/[slug].astro` - One case study template for every project
+- `src/pages/index.astro` - Home: the four main projects, each linking to its repository
+- `src/pages/blog.astro` - Blog at `/blog`, empty for now
+- `src/pages/work/[slug].astro` - One case study template for every project (not linked from the home page for now)
 - `src/pages/404.astro` - Not found page
-- `src/layouts/Base.astro` - Document head, the header (name, tagline and Blog link) and the footer with the language links
+- `src/layouts/Base.astro` - Document head and the header (name, tagline and Blog link)
 - `src/data/projects.ts` - Every project: status, stack, links, facts, progress and the blocks of its case study. 
-- `src/i18n/*.json` - All text in English, Spanish, Korean and Chinese; `src/i18n/index.ts` holds the translator and URL helpers
+- `src/i18n/en.json` - Case study text; `src/i18n/index.ts` looks strings up by key
 - `src/styles/global.css` - Single short stylesheet
 - `src/assets/work/` - Screenshots used on the case studies, optimized to WebP at build time by `astro:assets`
 - `public/` - Favicon (the four-petal emblem), Apple touch icon, social image and robots.txt
 - `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers and a one-year cache on `/_astro/*`
-
-## Languages
-
-English lives at the root (`/`, `/work/pool`). Spanish, Korean and Chinese are prefixed (`/es`, `/ko/work/pool`). Every page links its translations with `hreflang`, and the language links in the footer keep you on the same page.
 
 ## Design
 

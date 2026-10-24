@@ -1,9 +1,9 @@
 # Home
 The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 ## Features
-- Home page plus a case study for each project: Wii Party Recomp, Nivra, Pool and Poisoned Candy
+- Home page listing Wii Party Recomp, Nivra, Pool and Poisoned Candy with links to their repositories
+- A blog at arelkair.dev/blog
 - A single column of text in black and white, set in Lora
-- English, Spanish, Korean and Mandarin Chinese, each as its own static pages
 - Built with Astro, with no JavaScript sent to the browser
 ## Development
 ```

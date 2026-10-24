@@ -1,14 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { translator } from "../i18n";
-
-const t = translator("en");
+import { t } from "../i18n";
 ---
 
-<Base lang="en" path="/404" title="404">
-  <header>
-    <h1>404</h1>
-    <p>{t("nfText")}</p>
-    <p><a href="/">{t("nfHome")}</a></p>
-  </header>
+<Base path="/404" title="404">
+  <p>{t("nfText")}</p>
 </Base>

@@ -1,20 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import Base from "../../../layouts/Base.astro";
-import { localePaths, localize, translator, type Locale } from "../../../i18n";
-import { overallProgress, projects, type Project } from "../../../data/projects";
+import Base from "../../layouts/Base.astro";
+import { t } from "../../i18n";
+import { overallProgress, projects, type Project } from "../../data/projects";
 
 export function getStaticPaths() {
-  return localePaths().flatMap(({ params, props }) =>
-    projects.map((project, i) => ({
-      params: { ...params, slug: project.slug },
-      props: { ...props, project, next: projects[(i + 1) % projects.length] },
-    })),
-  );
+  return projects.map((project, i) => ({
+    params: { slug: project.slug },
+    props: { project, next: projects[(i + 1) % projects.length] },
+  }));
 }
 
-const { lang, project, next } = Astro.props as { lang: Locale; project: Project; next: Project };
-const t = translator(lang);
+const { project, next } = Astro.props as { project: Project; next: Project };
 const facts: [string, string][] = [
   ["factStatus", project.status],
   ["factSince", project.since],
@@ -23,7 +20,7 @@ const facts: [string, string][] = [
 ];
 ---
 
-<Base lang={lang} path={`/work/${project.slug}`} title={project.name} description={t(project.lead)}>
+<Base path={`/work/${project.slug}`} title={project.name} description={t(project.lead)}>
   <header>
     <h1>{project.name}</h1>
     <p>{t(project.lead)}</p>
@@ -114,6 +111,6 @@ const facts: [string, string][] = [
   }
 
   <nav class="next" aria-label={t("nextProject")}>
-    {t("nextProject")}: <a href={localize(lang, `/work/${next.slug}`)}>{next.name}</a>
+    {t("nextProject")}: <a href={`/work/${next.slug}`}>{next.name}</a>
   </nav>
 </Base>
