@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../../layouts/Base.astro";
+import { localePaths, localize, translator, type Locale } from "../../../i18n";
+import { overallProgress, projects, type Project } from "../../../data/projects";
+
+export function getStaticPaths() {
+  return localePaths().flatMap(({ params, props }) =>
+    projects.map((project, i) => ({
+      params: { ...params, slug: project.slug },
+      props: { ...props, project, next: projects[(i + 1) % projects.length] },
+    })),
+  );
+}
+
+const { lang, project, next } = Astro.props as { lang: Locale; project: Project; next: Project };
+const t = translator(lang);
+const facts: [string, string][] = [
+  ["factStatus", project.status],
+  ["factSince", project.since],
+  ["factStack", project.stack.join(", ")],
+  ...project.facts,
+];
+---
+
+<Base lang={lang} path={`/work/${project.slug}`} title={project.name} description={t(project.lead)}>
+  <article class="case">
+    <header class="case-aside">
+      <a class="back" href={`${localize(lang)}#work`}><span aria-hidden="true">←</span> {t("backWork")}</a>
+      <h1 class="case-name" style={`view-transition-name: ${project.slug}`}>{project.name}</h1>
+      <p class="case-lead">{t(project.lead)}</p>
+      <dl class="case-facts">
+        {
+          facts.map(([term, value]) => (
+            <div>
+              <dt>{t(term)}</dt>
+              <dd>{t(value)}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="case-links">
+        {
+          project.links.map(([label, url]) => (
+            <a href={url} target="_blank" rel="noopener">
+              {t(label)} <span aria-hidden="true">↗</span>
+            </a>
+          ))
+        }
+      </p>
+    </header>
+
+    <div class="case-main">
+      {
+        project.cover && (
+          <figure class="case-cover">
+            <Image class="mono" src={project.cover.src} alt={t(project.cover.alt)} widths={[640, 1024, 1600]} sizes="(min-width: 1024px) 55vw, 100vw" loading="eager" />
+            <figcaption>{t(project.cover.alt)}</figcaption>
+          </figure>
+        )
+      }
+
+      {
+        project.progress && (
+          <section class="progress" aria-labelledby="progress-title">
+            <div class="progress-head">
+              <p class="progress-number">{overallProgress}%</p>
+              <div>
+                <h2 class="progress-title" id="progress-title">{t("wiiProgress")}</h2>
+                <p class="progress-note">{t("wiiEstimate")}</p>
+              </div>
+            </div>
+            <ul class="progress-list">
+              {project.progress.map(([name, value]) => (
+                <li style={`--p: ${value / 100}`}>
+                  <span class="progress-name">{t(name)}</span>
+                  <span class="progress-value">{value}%</span>
+                  <span class="progress-line" aria-hidden="true" />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        project.sections.map((section) => (
+          <section class="chapter reveal">
+            <h2 class="chapter-title">{t(section.title)}</h2>
+            {section.blocks.map((block) =>
+              "p" in block ? (
+                <p>{t(block.p)}</p>
+              ) : "files" in block ? (
+                <dl class="pairs files">
+                  {block.files.map(([path, desc]) => (
+                    <div>
+                      <dt>
+                        <code>{path}</code>
+                      </dt>
+                      <dd>{t(desc)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : "groups" in block ? (
+                <dl class="pairs groups">
+                  {block.groups.map(([term, list]) => (
+                    <div>
+                      <dt>{t(term)}</dt>
+                      <dd>{t(list)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : (
+                <figure class:list={["inline-figure", { portrait: block.portrait }]}>
+                  <Image class="mono" src={block.figure} alt={t(block.alt)} widths={[400, 800, 1200]} sizes="(min-width: 1024px) 40vw, 100vw" loading="lazy" />
+                  <figcaption>{t(block.alt)}</figcaption>
+                </figure>
+              ),
+            )}
+          </section>
+        ))
+      }
+
+      <nav class="next" aria-label={t("nextProject")}>
+        <a href={localize(lang, `/work/${next.slug}`)}>
+          <span class="next-label">{t("nextProject")}</span>
+          <span class="next-name">{next.name} <span class="next-arrow" aria-hidden="true">→</span></span>
+        </a>
+      </nav>
+    </div>
+  </article>
+</Base>

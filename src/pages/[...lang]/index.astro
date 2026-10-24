@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import { localePaths, localize, translator, type Locale } from "../../i18n";
+import { overallProgress, projects, repositories, socials, toolIndex } from "../../data/projects";
+import nivraMobile from "../../assets/work/nivra-mobile.jpg";
+import poolShot from "../../assets/work/pool.jpg";
+
+export const getStaticPaths = localePaths;
+
+const { lang } = Astro.props as { lang: Locale };
+const t = translator(lang);
+const shapes = ["wide", "narrow", "narrow", "wide"];
+---
+
+<Base lang={lang} path="">
+  <section class="opening" aria-labelledby="statement">
+    <div class="opening-text">
+      <h1 class="statement" id="statement">{t("heroIntro")}</h1>
+      <p class="opening-meta">
+        <span>{t("about1")}</span>
+      </p>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <Image class="collage-back mono" src={poolShot} alt="" widths={[480, 800]} sizes="(min-width: 1024px) 30vw, 70vw" loading="eager" />
+      <Image class="collage-front mono" src={nivraMobile} alt="" widths={[260, 520]} sizes="(min-width: 1024px) 13vw, 34vw" loading="eager" />
+    </div>
+  </section>
+
+  <section class="block" id="work" aria-labelledby="work-title">
+    <h2 class="block-title" id="work-title">{t("workTitle")}</h2>
+    <ul class="gallery">
+      {
+        projects.map((project, i) => (
+          <li class:list={["tile", shapes[i], "reveal"]}>
+            <a class="tile-link" href={localize(lang, `/work/${project.slug}`)}>
+              <div class="tile-media">
+                {project.cover ? (
+                  <Image class="mono" src={project.cover.src} alt="" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 45vw, 100vw" loading="lazy" />
+                ) : (
+                  <div class="tile-ink">
+                    {project.icon && <Image class="tile-icon" src={project.icon} alt="" width={72} height={72} />}
+                    <p class="tile-percent">{overallProgress}%</p>
+                    <p class="tile-percent-label">{t("wiiProgress")}</p>
+                  </div>
+                )}
+              </div>
+              <div class="tile-caption">
+                <h3 class="tile-name" style={`view-transition-name: ${project.slug}`}>
+                  {project.name}
+                </h3>
+                <p class="tile-meta">
+                  <span>{t(project.since)}</span>
+                  <span>{t(project.status)}</span>
+                </p>
+              </div>
+              <p class="tile-summary">{t(project.summary)}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="block about" id="about" aria-labelledby="about-title">
+    <h2 class="block-title" id="about-title">{t("aboutTitle")}</h2>
+    <div class="about-text">
+      <p class="dropcap">{t("about2")}</p>
+      <p>{t("about4")}</p>
+      <p>{t("about3")}</p>
+    </div>
+    <dl class="about-facts">
+      <div><dt>{t("factBased")}</dt><dd>{t("spain")}</dd></div>
+      <div><dt>{t("factInterests")}</dt><dd>{t("interests")}</dd></div>
+    </dl>
+  </section>
+
+  <section class="block tools" id="tools" aria-labelledby="tools-title">
+    <h2 class="block-title" id="tools-title">{t("stackTitle")}</h2>
+    <p class="tool-cloud">
+      {
+        toolIndex.map(({ tool, projects: used }) => (
+          <span class="tool">
+            {tool}
+            <sup>{used.map((project) => projects.indexOf(project) + 1).join(",")}</sup>
+          </span>
+        ))
+      }
+    </p>
+    <ol class="notes">
+      {
+        projects.map((project) => (
+          <li>
+            <a href={localize(lang, `/work/${project.slug}`)}>{project.name}</a>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="tools-note">{t("stackNote")}</p>
+  </section>
+
+  <section class="block social" id="social" aria-labelledby="social-title">
+    <h2 class="block-title" id="social-title">{t("socialTitle")}</h2>
+    <ul class="social-links">
+      {
+        socials.map(([name, url]) => (
+          <li>
+            <a href={url} target="_blank" rel="noopener me">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="repos">
+      <h3 class="repos-title">{t("moreTitle")}</h3>
+      <ul>
+        {
+          repositories.map((repo) => (
+            <li>
+              <a href={repo.url} target="_blank" rel="noopener">
+                <span class="repo-name">{repo.name}</span>
+                <span class="repo-desc">{t(repo.desc)}</span>
+                <span class="repo-tag">{repo.tag}</span>
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="https://github.com/arelkair?tab=repositories" target="_blank" rel="noopener">
+            <span class="repo-name">{t("allRepos")}</span>
+            <span class="repo-desc">github.com/arelkair</span>
+            <span class="repo-tag" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import { translator } from "../i18n";
+
+const t = translator("en");
+---
+
+<Base lang="en" path="/404" title="404">
+  <section class="opening notfound">
+    <div class="opening-text">
+      <h1 class="statement">404</h1>
+      <p class="opening-meta">{t("nfText")}</p>
+      <p><a class="back" href="/">{t("nfHome")} <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+</Base>
