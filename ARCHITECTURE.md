@@ -1,6 +1,6 @@
 # Personal Site
 
-The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static site. The browser receives HTML, one stylesheet, fonts and images, and no JavaScript.
+The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static site. The browser receives HTML with the stylesheet inlined, fonts and images, and no JavaScript.
 
 ## Structure
 
@@ -15,10 +15,11 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 - `src/layouts/Base.astro` - Document head and the header (name, tagline and Blog link)
 - `src/data/projects.ts` - Every project: status, stack, links, facts, progress and the blocks of its case study. 
 - `src/i18n/en.json` - Case study text; `src/i18n/index.ts` looks strings up by key
-- `src/styles/global.css` - Single short stylesheet
+- `src/styles/global.css` - Single short stylesheet, which also declares the Lora `@font-face` rules (Latin and Latin Extended only)
+- `src/assets/fonts/` - The four Lora woff2 files (Latin and Latin Extended, normal and italic); the Latin normal one is preloaded in `Base.astro`
 - `src/assets/work/` - Screenshots used on the case studies, optimized to WebP at build time by `astro:assets`
 - `public/` - Favicon (an italic "a", SVG only), social image and robots.txt
-- `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers and a one-year cache on `/_astro/*`
+- `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers (the CSP allows no scripts except the inline speculation rules that prefetch links on hover) and a one-year cache on `/_astro/*`
 
 ## Design
 
