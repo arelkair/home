@@ -3,7 +3,7 @@ The portfolio of Arel Kair: [arelkair.dev](https://arelkair.dev).
 ## Features
 - Home page listing Wii Party Recomp, Nivra, Pool and Poisoned Candy linking to their websites
 - A blog at arelkair.dev/blog, written in Markdown
-- A single column of text in black and white, set in Lora
+- A single column of text in black and white, set in Allo
 - Built with Astro, with no JavaScript sent to the browser
 ## Development
 ```

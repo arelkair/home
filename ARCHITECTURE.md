@@ -15,15 +15,15 @@ The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static si
 - `src/layouts/Base.astro` - Document head and the header (name, tagline and Blog link)
 - `src/data/projects.ts` - Every project: status, stack, links, facts, progress and the blocks of its case study. 
 - `src/i18n/en.json` - Case study text; `src/i18n/index.ts` looks strings up by key
-- `src/styles/global.css` - Single short stylesheet, which also declares the Lora `@font-face` rules (Latin and Latin Extended only)
-- `src/assets/fonts/` - The four Lora woff2 files (Latin and Latin Extended, normal and italic); the Latin normal one is preloaded in `Base.astro`
+- `src/styles/global.css` - Single short stylesheet, which sets the text in Allo (imported from the `allo-font` package, roundness fixed at 50)
+- `public/allo-OFL.txt` - Allo's SIL Open Font License, shipped with the font files
 - `src/assets/work/` - Screenshots used on the case studies, optimized to WebP at build time by `astro:assets`
 - `public/` - Favicon (an italic "a", SVG only), social image and robots.txt
 - `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers (the CSP allows no scripts except the inline speculation rules that prefetch links on hover) and a one-year cache on `/_astro/*`
 
 ## Design
 
-Extremely minimal: one narrow column of text, set only in Lora, black and white following the system light or dark mode. Project and section names are in italic. The only image on the home page is the Snorlax plush; case studies show their screenshots in grayscale. Project and post rows are blocks that turn light gray on hover. On every page load the name stays still while the tagline, the Blog link and the content fade and rise in; with reduced motion this becomes a plain fade.
+Extremely minimal: one narrow column of text, set only in Allo, black and white following the system light or dark mode. Project and section names are in italic (Allo's drawn oblique). The only image on the home page is the Snorlax plush; case studies show their screenshots in grayscale. Project and post rows are blocks that turn light gray on hover. On every page load the name stays still while the tagline, the Blog link and the content fade and rise in; with reduced motion this becomes a plain fade.
 
 ## Content
 
