@@ -36,7 +36,15 @@ const facts: [string, string][] = [
     </p>
   </header>
 
-  <dl>
+  {
+    project.cover && (
+      <figure>
+        <Image src={project.cover.src} alt={t(project.cover.alt)} widths={[640, 1280]} sizes="(min-width: 640px) 576px, 100vw" loading="eager" />
+      </figure>
+    )
+  }
+
+  <dl class="facts">
     {
       facts.map(([term, value]) => (
         <div>
@@ -48,24 +56,19 @@ const facts: [string, string][] = [
   </dl>
 
   {
-    project.cover && (
-      <figure>
-        <Image src={project.cover.src} alt={t(project.cover.alt)} widths={[640, 1280]} sizes="(min-width: 640px) 576px, 100vw" loading="eager" />
-      </figure>
-    )
-  }
-
-  {
     project.progress && (
       <section aria-labelledby="progress">
         <h2 id="progress">
           {t("wiiProgress")}, {overallProgress}%
         </h2>
-        <dl>
+        <dl class="meters">
           {project.progress.map(([name, value]) => (
             <div>
               <dt>{t(name)}</dt>
-              <dd>{value}%</dd>
+              <dd>
+                <span class="bar" style={`--v:${value}`} aria-hidden="true" />
+                <span class="pct">{value}%</span>
+              </dd>
             </div>
           ))}
         </dl>

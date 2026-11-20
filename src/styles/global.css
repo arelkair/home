@@ -49,8 +49,10 @@ section {
 }
 
 h2 {
-  margin-bottom: 16px;
-  color: var(--muted);
+  margin-bottom: 12px;
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 700;
 }
 
 p + p,
@@ -90,8 +92,19 @@ main header p {
   color: var(--muted);
 }
 
+main header h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
 main header h1 + p {
-  margin-top: 4px;
+  max-width: 36rem;
+  margin-top: 12px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink);
 }
 
 .masthead {
@@ -277,11 +290,113 @@ main header h1 + p {
 }
 
 main header .inline {
-  margin-top: 16px;
+  margin-top: 20px;
+  font-size: 1.125rem;
+  color: var(--ink);
 }
 
 dl {
   margin-top: 40px;
+}
+
+section > h2 + dl {
+  margin-top: 0;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+
+.facts div {
+  display: block;
+}
+
+.facts dt {
+  font-size: 0.9375rem;
+}
+
+.meters div {
+  grid-template-columns: 15rem minmax(0, 1fr);
+  align-items: center;
+  padding-block: 4px;
+}
+
+.meters dd {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bar {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v) * 1%);
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.pct {
+  min-width: 4ch;
+  text-align: right;
+  font-feature-settings: "tnum";
+}
+
+.project {
+  align-items: start;
+}
+
+.project-media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1);
+}
+
+.project-media.icon {
+  display: grid;
+  place-items: center;
+}
+
+.project-media.icon img {
+  width: 40%;
+  height: auto;
+  filter: none;
+}
+
+.project-body {
+  display: grid;
+  gap: 2px;
+}
+
+.project-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.project-body > .row-detail:first-of-type {
+  margin-top: 6px;
 }
 
 dl div {
@@ -378,6 +493,19 @@ figure.portrait {
 
   dl div + div {
     margin-top: 8px;
+  }
+
+  .facts div + div {
+    margin-top: 0;
+  }
+
+  .meters div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .project-media {
+    max-width: 15rem;
   }
 }
 
