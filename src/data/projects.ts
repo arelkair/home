@@ -46,7 +46,7 @@ export const projects: Project[] = [
     stack: ["C++", "Python", "Direct3D 11", "OpenGL", "SDL3"],
     links: [
       ["linkSource", "https://github.com/arelkair/wiiparty-recomp"],
-      ["linkDownload", "https://github.com/arelkair/wiiparty-recomp/releases"],
+      ["linkDownload", "https://github.com/arelkair/wiiparty-recomp/releases/tag/v0.1.25-alpha"],
     ],
     icon: wiiIcon,
     facts: [
