@@ -21,6 +21,7 @@ const facts: [string, string][] = [
 ---
 
 <Base path={`/work/${project.slug}`} title={project.name} description={t(project.lead)}>
+  <a class="back" href="/work"><span aria-hidden="true">←</span> {t("backWork")}</a>
   <header>
     <h1>{project.name}</h1>
     <p>{t(project.lead)}</p>

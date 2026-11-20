@@ -119,6 +119,11 @@ main header h1 + p {
   color: var(--muted);
 }
 
+.masthead nav {
+  display: flex;
+  gap: 20px;
+}
+
 .masthead nav a {
   font-size: 1.125rem;
   color: var(--muted);

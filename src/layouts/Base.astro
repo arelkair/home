@@ -56,7 +56,8 @@ const person = {
         <a class="name" href="/">Arel Kair</a>
         <p class="tagline">Computers <span>&amp;</span> Reverse Engineering</p>
       </div>
-      <nav aria-label="Blog">
+      <nav aria-label="Sections">
+        <a href="/work" aria-current={path.startsWith("/work") ? "page" : undefined}>Work</a>
         <a href="/blog" aria-current={path.startsWith("/blog") ? "page" : undefined}>Blog</a>
       </nav>
     </header>

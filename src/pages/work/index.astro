@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/Base.astro";
+import { t } from "../../i18n";
+import { projects } from "../../data/projects";
+---
+
+<Base path="/work" title="Work" description="Projects by Arel Kair: a Wii Party recompilation for PC, Nivra, Pool and Poisoned Candy.">
+  <a class="back" href="/"><span aria-hidden="true">←</span> Back</a>
+  <ul class="rows">
+    {
+      projects.map((project) => (
+        <li>
+          <a class="row" href={`/work/${project.slug}`}>
+            <span class="row-title">{project.name}</span>
+            <span class="row-text">
+              <span>{t(project.summary)}</span>
+              <span class="row-detail">
+                {t(project.status)}, {t(project.since)}. {project.stack.join(", ")}.
+              </span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
