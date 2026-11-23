@@ -371,17 +371,6 @@ section > h2 + dl {
   object-position: top;
 }
 
-.project-media.icon {
-  display: grid;
-  place-items: center;
-}
-
-.project-media.icon img {
-  width: 40%;
-  height: auto;
-  filter: none;
-}
-
 .project-body {
   display: grid;
   gap: 2px;

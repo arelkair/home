@@ -1,6 +1,6 @@
 import type { ImageMetadata } from "astro";
 import type { Key } from "../i18n";
-import wiiIcon from "../assets/work/wiiparty-icon.png";
+import wiiCover from "../assets/work/wiiparty.jpg";
 import nivra from "../assets/work/nivra.jpg";
 import nivraMobile from "../assets/work/nivra-mobile.jpg";
 import pool from "../assets/work/pool.jpg";
@@ -20,8 +20,7 @@ export interface Project {
   lead: Key;
   stack: string[];
   links: [Key, string][];
-  cover?: { src: ImageMetadata; alt: Key };
-  icon?: ImageMetadata;
+  cover: { src: ImageMetadata; alt: Key };
   facts: [Key, string][];
   sections: { title: Key; blocks: Block[] }[];
 }
@@ -39,7 +38,7 @@ export const projects: Project[] = [
       ["linkSource", "https://github.com/arelkair/wiiparty-recomp"],
       ["linkDownload", "https://github.com/arelkair/wiiparty-recomp/releases"],
     ],
-    icon: wiiIcon,
+    cover: { src: wiiCover, alt: "wiiCoverAlt" },
     facts: [
       ["factRuns", "Windows, Linux"],
       ["factLicense", "GPL-3.0-or-later"],

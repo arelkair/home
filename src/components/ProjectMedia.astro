@@ -11,12 +11,6 @@ interface Props {
 const { project, widths = [240, 480], sizes = "240px" } = Astro.props;
 ---
 
-<span class:list={["project-media", { icon: !project.cover }]}>
-  {
-    project.cover ? (
-      <Image src={project.cover.src} alt="" widths={widths} sizes={sizes} loading="lazy" />
-    ) : (
-      project.icon && <Image src={project.icon} alt="" widths={[96, 192]} sizes="96px" loading="lazy" />
-    )
-  }
+<span class="project-media">
+  <Image src={project.cover.src} alt="" widths={widths} sizes={sizes} loading="lazy" />
 </span>
