@@ -16,7 +16,7 @@ const pageTitle = title ? `${title}, Arel Kair` : "Arel Kair";
 const pageDescription = description ?? t("metaDescription");
 const canonical = site + (path || "/");
 const isHome = path === "";
-const siteHeading = isHome || path === "/work" || path === "/blog" || path === "/404";
+const siteHeading = isHome || path === "/work" || path === "/404";
 
 const elsewhere: [string, string][] = [
   ["GitHub", "https://github.com/arelkair"],
@@ -79,7 +79,6 @@ const person = {
       </div>
       <nav aria-label="Sections">
         <a href="/work" aria-current={path.startsWith("/work") ? "page" : undefined}>Work</a>
-        <a href="/blog" aria-current={path.startsWith("/blog") ? "page" : undefined}>Blog</a>
       </nav>
     </header>
     <main id="main">
