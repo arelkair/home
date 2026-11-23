@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import Base from "../../layouts/Base.astro";
+import ProjectMedia from "../../components/ProjectMedia.astro";
 import { t } from "../../i18n";
 import { projects } from "../../data/projects";
 ---
@@ -12,13 +12,7 @@ import { projects } from "../../data/projects";
       projects.map((project) => (
         <li>
           <a class="row project" href={`/work/${project.slug}`}>
-            <span class:list={["project-media", { icon: !project.cover }]}>
-              {project.cover ? (
-                <Image src={project.cover.src} alt="" widths={[240, 480]} sizes="240px" loading="lazy" />
-              ) : (
-                project.icon && <Image src={project.icon} alt="" widths={[96, 192]} sizes="96px" loading="lazy" />
-              )}
-            </span>
+            <ProjectMedia project={project} />
             <span class="project-body">
               <span class="project-name">{project.name}</span>
               <span>{t(project.summary)}</span>

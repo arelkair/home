@@ -1,31 +1,30 @@
 ---
-import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import ProjectMedia from "../components/ProjectMedia.astro";
+import { t } from "../i18n";
 import { projects } from "../data/projects";
-import snorlax from "../assets/snorlax.webp";
 ---
 
 <Base path="">
   <p class="intro">
     I like finding out how programs work by taking them apart, and I build games and tools along the way. These are the biggest things I have made so far.
   </p>
-  <ul class="rows">
+  <ul class="cards">
     {
       projects.map((project) => (
         <li>
-          <a class="row" href={project.href} target="_blank" rel="noopener">
-            <span class="row-title">
-              {project.name}
-              <span class="arrow" aria-hidden="true">↗</span>
-            </span>
-            <span class="row-text">
-              <span>{project.short}</span>
-              <span class="row-detail">{project.detail}</span>
+          <a class="card" href={`/work/${project.slug}`}>
+            <ProjectMedia project={project} widths={[360, 720]} sizes="(min-width: 720px) 344px, 100vw" />
+            <span class="card-body">
+              <span class="card-name">{project.name}</span>
+              <span class="card-summary">{t(project.summary)}</span>
+              <span class="row-detail">
+                {t(project.status)} since {t(project.since)}
+              </span>
             </span>
           </a>
         </li>
       ))
     }
   </ul>
-  <Image class="mascot" src={snorlax} alt="" widths={[280, 560]} sizes="280px" loading="lazy" />
 </Base>

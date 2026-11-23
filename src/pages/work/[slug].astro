@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Base from "../../layouts/Base.astro";
 import { t } from "../../i18n";
-import { overallProgress, projects, type Project } from "../../data/projects";
+import { projects, type Project } from "../../data/projects";
 
 export function getStaticPaths() {
   return projects.map((project, i) => ({
@@ -54,28 +54,6 @@ const facts: [string, string][] = [
       ))
     }
   </dl>
-
-  {
-    project.progress && (
-      <section aria-labelledby="progress">
-        <h2 id="progress">
-          {t("wiiProgress")}, {overallProgress}%
-        </h2>
-        <dl class="meters">
-          {project.progress.map(([name, value]) => (
-            <div>
-              <dt>{t(name)}</dt>
-              <dd>
-                <span class="bar" style={`--v:${value}`} aria-hidden="true" />
-                <span class="pct">{value}%</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <p class="note">{t("wiiEstimate")}</p>
-      </section>
-    )
-  }
 
   {
     project.sections.map((section) => (

@@ -16,9 +16,6 @@ export type Block =
 export interface Project {
   slug: string;
   name: string;
-  href: string;
-  short: string;
-  detail: string;
   status: "statusLive" | "statusDev";
   since: Key;
   summary: Key;
@@ -28,7 +25,6 @@ export interface Project {
   cover?: { src: ImageMetadata; alt: Key };
   icon?: ImageMetadata;
   facts: [Key, string][];
-  progress?: [Key, number][];
   sections: { title: Key; blocks: Block[] }[];
 }
 
@@ -36,9 +32,6 @@ export const projects: Project[] = [
   {
     slug: "wii-party-recomp",
     name: "Wii Party Recomp",
-    href: "https://github.com/arelkair/wiiparty-recomp",
-    short: "Static recompilation of Wii Party for native PC.",
-    detail: "In development, about 93% complete.",
     status: "statusDev",
     since: "monthSep",
     summary: "wiiSummary",
@@ -52,15 +45,6 @@ export const projects: Project[] = [
     facts: [
       ["factRuns", "Windows, Linux"],
       ["factLicense", "GPL-3.0-or-later"],
-    ],
-    progress: [
-      ["pToolchain", 100],
-      ["pRuntime", 100],
-      ["pGraphics", 100],
-      ["pAudio", 100],
-      ["pFlow", 90],
-      ["pInput", 80],
-      ["pPc", 80],
     ],
     sections: [
       { title: "wiiWhatTitle", blocks: [{ p: "wiiWhat1" }] },
@@ -89,9 +73,6 @@ export const projects: Project[] = [
   {
     slug: "nivra",
     name: "Nivra",
-    href: "https://nivra.arelkair.dev",
-    short: "Privacy-first personal organizer for the browser.",
-    detail: "Everything stays on your device.",
     status: "statusLive",
     since: "monthAug",
     summary: "nivraSummary",
@@ -130,9 +111,6 @@ export const projects: Project[] = [
   {
     slug: "pool",
     name: "Pool",
-    href: "https://pool.arelkair.dev",
-    short: "2D 8-ball pool with online peer-to-peer matches.",
-    detail: "Custom physics engine, rendered with PixiJS.",
     status: "statusLive",
     since: "monthJun",
     summary: "poolSummary",
@@ -173,9 +151,6 @@ export const projects: Project[] = [
   {
     slug: "poisoned-candy",
     name: "Poisoned Candy",
-    href: "https://candy.arelkair.dev",
-    short: "Multiplayer board game for 2 to 5 players.",
-    detail: "Local on one device, or online peer-to-peer.",
     status: "statusLive",
     since: "monthJul",
     summary: "candySummary",
@@ -198,6 +173,4 @@ export const projects: Project[] = [
     ],
   },
 ];
-
-export const overallProgress = 93;
 

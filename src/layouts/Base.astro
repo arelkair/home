@@ -15,12 +15,23 @@ const site = Astro.site!.origin;
 const pageTitle = title ? `${title}, Arel Kair` : "Arel Kair";
 const pageDescription = description ?? t("metaDescription");
 const canonical = site + (path || "/");
+const isHome = path === "";
+const siteHeading = isHome || path === "/work" || path === "/blog" || path === "/404";
+
+const elsewhere: [string, string][] = [
+  ["GitHub", "https://github.com/arelkair"],
+  ["X", "https://x.com/arelkair"],
+  ["YouTube", "https://www.youtube.com/@arelkair"],
+  ["TikTok", "https://www.tiktok.com/@arelkair"],
+];
+
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Arel Kair",
+  alternateName: "Mateo Fresco Canicoba",
   url: `${site}/`,
-  sameAs: ["https://github.com/arelkair", "https://x.com/arelkair", "https://www.youtube.com/@arelkair", "https://www.tiktok.com/@arelkair"],
+  sameAs: elsewhere.map(([, url]) => url),
   address: { "@type": "PostalAddress", addressCountry: "ES" },
 };
 ---
@@ -48,12 +59,22 @@ const person = {
     <link rel="preload" href={alloLatin} as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.svg?v=5" type="image/svg+xml" />
     <script type="speculationrules" set:html={JSON.stringify({ prefetch: [{ where: { href_matches: "/*" }, eagerness: "moderate" }] })} />
-    {path === "" && <script type="application/ld+json" set:html={JSON.stringify(person)} />}
+    {isHome && <script type="application/ld+json" set:html={JSON.stringify(person)} />}
   </head>
   <body>
     <header class="masthead">
       <div>
-        <a class="name" href="/">Arel Kair</a>
+        {
+          siteHeading ? (
+            <h1 class="site-name">
+              <a class="name" href="/">Arel Kair</a>
+            </h1>
+          ) : (
+            <p class="site-name">
+              <a class="name" href="/">Arel Kair</a>
+            </p>
+          )
+        }
         <p class="tagline">Computers <span>&amp;</span> Reverse Engineering</p>
       </div>
       <nav aria-label="Sections">
@@ -64,5 +85,11 @@ const person = {
     <main id="main">
       <slot />
     </main>
+    <footer class="foot">
+      <p>{t("footNote")}</p>
+      <nav aria-label={t("elsewhere")}>
+        {elsewhere.map(([label, url]) => <a href={url} rel="me">{label}</a>)}
+      </nav>
+    </footer>
   </body>
 </html>
