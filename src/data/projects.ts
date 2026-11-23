@@ -4,8 +4,6 @@ import wiiIcon from "../assets/work/wiiparty-icon.png";
 import nivra from "../assets/work/nivra.jpg";
 import nivraMobile from "../assets/work/nivra-mobile.jpg";
 import pool from "../assets/work/pool.jpg";
-import candyBoard from "../assets/work/candy-board.jpg";
-import candyShop from "../assets/work/candy-shop.jpg";
 
 export type Block =
   | { p: Key }
@@ -146,30 +144,6 @@ export const projects: Project[] = [
           },
         ],
       },
-    ],
-  },
-  {
-    slug: "poisoned-candy",
-    name: "Poisoned Candy",
-    status: "statusLive",
-    since: "monthJul",
-    summary: "candySummary",
-    lead: "candyLead",
-    stack: ["HTML", "CSS", "JavaScript", "PeerJS"],
-    links: [
-      ["linkPlay", "https://candy.arelkair.dev/"],
-      ["linkSource", "https://github.com/arelkair/poisoned-candy"],
-    ],
-    cover: { src: candyBoard, alt: "candyAlt" },
-    facts: [
-      ["factLanguages", "langsCandy"],
-      ["factBuild", "none"],
-    ],
-    sections: [
-      { title: "candyRoundTitle", blocks: [{ p: "candyRound1" }] },
-      { title: "candyShopTitle", blocks: [{ p: "candyShop1" }, { figure: candyShop, alt: "candyShopAlt" }] },
-      { title: "candyModesTitle", blocks: [{ p: "candyModes1" }, { p: "candyModes2" }] },
-      { title: "candyBuiltTitle", blocks: [{ p: "candyBuilt1" }] },
     ],
   },
 ];
