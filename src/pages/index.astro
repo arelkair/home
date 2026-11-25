@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import ProjectMedia from "../components/ProjectMedia.astro";
 import { t } from "../i18n";
 import { projects } from "../data/projects";
 ---
@@ -9,15 +8,14 @@ import { projects } from "../data/projects";
   <p class="intro">
     I like finding out how programs work by taking them apart, and I build games and tools along the way. These are the biggest things I have made so far.
   </p>
-  <ul class="cards">
+  <ul class="rows">
     {
       projects.map((project) => (
         <li>
-          <a class="card" href={`/work/${project.slug}`}>
-            <ProjectMedia project={project} widths={[360, 720]} sizes="(min-width: 720px) 344px, 100vw" />
-            <span class="card-body">
-              <span class="card-name">{project.name}</span>
-              <span class="card-summary">{t(project.summary)}</span>
+          <a class="row" href={`/work/${project.slug}`}>
+            <span class="row-title">{project.name}</span>
+            <span class="row-text">
+              <span>{t(project.summary)}</span>
               <span class="row-detail">
                 {t(project.status)} since {t(project.since)}
               </span>
