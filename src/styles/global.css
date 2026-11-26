@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Allo";
-  src: url("../assets/fonts/allo-latin.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Geist";
+  src: url("../assets/fonts/geist.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Allo Fallback";
+  font-family: "Geist Fallback";
   src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans");
-  size-adjust: 106.2%;
-  ascent-override: 91.2%;
-  descent-override: 22.7%;
+  size-adjust: 108.6%;
+  ascent-override: 92.5%;
+  descent-override: 27.2%;
   line-gap-override: 0%;
 }
 
 @theme {
-  --font-sans: "Allo", "Allo Fallback", system-ui, sans-serif;
+  --font-sans: "Geist", "Geist Fallback", system-ui, sans-serif;
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --animate-rise: rise 250ms var(--ease-out-quint) both;
+  --animate-rise: rise 800ms var(--ease-out-quint) both;
 
   @keyframes rise {
     from {
       opacity: 0;
-      transform: translateY(6px);
+      transform: translateY(14px);
     }
   }
 }
@@ -73,7 +73,7 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
-  transition: text-decoration-color 75ms ease;
+  transition: text-decoration-color 250ms ease;
 
   &:hover {
     text-decoration-color: currentColor;
