@@ -7,19 +7,19 @@ import { projects } from "../data/projects";
   <p class="mb-10 max-w-160">
     I like finding out how programs work by taking them apart, and I build games and tools along the way. These are the biggest things I have made so far.
   </p>
-  <ul class="-mx-4 grid gap-1 max-sm:-mx-3">
+  <ul class="-mx-4 grid gap-1 max-sm:-mx-3 [@media(hover:hover)]:[&:has(a:hover)>li:not(:hover)]:opacity-50">
     {
       projects.map((project) => (
-        <li>
+        <li class="transition-opacity duration-100">
           <a
-            class="group grid grid-cols-[15rem_minmax(0,1fr)] gap-x-6 gap-y-0.5 rounded-[10px] px-4 py-3.5 transition-[background-color,transform] duration-75 active:scale-[0.99] hover:bg-ink/6 max-sm:grid-cols-1 max-sm:p-3"
+            class="group relative isolate grid grid-cols-[15rem_minmax(0,1fr)] gap-x-6 gap-y-0.5 px-4 py-3.5 before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-ink/6 before:transition-transform before:duration-100 before:ease-[cubic-bezier(0.23,1,0.32,1)] hover:before:scale-x-100 focus-visible:before:scale-x-100 max-sm:grid-cols-1 max-sm:p-3"
             href={project.href}
             target="_blank"
             rel="noopener"
           >
-            <span class="leading-[1.4] font-semibold">
+            <span class="leading-[1.4] font-semibold transition-transform duration-100 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 group-focus-visible:translate-x-1">
               {project.name}
-              <span class="ml-1.5 inline-block text-[0.875rem] font-normal text-muted transition-[transform,color] duration-75 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" aria-hidden="true">↗</span>
+              <span class="ml-1.5 inline-block -translate-x-1 translate-y-0.5 text-[0.875rem] font-normal text-muted opacity-0 transition-[opacity,translate] duration-100 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-ink group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 pointer-coarse:translate-x-0 pointer-coarse:translate-y-0 pointer-coarse:opacity-100" aria-hidden="true">↗</span>
             </span>
             <span class="grid">
               <span>{project.summary}</span>
