@@ -1,9 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Allo";
+  src: url("../assets/fonts/allo-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Allo Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans");
+  size-adjust: 106.2%;
+  ascent-override: 91.2%;
+  descent-override: 22.7%;
+  line-gap-override: 0%;
+}
+
 @theme {
-  --font-sans: "Allo", system-ui, sans-serif;
+  --font-sans: "Allo", "Allo Fallback", system-ui, sans-serif;
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --animate-rise: rise 700ms var(--ease-out-quint) both;
+  --animate-rise: rise 450ms var(--ease-out-quint) both;
 
   @keyframes rise {
     from {
