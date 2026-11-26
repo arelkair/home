@@ -20,7 +20,7 @@
 @theme {
   --font-sans: "Allo", "Allo Fallback", system-ui, sans-serif;
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --animate-rise: rise 450ms var(--ease-out-quint) both;
+  --animate-rise: rise 250ms var(--ease-out-quint) both;
 
   @keyframes rise {
     from {
@@ -73,7 +73,7 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
-  transition: text-decoration-color 200ms ease;
+  transition: text-decoration-color 75ms ease;
 
   &:hover {
     text-decoration-color: currentColor;
