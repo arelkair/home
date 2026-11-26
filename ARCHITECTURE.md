@@ -1,34 +1,27 @@
 # Personal Site
 
-The portfolio of Arel Kair (arelkair.dev), built with Astro as a fully static site. The browser receives HTML with the stylesheet inlined, fonts and images, and no JavaScript.
+The portfolio of Arel Kair (arelkair.dev), built with Astro and Tailwind CSS v4 as a fully static site. The browser receives HTML with the stylesheet inlined, the font and images, and no JavaScript.
 
 ## Structure
 
-- `src/pages/index.astro` - Home: a short intro, then the four main projects, each a block that links to its website (Wii Party Recomp, which has none, links to its repository), with a Snorlax plush below as decoration
-- `src/pages/blog/index.astro` - Blog list at `/blog`, newest first, with a back link and an empty state
-- `src/pages/blog/[slug].astro` - One page per post, with a link back to the blog
-- `src/content/blog/*.md` - Posts in Markdown (title, description, date, draft); files starting with `_` are never published
-- `src/content.config.ts` - Blog collection schema
-- `src/data/blog.ts` - Published posts sorted by date, and date formatting
-- `src/pages/work/[slug].astro` - One case study template for every project (not linked from the home page for now)
+- `src/pages/index.astro` - Home: a short intro and the three projects as rows, each linking to its GitHub repository in a new tab
 - `src/pages/404.astro` - Not found page
-- `src/layouts/Base.astro` - Document head and the header (name, tagline and Blog link)
-- `src/data/projects.ts` - Every project: status, stack, links, facts, progress and the blocks of its case study. 
-- `src/i18n/en.json` - Case study text; `src/i18n/index.ts` looks strings up by key
-- `src/styles/global.css` - Single short stylesheet, which sets the text in Allo (imported from the `allo-font` package, roundness fixed at 50)
-- `public/allo-OFL.txt` - Allo's SIL Open Font License, shipped with the font files
-- `src/assets/work/` - Screenshots used on the case studies, optimized to WebP at build time by `astro:assets`
-- `public/` - Favicon (an italic "a", SVG only), social image and robots.txt
+- `src/layouts/Base.astro` - Document head, the header (name and tagline), the footer with links elsewhere, and the body classes that set the column
+- `src/data/projects.ts` - Every project: name, repository, summary, status and start date
+- `src/styles/global.css` - Tailwind import, the theme (Allo, the paper, ink and muted colors, the rise animation), the light and dark variables and the `link` utility
+- `public/` - Favicon, social image, robots.txt and Allo's license
 - `vercel.json` - Deploy configuration: Astro framework, clean URLs, security headers (the CSP allows no scripts except the inline speculation rules that prefetch links on hover) and a one-year cache on `/_astro/*`
 
 ## Design
 
-Extremely minimal: one narrow column of text, set only in Allo, black and white following the system light or dark mode. Project and section names are in italic (Allo's drawn oblique). The only image on the home page is the Snorlax plush; case studies show their screenshots in grayscale. Project and post rows are blocks that turn light gray on hover. On every page load the name stays still while the tagline, the Blog link and the content fade and rise in; with reduced motion this becomes a plain fade.
+Extremely minimal: one narrow column of text, set only in Allo, black and white following the system light or dark mode. The project rows are blocks that turn light gray on hover, with a small arrow that moves. The tagline and the content fade and rise in on load, which Tailwind's `motion-safe` turns off for people who prefer reduced motion.
+
+There is no Work section for now: the projects link straight to their repositories.
 
 ## Content
 
-Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show. Nivra's repository is public, so it links to both the live app and the repository. Wii Party Recomp uses its own icon and progress estimates instead of game screenshots, which would be Nintendo's content.
+Every fact on the site comes from a public source: the GitHub profile and its README, each repository's README and `package.json`, and what the live sites show.
 
 ## Deploy
 
-The Vercel project root must be the repository root (it used to be `src/`). Vercel detects Astro, runs `npm run build` and serves `dist/`.
+The Vercel project root must be the repository root. Vercel detects Astro, runs `npm run build` and serves `dist/`.

@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://arelkair.dev",
@@ -7,4 +8,5 @@ export default defineConfig({
   build: { format: "file", inlineStylesheets: "always" },
   server: { port: 4321 },
   integrations: [sitemap()],
+  vite: { plugins: [tailwindcss()] },
 });
